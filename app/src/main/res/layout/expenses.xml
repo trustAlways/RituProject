@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/mrg2"
+            android:layout_marginRight="@dimen/mrg2"
+            >
+
+            <RelativeLayout
+                android:id="@+id/rr_expenses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="@dimen/size1"
+                >
+                <TextView
+                    android:id="@+id/txt_expenses"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Expenses"
+                    android:textColor="@color/colorPrimary"
+
+                    android:textSize="@dimen/size0"
+                    />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rr_expenses_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rr_expenses"
+                android:layout_marginTop="@dimen/size000"
+                >
+
+                <TextView
+                    android:id="@+id/txt_fwa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/mrg2"
+                    android:layout_marginRight="@dimen/mrg2"
+                    android:layout_marginTop="@dimen/size0"
+                    android:elevation="@dimen/mrg1"
+                    android:hint="@string/fwa"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:paddingLeft="@dimen/mrg1"
+                    android:textSize="@dimen/mrg4"
+
+                    />
+
+
+
+                <EditText
+                    android:layout_below="@+id/txt_fwa"
+                    android:id="@+id/edt_fwa"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size3"
+
+                    android:layout_marginLeft="@dimen/mrg2"
+                    android:layout_marginRight="@dimen/mrg2"
+                    android:layout_marginTop="@dimen/mrg1"
+                    android:background="@drawable/x_et_bg"
+                    android:elevation="@dimen/mrg1"
+
+                    android:hint="Add F.W.A Expenses"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:paddingLeft="@dimen/size0"
+                    android:textSize="@dimen/mrg4"
+                    android:inputType="number"
+
+                    />
+
+                <!----><!----><!----><!----><!---->
+
+                <TextView
+                    android:id="@+id/txt_car_expense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edt_petrol"
+                    android:layout_marginLeft="@dimen/mrg2"
+                    android:layout_marginRight="@dimen/mrg2"
+                    android:layout_marginTop="@dimen/mrg2"
+                    android:elevation="@dimen/mrg1"
+                    android:visibility="gone"
+                    android:hint="Car/Taxi Expenses"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:paddingLeft="@dimen/mrg1"
+                    android:textSize="@dimen/mrg4"
+
+                    />
+
+
+
+                <EditText
+                    android:id="@+id/edt_car_expenses"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size3"
+                    android:layout_below="@+id/txt_car_expense"
+                    android:layout_marginLeft="@dimen/mrg2"
+                    android:layout_marginRight="@dimen/mrg2"
+                    android:layout_marginTop="@dimen/mrg1"
+                    android:background="@drawable/x_et_bg"
+                    android:elevation="@dimen/mrg1"
+                    android:hint="Add Car/Taxi Expenses"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:paddingLeft="@dimen/size0"
+                    android:textSize="@dimen/mrg4"
+                    android:visibility="gone"
+                    android:inputType="number"
+                    />
+
+
+
+<!----><!----><!----><!---->
+
+
+                <TextView
+                    android:id="@+id/txt_reminder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edt_car_expenses"
+                    android:layout_marginLeft="@dimen/mrg2"
+                    android:layout_marginRight="@dimen/mrg2"
+                    android:layout_marginTop="@dimen/mrg2"
+                    android:elevation="@dimen/mrg1"
+                    android:hint="@string/reminder_expenses"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:paddingLeft="@dimen/mrg1"
+                    android:textSize="@dimen/mrg4"
+
+                    />
+
+
+
+                <EditText
+                    android:id="@+id/edt_reminder_expenses"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size3"
+                    android:layout_below="@+id/txt_reminder"
+                    android:layout_marginLeft="@dimen/mrg2"
+                    android:layout_marginRight="@dimen/mrg2"
+                    android:layout_marginTop="@dimen/mrg1"
+                    android:background="@drawable/x_et_bg"
+                    android:elevation="@dimen/mrg1"
+                    android:hint="Add Reminder Expenses"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:paddingLeft="@dimen/size0"
+                    android:textSize="@dimen/mrg4"
+
+                    android:inputType="number"
+                    />
+
+
+
+                <TextView
+                    android:id="@+id/txt_telephone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edt_reminder_expenses"
+                    android:layout_marginLeft="@dimen/mrg2"
+                    android:layout_marginRight="@dimen/mrg2"
+                    android:layout_marginTop="@dimen/mrg2"
+                    android:elevation="@dimen/mrg1"
+                    android:hint="@string/telephone"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:paddingLeft="@dimen/mrg1"
+                    android:textSize="@dimen/mrg4"
+
+                    />
+
+
+                <EditText
+                    android:id="@+id/edt_telephone"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size3"
+
+                    android:layout_marginLeft="@dimen/mrg2"
+                    android:layout_marginRight="@dimen/mrg2"
+                    android:layout_marginTop="@dimen/mrg1"
+                    android:background="@drawable/x_et_bg"
+                    android:elevation="@dimen/mrg1"
+                    android:hint="Add Telephone Expenses"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:paddingLeft="@dimen/size0"
+                    android:textSize="@dimen/mrg4"
+                    android:layout_below="@+id/txt_telephone"
+                    android:inputType="number"
+                    />
+
+
+
+
+                <TextView
+                    android:id="@+id/txt_sundry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edt_printingstationary"
+                    android:layout_marginLeft="@dimen/mrg2"
+                    android:layout_marginRight="@dimen/mrg2"
+                    android:layout_marginTop="@dimen/mrg2"
+                    android:elevation="@dimen/mrg1"
+                    android:hint="@string/sundry1"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:paddingLeft="@dimen/mrg1"
+                    android:textSize="@dimen/mrg4"
+
+                    />
+
+
+                <EditText
+                    android:id="@+id/edt_sundary"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size3"
+
+                    android:layout_marginLeft="@dimen/mrg2"
+                    android:layout_marginRight="@dimen/mrg2"
+                    android:layout_marginTop="@dimen/mrg1"
+                    android:background="@drawable/x_et_bg"
+                    android:elevation="@dimen/mrg1"
+
+                    android:hint="@string/sundry"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:paddingLeft="@dimen/size0"
+                    android:textSize="@dimen/mrg4"
+                    android:layout_below="@+id/txt_sundry"
+                    android:inputType="number"
+
+                    />
+
+
+
+                <TextView
+                    android:id="@+id/txt_printingstationary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edt_telephone"
+                    android:layout_marginLeft="@dimen/mrg2"
+                    android:layout_marginRight="@dimen/mrg2"
+                    android:layout_marginTop="@dimen/mrg2"
+                    android:elevation="@dimen/mrg1"
+                    android:hint="@string/printing_nd_sationary1"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:paddingLeft="@dimen/mrg1"
+                    android:textSize="@dimen/mrg4"
+
+                    />
+
+                <EditText
+                    android:id="@+id/edt_printingstationary"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size3"
+
+                    android:layout_marginLeft="@dimen/mrg2"
+                    android:layout_marginRight="@dimen/mrg2"
+                    android:layout_marginTop="@dimen/mrg1"
+                    android:background="@drawable/x_et_bg"
+                    android:elevation="@dimen/mrg1"
+
+                    android:hint="@string/printing_nd_sationary"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:paddingLeft="@dimen/size0"
+                    android:textSize="@dimen/mrg4"
+                    android:layout_below="@+id/txt_printingstationary"
+                    android:inputType="number"
+                    />
+
+
+
+                <TextView
+                    android:id="@+id/txt_petrol"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edt_fwa"
+                    android:layout_marginLeft="@dimen/mrg2"
+                    android:layout_marginRight="@dimen/mrg2"
+                    android:layout_marginTop="@dimen/mrg2"
+                    android:elevation="@dimen/mrg1"
+                    android:hint="@string/petrol"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:paddingLeft="@dimen/mrg1"
+                    android:textSize="@dimen/mrg4"
+                    android:visibility="gone"
+
+                    />
+
+                <EditText
+                    android:id="@+id/edt_petrol"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size3"
+                    android:layout_marginLeft="@dimen/mrg2"
+                    android:layout_marginRight="@dimen/mrg2"
+                    android:layout_marginTop="@dimen/mrg1"
+                    android:background="@drawable/x_et_bg"
+                    android:elevation="@dimen/mrg1"
+                    android:hint="@string/petrol"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:paddingLeft="@dimen/size0"
+                    android:textSize="@dimen/mrg4"
+                    android:layout_below="@+id/txt_petrol"
+                    android:inputType="number"
+                    android:visibility="gone"
+                    />
+
+                <TextView
+                    android:id="@+id/txt_remark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edt_sundary"
+                    android:layout_marginLeft="@dimen/mrg2"
+                    android:layout_marginRight="@dimen/mrg2"
+                    android:layout_marginTop="@dimen/mrg2"
+                    android:elevation="@dimen/mrg1"
+                    android:hint="Remark"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:paddingLeft="@dimen/mrg1"
+                    android:textSize="@dimen/mrg4"
+                    android:visibility="visible"
+
+                    />
+
+
+                <EditText
+                    android:id="@+id/edt_remark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/mrg2"
+                    android:layout_marginRight="@dimen/mrg2"
+                    android:layout_marginTop="@dimen/mrg1"
+                    android:background="@drawable/x_et_bg"
+                    android:elevation="@dimen/mrg1"
+                    android:hint="Enter remarks for your managers and company, if any."
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:padding="@dimen/mrg2"
+                    android:textSize="@dimen/mrg4"
+                    android:layout_below="@+id/txt_remark"/>
+
+
+
+
+                <RelativeLayout
+                    android:id="@+id/rr_cllstrt_docreminder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edt_remark"
+                    android:layout_marginTop="@dimen/size1"
+                    android:layout_marginLeft="@dimen/mrg2"
+                    android:layout_marginRight="@dimen/mrg2"
+
+
+
+                    >
+
+                    <RelativeLayout
+                        android:id="@+id/rr_addfiles_checked_unchecked"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/size3"
+                        android:layout_alignParentLeft="true"
+                        android:background="@drawable/login_button_bg"
+
+                        >
+                        <RelativeLayout
+                            android:id="@+id/rr_cllstrt_chekunck_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/mrg4"
+                            >
+                            <ImageView
+                                android:id="@+id/img_cllstrt_checked_icon"
+                                android:layout_width="@dimen/mrg5"
+                                android:layout_height="@dimen/mrg4"
+                                android:background="@drawable/add_files_icons"
+                                />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/txt_cllstrt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/add_files"
+                            android:layout_toRightOf="@+id/rr_cllstrt_chekunck_img"
+                            android:layout_centerVertical="true"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/mrg4"
+                            android:layout_marginLeft="@dimen/mrg1"
+                            android:layout_marginRight="@dimen/mrg4"
+                            />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rr_dcrsubmit_checked_unchecked"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/size3"
+                        android:layout_alignParentRight="true"
+
+                        android:background="@drawable/login_button_bg"
+
+                        >
+                        <RelativeLayout
+                            android:id="@+id/rr_docreminder_chekunck_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/mrg4"
+
+                            >
+                            <ImageView
+                                android:id="@+id/img_docreminder_checked_icon"
+                                android:layout_width="@dimen/mrg5"
+                                android:layout_height="@dimen/mrg4"
+                                android:background="@drawable/dcr_submit_icon"
+                                />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/txt_docreminder"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/add_expenses"
+                            android:layout_toRightOf="@+id/rr_docreminder_chekunck_img"
+                            android:layout_centerVertical="true"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/mrg4"
+                            android:layout_marginRight="@dimen/mrg4"
+                            android:layout_marginLeft="@dimen/mrg1"
+
+                            />
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mrg1"
+                    android:layout_marginBottom="@dimen/mrg1"
+                    android:orientation="vertical"
+                    android:layout_below="@+id/rr_cllstrt_docreminder">
+
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/list_item_image_doc_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+            <ProgressBar
+                android:id="@+id/expenseloader"
+                android:layout_width="@dimen/size4"
+                android:layout_height="@dimen/size4"
+                android:layout_centerInParent="true"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+        </RelativeLayout>

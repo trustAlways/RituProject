@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rr_current_loc_descp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size3"
+        android:layout_below="@+id/rr_search_doctors"
+        android:background="@drawable/x_et_bg_gridhome"
+        >
+
+        <TextView
+            android:id="@+id/txt_current_loc_descp"
+            android:layout_width="@dimen/size16"
+            android:layout_height="wrap_content"
+            android:text="Product1"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/mrg2"
+            android:layout_marginRight="@dimen/mrg2"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/size0"/>
+    </RelativeLayout>
+
+
+</RelativeLayout>

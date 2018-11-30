@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/home_icon1"
+            android:icon="@drawable/home_icon"
+            android:title="@string/home"
+
+            />
+
+        <item
+            android:id="@+id/reviewdayend_icon1"
+            android:icon="@drawable/review_nd_dayend_icon"
+
+            android:title="@string/reviewdayend"
+
+            />
+
+        <item
+            android:id="@+id/viewdcr_icon1"
+            android:icon="@drawable/view_dcr_icon"
+            android:title="@string/viewdcr"
+
+            />
+
+        <item
+            android:id="@+id/view_timeline"
+            android:icon="@drawable/timeline"
+            android:title="@string/viewtime"
+
+            />
+
+        <item
+            android:id="@+id/view_doc_list"
+            android:icon="@drawable/doctor_list"
+            android:title="@string/view_doc_list"
+
+            />
+
+        <item
+            android:id="@+id/logout_icon1"
+            android:icon="@drawable/logout_icon"
+
+            android:title="@string/logout"
+
+            />
+
+
+    </group>
+
+
+</menu>

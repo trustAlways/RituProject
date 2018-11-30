@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rr_txt_doc_descp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mrg1"
+        android:visibility="visible"
+        android:layout_below="@+id/rr_calltime_callinprogress"
+        android:background="@drawable/x_et_bg"
+        android:elevation="@dimen/mrg1"
+        >
+
+        <RelativeLayout
+            android:id="@+id/rr_full_descp_timedate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/rr_doctime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/mrg2"
+                android:layout_marginTop="@dimen/mrg2"
+                >
+                <TextView
+                    android:id="@+id/txt_doctor_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/mrg4"
+                    android:text="2 to 3"
+                    android:visibility="visible"
+                    android:singleLine="true"
+                    android:inputType="textCapWords"
+                    android:capitalize="words"
+                    android:textColor="@color/colorPrimary"/>
+
+                <TextView
+                    android:id="@+id/txt_doctor_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/mrg4"
+                    android:text=""
+                    android:layout_alignParentRight="true"
+                    android:gravity="right"
+                    android:visibility="visible"
+                    android:layout_marginRight="@dimen/mrg4"
+                    android:singleLine="true"
+                    android:inputType="textCapWords|textNoSuggestions"
+                    android:textColor="@color/colorPrimary"/>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/rr_docname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rr_doctime"
+                android:layout_marginLeft="@dimen/mrg2"
+                >
+                <TextView
+                    android:id="@+id/txt_doctor_namee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/size0"
+                    android:text="Doctor name"
+                    android:visibility="visible"
+                    android:singleLine="true"
+                    android:inputType="textCapWords|textNoSuggestions"
+                    android:capitalize="words"
+
+                    android:textColor="@color/colorPrimary"/>
+
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rr_degree"
+            android:layout_marginTop="@dimen/mrg1"
+            android:layout_width="@dimen/size13"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rr_full_descp_timedate"
+            android:layout_marginLeft="@dimen/mrg2"
+            android:visibility="gone"
+
+            >
+            <TextView
+                android:id="@+id/txt_degree"
+                android:layout_width="@dimen/size13"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/mrg4"
+                android:textColor="@color/colorPrimary"
+                android:visibility="visible"
+                android:singleLine="true"
+                android:text="Anesthesiology"
+                />
+
+
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:id="@+id/rr_txt_distributor_name"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mrg2"
+            android:layout_marginTop="@dimen/mrg1"
+            android:layout_below="@+id/rr_degree"
+            android:layout_marginBottom="@dimen/mrg2"
+            >
+
+            <ImageView
+                android:id="@+id/img_loc"
+                android:layout_width="@dimen/mrg4"
+                android:layout_height="@dimen/mrg5"
+                android:layout_centerVertical="true"
+                android:background="@drawable/location_icon"
+                />
+            <TextView
+                android:id="@+id/txt_doc_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/img_loc"
+                android:text="Indore"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/mrg1"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/mrg4"
+                />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

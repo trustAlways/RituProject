@@ -1,0 +1,92 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_marginLeft="@dimen/mrg2"
+        android:layout_marginRight="@dimen/mrg2"
+    >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+
+            <RelativeLayout
+                android:id="@+id/rr_search_doctors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="@dimen/size1"
+                >
+                <TextView
+                    android:id="@+id/txt_search_doctorr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/viewtime"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/size0"
+                    />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rr_search_descp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size3"
+                android:layout_marginTop="@dimen/size0"
+                android:layout_below="@+id/rr_search_doctors"
+                android:background="@drawable/x_et_bg_gridhome"
+                >
+
+                <RelativeLayout
+                    android:id="@+id/rr_search"
+                    android:layout_width="@dimen/size1"
+                    android:layout_height="@dimen/size1"
+                    android:layout_alignParentRight="true"
+                    >
+
+                    <ImageView
+                        android:id="@+id/img_search"
+                        android:layout_width="@dimen/size1"
+                        android:layout_height="@dimen/size0"
+
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/search_icon" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/size3">
+                    <EditText
+                        android:id="@+id/txt_search_doctor"
+                        android:layout_width="@dimen/size18"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/select_date"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/mrg2"
+                        android:layout_marginRight="@dimen/mrg2"
+                        android:textColor="@color/colorPrimary"
+                        android:inputType="textNoSuggestions|textCapWords"
+                        android:background="@android:color/transparent"
+                        android:textSize="@dimen/size0"
+                        android:focusable="false"
+                        />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <CalendarView
+                android:id="@+id/calender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_below="@+id/rr_search_descp"
+                ></CalendarView>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

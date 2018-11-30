@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+         <RelativeLayout
+                android:id="@+id/rr_logo"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size22"
+                android:background="#f7f7ff">
+
+             <LinearLayout
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_centerInParent="true"
+                 android:layout_margin="@dimen/mrg2"
+                 >
+
+
+             <ImageView
+                    android:id="@+id/img_logo_main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/default_img"
+                    />
+             </LinearLayout>
+
+            </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay"
+            android:layout_below="@+id/rr_logo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mrg1"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/nameroleeid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pk Candid"
+                android:layout_marginLeft="@dimen/mrg5"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/mrg4"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay2"
+            android:layout_below="@+id/lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mrg1"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/employcode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pk Candid"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/mrg5"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/mrg4"/>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

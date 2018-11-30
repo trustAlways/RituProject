@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:background="@color/white"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mrg2"
+            android:layout_marginRight="@dimen/mrg2">
+
+
+            <RelativeLayout
+                android:id="@+id/rr_doc_reminder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size1"
+                >
+                <TextView
+                    android:id="@+id/txt_doc_reminder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/doc_reminder"
+                    android:textColor="@color/colorPrimary"
+
+                    android:textSize="@dimen/size0"
+                    />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/rr_txt_doc_descp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mrg1"
+                android:layout_below="@+id/rr_doc_reminder"
+                android:background="@drawable/x_et_bg"
+                android:elevation="@dimen/mrg1"
+                >
+
+                <RelativeLayout
+                    android:id="@+id/rr_docname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/mrg2"
+                    android:layout_marginTop="@dimen/mrg2"
+                    >
+                    <TextView
+                        android:id="@+id/txt_doctor_namee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/size0"
+                        android:text="Doctor name"
+                        android:visibility="visible"
+                        android:singleLine="true"
+                        android:inputType="textCapWords"
+                        android:capitalize="words"
+
+                        android:textColor="@color/colorPrimary"/>
+
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rr_degree"
+                    android:layout_marginTop="@dimen/mrg1"
+                    android:layout_width="@dimen/size13"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rr_docname"
+                    android:layout_marginLeft="@dimen/mrg2"
+
+                    >
+                    <TextView
+                        android:id="@+id/txt_degree"
+                        android:layout_width="@dimen/size13"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/mrg4"
+                        android:textColor="@color/colorPrimary"
+                        android:visibility="visible"
+                        android:singleLine="true"
+                        android:text="Anesthesiology"
+                        />
+
+
+
+                </RelativeLayout>
+
+
+
+                <RelativeLayout
+                    android:id="@+id/rr_txt_distributor_name"
+
+                    android:layout_width="@dimen/size8"
+                    android:layout_height="@dimen/size2"
+                    android:layout_marginLeft="@dimen/mrg2"
+
+                    android:layout_below="@+id/rr_degree"
+                    >
+
+                    <ImageView
+                        android:id="@+id/img_loc"
+                        android:layout_width="@dimen/mrg3"
+                        android:layout_height="@dimen/mrg4"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/location_icon"
+                        />
+                    <TextView
+                        android:id="@+id/txt_distributor_namee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/img_loc"
+                        android:text="Indore"
+                        android:layout_centerVertical="true"
+                        android:maxLines="2"
+                        android:layout_marginLeft="@dimen/mrg1"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/mrg3"
+                        />
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+<RelativeLayout
+    android:id="@+id/rr_testing"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/rr_txt_doc_descp"
+    android:layout_marginTop="@dimen/size0"
+    >
+            <RelativeLayout
+                android:id="@+id/rr_left_testing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/x_et_bg_cmpny_login"
+
+                >
+
+                <EditText
+                    android:id="@+id/edt_product"
+                    android:layout_width="@dimen/size16"
+                    android:layout_height="@dimen/size3"
+                    android:hint="@string/select_gift"
+android:singleLine="true"
+                    android:paddingLeft="@dimen/size0"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+android:background="@android:color/transparent"
+                    ></EditText>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/rr_right_qty"
+                android:layout_width="@dimen/size14"
+                android:layout_height="@dimen/size3"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/x_et_bg_cmpny_login">
+
+                <EditText
+                    android:id="@+id/edt_product_qty"
+                    android:layout_width="@dimen/size14"
+                    android:layout_height="@dimen/size3"
+                    android:hint="@string/qty"
+                    android:layout_centerInParent="true"
+                    android:paddingLeft="@dimen/size2"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:textSize="@dimen/mrg4"
+                    android:inputType="number"
+                    android:background="@android:color/transparent"
+                    ></EditText>
+
+            </RelativeLayout>
+
+
+</RelativeLayout>
+
+            <TextView
+                android:id="@+id/edt_product_txt"
+                android:layout_width="@dimen/size19"
+                android:layout_height="wrap_content"
+                android:text="@string/field"
+                android:layout_below="@+id/rr_testing"
+                android:textColor="@color/Red"
+                android:visibility="gone"
+                android:background="@android:color/transparent"
+                ></TextView>
+
+            <RelativeLayout
+                android:id="@+id/rr_InboxDetailRV"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rr_testing"
+                android:visibility="gone"
+                >
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/InboxDetailRV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:alwaysDrawnWithCache="true"
+                    android:clipToPadding="false"
+                    android:scrollbars="none" />
+
+                <ProgressBar
+                    android:id="@+id/progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:id="@+id/rr_add_checked_unchecked"
+                android:layout_width="@dimen/size6"
+                android:layout_height="@dimen/size3"
+                android:layout_marginTop="@dimen/size0"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/rr_InboxDetailRV"
+                android:background="@drawable/login_button_bg"
+
+                >
+                <RelativeLayout
+                    android:id="@+id/rr_local_chekunck_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+
+                    android:layout_marginLeft="@dimen/size1"
+                    >
+                    <ImageView
+                        android:id="@+id/img_local_checked_icon"
+                        android:layout_width="@dimen/mrg5"
+                        android:layout_height="@dimen/mrg4"
+                        android:background="@drawable/add_chemist_icon"
+                        />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/txt_local"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add"
+                    android:layout_toRightOf="@+id/rr_local_chekunck_img"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/mrg4"
+                    />
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/mrg1"
+                android:layout_below="@+id/rr_addchmist_cllcmplt"></LinearLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+     <ProgressBar
+        android:id="@+id/loader"
+        android:layout_width="@dimen/size4"
+        android:layout_height="@dimen/size4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/size5"
+        android:visibility="gone"/>
+
+  </RelativeLayout>

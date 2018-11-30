@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rr_txt_doc_descp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mrg1"
+        android:background="@drawable/x_et_bg"
+        android:elevation="@dimen/mrg1"
+        >
+
+        <RelativeLayout
+            android:id="@+id/rr_gifts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            >
+
+            <RelativeLayout
+                android:id="@+id/rr_degree"
+                android:layout_marginTop="@dimen/mrg1"
+                android:layout_width="@dimen/size14"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mrg2"
+                android:layout_centerVertical="true"
+
+                >
+                <TextView
+                    android:id="@+id/txt_degree"
+                    android:layout_width="@dimen/size13"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/size0"
+                    android:textColor="@color/colorPrimary"
+                    android:visibility="visible"
+                    android:singleLine="true"
+                    android:text="Gifts"
+                    />
+                <TextView
+                    android:id="@+id/txt_degree_professional"
+                    android:layout_width="@dimen/size13"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/mrg4"
+                    android:layout_below="@+id/txt_degree"
+                    android:textColor="@color/colorPrimary"
+                    android:visibility="visible"
+                    android:singleLine="true"
+                    android:text="Gifts"
+                    />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rr_testing_count"
+                android:layout_width="@dimen/size19"
+                android:layout_height="@dimen/size3"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                >
+
+
+                <RelativeLayout
+                    android:id="@+id/rr_left_testing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/x_et_bg"
+                    android:elevation="@dimen/mrg1"
+                    android:layout_toLeftOf="@+id/rr_right_qty"
+                    android:layout_marginRight="@dimen/mrg1"
+
+                    >
+
+                    <EditText
+                        android:id="@+id/spn_product"
+                        android:layout_width="@dimen/size7"
+                        android:layout_height="@dimen/size2"
+                        android:focusable="false"
+                        android:text="Testing"
+
+                        android:paddingLeft="@dimen/size0"
+                        android:textColor="@color/colorPrimary"
+                        android:background="@android:color/transparent"
+                        ></EditText>
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/rr_right_qty"
+                    android:layout_width="@dimen/size4"
+                    android:layout_height="@dimen/size2"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/x_et_bg"
+                    android:elevation="@dimen/mrg1"
+                    android:layout_marginRight="@dimen/mrg1"
+
+                    >
+
+                    <EditText
+                        android:id="@+id/edt_product_qty"
+                        android:layout_width="@dimen/size4"
+                        android:layout_height="@dimen/size2"
+
+                        android:text="10"
+                        android:layout_centerInParent="true"
+                        android:paddingLeft="@dimen/size1"
+                        android:textColor="@color/colorPrimary"
+                        android:textColorHint="@color/colorPrimary"
+                        android:textSize="@dimen/mrg4"
+                        android:focusable="false"
+                        android:background="@android:color/transparent"
+                        ></EditText>
+
+                </RelativeLayout>
+
+
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

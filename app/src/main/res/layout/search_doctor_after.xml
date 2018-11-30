@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_marginLeft="@dimen/mrg2"
+        android:layout_marginRight="@dimen/mrg2">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+
+            <RelativeLayout
+                android:id="@+id/rr_search_doctors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="@dimen/size1"
+                >
+                <TextView
+                    android:id="@+id/txt_search_doctors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/search_doctor"
+                    android:textColor="@color/colorPrimary"
+
+                    android:textSize="@dimen/size0"
+                    />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rr_search_descp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size3"
+                android:layout_marginTop="@dimen/size0"
+                android:layout_below="@+id/rr_search_doctors"
+                android:background="@drawable/x_et_bg_gridhome"
+                >
+
+                <RelativeLayout
+                    android:id="@+id/rr_search"
+                    android:layout_width="@dimen/size1"
+                    android:layout_height="@dimen/size1"
+                    android:layout_alignParentRight="true"
+>
+
+                    <ImageView
+                        android:id="@+id/img_search"
+                        android:layout_width="@dimen/size1"
+                        android:layout_height="@dimen/size0"
+                        android:background="@drawable/search_icon"
+                        android:layout_alignParentLeft="true"
+
+                        android:layout_centerVertical="true"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/size3">
+                <EditText
+                    android:id="@+id/txt_search_doctor"
+                    android:layout_width="@dimen/size18"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/search_doctor"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/mrg2"
+                    android:layout_marginRight="@dimen/mrg2"
+                    android:textColor="@color/colorPrimary"
+                    android:inputType="textNoSuggestions|textCapWords"
+                    android:background="@android:color/transparent"
+                    android:textSize="@dimen/size0"/>
+
+                </RelativeLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/rr_recleview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rr_search_descp"
+
+                >
+
+                <RelativeLayout
+                    android:id="@+id/rr_InboxDetailRV"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/InboxDetailRV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:alwaysDrawnWithCache="true"
+                        android:clipToPadding="false"
+                        android:scrollbars="none" />
+
+                    <ProgressBar
+                        android:id="@+id/progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:visibility="gone" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/rr_InboxDetailRVv"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    >
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/InboxDetailRVv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:alwaysDrawnWithCache="true"
+                        android:clipToPadding="false"
+                        android:scrollbars="none" />
+
+                    <ProgressBar
+                        android:id="@+id/progresss"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rr_cllstrt_docreminder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rr_recleview"
+                android:layout_marginTop="@dimen/size1"
+                android:layout_marginLeft="@dimen/mrg2"
+                android:layout_marginRight="@dimen/mrg2"
+
+
+
+                >
+
+                <RelativeLayout
+                    android:id="@+id/rr_cllstrt_checked_unchecked"
+                    android:layout_width="@dimen/size6"
+                    android:layout_height="@dimen/size3"
+                    android:layout_alignParentLeft="true"
+                    android:background="@drawable/login_button_bg"
+
+                    >
+                    <RelativeLayout
+                        android:id="@+id/rr_cllstrt_chekunck_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/mrg2"
+                        >
+                        <ImageView
+                            android:id="@+id/img_cllstrt_checked_icon"
+                            android:layout_width="@dimen/mrg5"
+                            android:layout_height="@dimen/mrg4"
+                            android:background="@drawable/add_chemist_icon"
+                            />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/txt_cllstrt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/call_start"
+                        android:layout_toRightOf="@+id/rr_cllstrt_chekunck_img"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/mrg4"
+                        android:layout_marginLeft="@dimen/mrg1"
+                        />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rr_docreminder_checked_unchecked"
+                    android:layout_width="@dimen/size17"
+                    android:layout_height="@dimen/size3"
+                    android:layout_alignParentRight="true"
+
+                    android:background="@drawable/login_button_bg"
+
+                    >
+                    <RelativeLayout
+                        android:id="@+id/rr_docreminder_chekunck_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/mrg2"
+                        >
+                        <ImageView
+                            android:id="@+id/img_docreminder_checked_icon"
+                            android:layout_width="@dimen/size0"
+                            android:layout_height="@dimen/size0"
+                            android:background="@drawable/doctor_reminder_icon"
+                            />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/txt_docreminder"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/doc_reminder"
+                        android:layout_toRightOf="@+id/rr_docreminder_chekunck_img"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/mrg4"
+                        android:layout_marginLeft="@dimen/mrg1"
+
+                        />
+                </RelativeLayout>
+
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size0"
+                android:layout_marginTop="@dimen/mrg2"
+                android:layout_below="@+id/rr_cllstrt_docreminder"
+                ></RelativeLayout>
+
+            <ProgressBar
+                android:id="@+id/loader"
+                android:layout_width="@dimen/size4"
+                android:layout_height="@dimen/size4"
+
+                android:layout_centerInParent="true"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

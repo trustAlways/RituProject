@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="text_large">20sp</dimen>
+    <dimen name="text_medium">16sp</dimen>
+    <dimen name="text_small">14sp</dimen>
+    <dimen name="text_smalll">13sp</dimen>
+    <dimen name="extra_text_small">12sp</dimen>
+
+    <dimen name="mtf_corner_radius">4dp</dimen>
+
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="txt_size">10dp</dimen>
+    <dimen name="txt_size_md">12dp</dimen>
+    <dimen name="txt_size_lg">15dp</dimen>
+    <dimen name="txt_size_xlg">17dp</dimen>
+    <dimen name="txt_size_xxlg">20dp</dimen>
+    <dimen name="txt_size_xxxlg">22dp</dimen>
+    <dimen name="txt_size_xxxlggg">23dp</dimen>
+
+    <dimen name="txt_size_xxxlgg">25dp</dimen>
+    <dimen name="size00">19dp</dimen>
+    <dimen name="size188">18dp</dimen>
+
+    <dimen name="size000">10dp</dimen>
+    <dimen name="size0">20dp</dimen>
+    <dimen name="size1">30dp</dimen>
+    <dimen name="size2">40dp</dimen>
+    <dimen name="size3">50dp</dimen>
+    <dimen name="size33">60dp</dimen>
+    <dimen name="size4">70dp</dimen>
+    <dimen name="size44">80dp</dimen>
+    <dimen name="size444">100dp</dimen>
+
+    <dimen name="size5">110dp</dimen>
+    <dimen name="size6">120dp</dimen>
+    <dimen name="size66">130dp</dimen>
+
+    <dimen name="size7">150dp</dimen>
+    <dimen name="size8">180dp</dimen>
+    <dimen name="size9">210dp</dimen>
+    <dimen name="size10">240dp</dimen>
+    <dimen name="size11">280dp</dimen>
+    <dimen name="size12">220dp</dimen>
+    <dimen name="size16">230dp</dimen>
+    <dimen name="size13">200dp</dimen>
+    <dimen name="size19">250dp</dimen>
+    <dimen name="size18">300dp</dimen>
+    <dimen name="size17">190dp</dimen>
+
+    <dimen name="size14">100dp</dimen>
+    <dimen name="size15">380dp</dimen>
+    <dimen name="size20">400dp</dimen>
+    <dimen name="size21">420dp</dimen>
+
+    <dimen name="size22">160dp</dimen>
+    <dimen name="mrg0">3dp</dimen>
+    <dimen name="mrg00">8dp</dimen>
+
+    <dimen name="mrg1">5dp</dimen>
+    <dimen name="mrg2">10dp</dimen>
+    <dimen name="mrg3">12dp</dimen>
+    <dimen name="mrg15">13dp</dimen>
+    <dimen name="mrg4">17dp</dimen>
+    <dimen name="mrg44">18dp</dimen>
+    <dimen name="mrg444">20dp</dimen>
+
+    <dimen name="mrg5">22dp</dimen>
+    <dimen name="mrg6">27dp</dimen>
+    <dimen name="mrg7">32dp</dimen>
+    <dimen name="mrg8">37dp</dimen>
+    <dimen name="mrg9">45dp</dimen>
+    <dimen name="mrg10">55dp</dimen>
+    <dimen name="mrg11">7dp</dimen>
+
+    <dimen name="large_half">240px</dimen>
+
+    <dimen name="value">45sp</dimen>
+    <dimen name="small_value">30sp</dimen>
+    <dimen name="step_count">35dp</dimen>
+    <dimen name="units">11sp</dimen>
+    <dimen name="desired_pace">36sp</dimen>
+    <dimen name="desired_pace_width">128sp</dimen>
+
+    <dimen name="button">48sp</dimen>
+    <dimen name="button_sign">24sp</dimen>
+
+    <dimen name="margin">10px</dimen>
+    <dimen name="padding">5px</dimen>
+    <dimen name="row_spacing">10px</dimen>
+
+
+</resources>

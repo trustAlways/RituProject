@@ -1,0 +1,1721 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/rr_workingtype_interior"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size0"
+                android:layout_marginTop="@dimen/size0"
+
+                >
+                <TextView
+                    android:id="@+id/txt_workingtype_interior"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/working_type"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/size0"
+
+                    />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/rr_fieldwork_interior"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rr_workingtype_interior"
+                android:layout_marginTop="@dimen/size0"
+
+                >
+
+
+                <RelativeLayout
+                    android:id="@+id/rr_fieldwork_interior_checked_unchecked"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/mrg2"
+                    android:layout_marginRight="@dimen/size0"
+                    >
+                    <RelativeLayout
+                        android:id="@+id/rr_fieldwork_interior_chekunck_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/img_fieldwork_interior_checked_icon"
+                            android:layout_width="@dimen/size2"
+                            android:layout_height="@dimen/size2"
+                            android:background="@drawable/radio_checked_icon"
+                            android:layout_centerVertical="true"
+                            />
+                        <ImageView
+                            android:id="@+id/img_fieldwork_interior_unchecked_icon"
+                            android:layout_width="@dimen/size2"
+                            android:layout_height="@dimen/size2"
+                            android:background="@drawable/radio_unchecked_icon"
+                            android:layout_centerVertical="true"
+                            android:visibility="gone"
+                            />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rr_fieldwork_interior_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/rr_fieldwork_interior_chekunck_img"
+                        android:background="@drawable/x_et_bg_cmpny_login"
+                        android:elevation="@dimen/mrg1"
+                        android:layout_marginLeft="@dimen/mrg2"
+                        android:layout_marginRight="@dimen/mrg2"
+                        >
+
+                        <TextView
+                            android:id="@+id/txt_fieldwork_interior"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/field_work"
+                            android:layout_centerVertical="true"
+                            android:textColor="@color/colorPrimary"
+
+                            android:textSize="@dimen/size0"
+                            android:paddingLeft="@dimen/mrg2"
+                            android:paddingRight="@dimen/mrg2"
+                            android:paddingTop="@dimen/mrg1"
+                            android:paddingBottom="@dimen/mrg1"                                />
+
+                    </RelativeLayout>
+                </RelativeLayout>
+
+
+            </RelativeLayout>//..
+
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/rr_select_area"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mrg2"
+                android:layout_marginTop="@dimen/size1"
+                android:layout_below="@+id/rr_fieldwork_interior"
+                >
+
+<RelativeLayout
+    android:id="@+id/rr_local_checked_unchecked"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    >
+<RelativeLayout
+    android:id="@+id/rr_local_chekunck_img"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/img_local_checked_icon"
+        android:layout_width="@dimen/size1"
+        android:layout_height="@dimen/size1"
+        android:background="@drawable/radio_checked_icon"
+        android:layout_centerVertical="true"
+
+        />
+    <ImageView
+        android:id="@+id/img_local_unchecked_icon"
+        android:layout_width="@dimen/size1"
+        android:layout_height="@dimen/size1"
+        android:background="@drawable/radio_unchecked_icon"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        />
+</RelativeLayout>
+
+    <TextView
+        android:id="@+id/txt_local"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/local"
+        android:layout_toRightOf="@+id/rr_local_chekunck_img"
+        android:layout_centerVertical="true"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+
+        android:textSize="@dimen/size0"
+        android:layout_marginLeft="@dimen/mrg2"
+        />
+</RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rr_interior_checked_unchecked"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/size3">
+
+                    <RelativeLayout
+                        android:id="@+id/rr_interior_chekunck_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/img_interior_checked_icon"
+                            android:layout_width="@dimen/size1"
+                            android:layout_height="@dimen/size1"
+                            android:background="@drawable/radio_checked_icon"
+                            android:layout_centerVertical="true"
+                            android:visibility="gone"
+
+                            />
+                        <ImageView
+                            android:id="@+id/img_interior_unchecked_icon"
+                            android:layout_width="@dimen/size1"
+                            android:layout_height="@dimen/size1"
+                            android:background="@drawable/radio_unchecked_icon"
+                            android:layout_centerVertical="true"
+                            android:visibility="visible"
+                            />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/txt_interior"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/interior"
+                        android:layout_toRightOf="@+id/rr_interior_chekunck_img"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/colorPrimary"
+
+                        android:textSize="@dimen/size0"
+                        android:layout_marginLeft="@dimen/mrg2"
+                        />
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/rr_local"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:layout_below="@+id/rr_select_area"
+                android:layout_marginTop="@dimen/size0"
+                >
+
+
+
+                <RelativeLayout
+                    android:id="@+id/rr_current_loc_descp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <RelativeLayout
+                        android:id="@+id/rr_cureent_loc_img_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/img_curent_location"
+                        android:layout_width="15dp"
+                        android:layout_height="@dimen/size0"
+                        android:layout_centerVertical="true"
+                        android:layout_marginBottom="@dimen/mrg2"
+                        android:layout_marginTop="@dimen/mrg2"
+                        android:layout_marginLeft="@dimen/size0"
+                        android:background="@drawable/location_icon"/>
+                    <TextView
+                        android:id="@+id/txt_current_loc_descp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Indore,India"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/mrg2"
+                        android:layout_marginRight="@dimen/mrg2"
+                        android:layout_toRightOf="@+id/img_curent_location"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/size0"/>
+
+                    </RelativeLayout>
+                    <TextView
+                        android:id="@+id/txt_current_loc_error"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/size0"
+                         android:layout_below="@+id/rr_cureent_loc_img_txt"
+                        android:text="@string/field"
+                        android:textColor="@color/Red"
+                        android:visibility="gone"
+                        />
+                </RelativeLayout>
+<!----><!----><!----><!---->
+
+                <RelativeLayout
+                    android:id="@+id/rr_local_selectterritory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size0"
+                    android:layout_marginRight="@dimen/size0"
+                    android:visibility="visible"
+                    android:layout_below="@+id/rr_current_loc_descp"
+                    >
+
+
+                    <TextView
+                        android:id="@+id/txt_selectterritory_descp_local"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/select_territory_interior"
+                        android:layout_marginTop="@dimen/mrg2"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/size0"/>
+
+
+                    <RelativeLayout
+                        android:id="@+id/rr_selct_region_local"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/mrg2"
+
+                        android:layout_below="@+id/txt_selectterritory_descp_local"
+
+                        >
+
+                        <EditText
+                            android:id="@+id/edt_selct_region"
+                            android:layout_width="340dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/x_et_bg_cmpny_login"
+                            android:elevation="@dimen/mrg1"
+                            android:hint="@string/select_region"
+                            android:paddingBottom="@dimen/mrg1"
+                            android:paddingLeft="@dimen/mrg2"
+                            android:paddingRight="@dimen/mrg2"
+                            android:paddingTop="@dimen/mrg1"
+                            android:singleLine="true"
+                            android:textColor="@color/colorPrimary"
+                            android:textColorHint="@color/colorPrimary"
+                            android:textSize="@dimen/size0"
+
+                            />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rr_region_relative_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rr_selct_region_local"
+                        android:visibility="gone"
+                        >
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/show_region_suggestion_local"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:alwaysDrawnWithCache="true"
+                            android:clipToPadding="false"
+                            android:scrollbars="none" />
+
+                        <ProgressBar
+                            android:id="@+id/loaderr"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:visibility="gone" />
+
+
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/txt_region_error"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rr_region_relative_layout"
+                        android:text="@string/field"
+                        android:textColor="@color/Red"
+                        android:visibility="gone"
+                        />
+
+
+
+
+
+                    <RelativeLayout
+                        android:id="@+id/rr_selct_city_local"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/mrg2"
+                        android:layout_below="@+id/txt_region_error"
+                        >
+
+                        <EditText
+                            android:id="@+id/edt_selct_city_local"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:background="@drawable/x_et_bg_cmpny_login"
+                            android:elevation="@dimen/mrg1"
+                            android:paddingLeft="@dimen/mrg2"
+                            android:paddingRight="@dimen/mrg2"
+                            android:paddingTop="@dimen/mrg1"
+                            android:paddingBottom="@dimen/mrg1"
+                            android:hint="@string/select_territory"
+                            android:textColor="@color/colorPrimary"
+                            android:textColorHint="@color/colorPrimary"
+                            android:textSize="@dimen/size0"
+
+                            />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rr_InboxDetailRVv_show_suggestCity_local"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rr_selct_city_local"
+                        android:visibility="gone"
+                        >
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/show_city_suggestion_local"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:alwaysDrawnWithCache="true"
+                            android:clipToPadding="false"
+                            android:scrollbars="none" />
+
+                        <ProgressBar
+                            android:id="@+id/progresss_local"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+                    <TextView
+                        android:id="@+id/txt_city_error_local"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rr_InboxDetailRVv_show_suggestCity_local"
+                        android:text="@string/field"
+                        android:textColor="@color/Red"
+                        android:visibility="gone"
+                        />
+
+                    <RelativeLayout
+                        android:id="@+id/rr_select_interior_local"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/mrg2"
+                        android:visibility="gone"
+                        android:layout_below="@+id/txt_city_error_local"
+                        >
+
+                        <EditText
+                            android:id="@+id/edt_selct_interior_local"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:background="@drawable/x_et_bg_cmpny_login"
+                            android:elevation="@dimen/mrg1"
+                            android:paddingLeft="@dimen/mrg2"
+                            android:paddingRight="@dimen/mrg2"
+                            android:paddingTop="@dimen/mrg1"
+                            android:paddingBottom="@dimen/mrg1"
+                            android:hint="@string/select_interior"
+                            android:textColor="@color/colorPrimary"
+                            android:textColorHint="@color/colorPrimary"
+                            android:textSize="@dimen/size0"
+                            />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rr_InboxDetailRVvv_local"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:layout_below="@+id/rr_select_interior_local"
+                        android:visibility="gone"
+                        >
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/InboxDetailRVvv_local"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:alwaysDrawnWithCache="true"
+                            android:clipToPadding="false"
+                            android:scrollbars="none" />
+
+                        <ProgressBar
+                            android:id="@+id/progressss_local"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+                    <TextView
+                        android:id="@+id/txt_working_with_error_interior_local"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rr_InboxDetailRVvv_local"
+                        android:text="@string/field"
+                        android:textColor="@color/Red"
+                        android:visibility="gone"/>
+                </RelativeLayout>
+
+                <!----><!----><!----><!---->
+
+
+
+
+
+                <RelativeLayout
+                    android:id="@+id/rr_workingwith"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size0"
+                    android:layout_marginTop="@dimen/mrg2"
+                    android:layout_below="@+id/rr_local_selectterritory"
+                    >
+                    <TextView
+                        android:id="@+id/txt_workingwith"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/working_with"
+                        android:textColor="@color/colorPrimary"
+
+                        android:textSize="@dimen/size0"
+
+                        />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rr_independent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rr_workingwith"
+                    android:layout_marginTop="@dimen/size000"
+
+                    >
+
+
+                    <RelativeLayout
+                        android:id="@+id/rr_independent_checked_unchecked"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/size0"
+                        android:layout_marginRight="@dimen/size0"
+                        >
+                        <RelativeLayout
+                            android:id="@+id/rr_independent_chekunck_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/img_independent_checked_icon"
+                                android:layout_width="@dimen/size2"
+                                android:layout_height="@dimen/size2"
+                                android:background="@drawable/radio_checked_icon"
+                                android:layout_centerVertical="true"
+                                />
+                            <ImageView
+                                android:id="@+id/img_independent_unchecked_icon"
+                                android:layout_width="@dimen/size2"
+                                android:layout_height="@dimen/size2"
+                                android:background="@drawable/radio_unchecked_icon"
+                                android:layout_centerVertical="true"
+                                android:visibility="gone"
+                                />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rr_independent_txt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/rr_independent_chekunck_img"
+android:background="@drawable/x_et_bg_cmpny_login"
+                            android:elevation="@dimen/mrg1"
+                            android:layout_marginLeft="@dimen/mrg2"
+
+                            >
+
+                        <TextView
+                            android:id="@+id/txt_independent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/independent"
+                            android:layout_centerVertical="true"
+                            android:textColor="@color/colorPrimary"
+
+                            android:textSize="@dimen/size0"
+
+                            android:paddingLeft="@dimen/mrg2"
+                            android:paddingRight="@dimen/mrg2"
+                            android:paddingTop="@dimen/mrg1"
+                            android:paddingBottom="@dimen/mrg1"
+                            />
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rr_areamanger_checked_unchecked"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/size0"
+                        android:layout_marginRight="@dimen/size0"
+                        android:layout_marginTop="@dimen/size0"
+                        android:layout_below="@+id/rr_regionalmanger_checked_unchecked"
+
+                        >
+                        <RelativeLayout
+                            android:id="@+id/rr_areamanger_chekunck_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/img_areamanger_checked_icon"
+                                android:layout_width="@dimen/size2"
+                                android:layout_height="@dimen/size2"
+                                android:background="@drawable/radio_checked_icon"
+                                android:layout_centerVertical="true"
+                                android:visibility="gone"
+
+                                />
+                            <ImageView
+                                android:id="@+id/img_areamanger_unchecked_icon"
+                                android:layout_width="@dimen/size2"
+                                android:layout_height="@dimen/size2"
+                                android:background="@drawable/radio_unchecked_icon"
+                                android:layout_centerVertical="true"
+                                android:visibility="visible"
+                                />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rr_areamanger_txt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/rr_areamanger_chekunck_img"
+                            android:background="@drawable/x_et_bg_cmpny_login"
+                            android:elevation="@dimen/mrg1"
+                            android:layout_marginLeft="@dimen/mrg2"
+                            >
+
+                            <TextView
+                                android:id="@+id/txt_areamanger"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/local"
+                                android:layout_centerVertical="true"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/size0"
+                                android:paddingLeft="@dimen/mrg2"
+                                android:paddingRight="@dimen/mrg2"
+                                android:paddingTop="@dimen/mrg1"
+                                android:paddingBottom="@dimen/mrg1"
+                                android:visibility="visible"/>
+
+                            <Spinner
+                                android:id="@+id/spn_areamanger"
+                                android:spinnerMode="dropdown"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/size2"
+                                android:textColor="@color/colorPrimary"
+                                android:paddingLeft="@dimen/mrg2"
+                                android:paddingRight="@dimen/mrg2"
+                                android:prompt="@string/select_tittle"
+                                android:dropDownVerticalOffset="40dp"
+                                android:visibility="gone"
+                                />
+
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/rr_regionalmanger_checked_unchecked"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/size0"
+                        android:layout_marginRight="@dimen/size0"
+                        android:layout_marginTop="@dimen/size0"
+                        android:layout_below="@+id/rr_salesmanger_checked_unchecked">
+                        <RelativeLayout
+                            android:id="@+id/rr_regionalmanger_chekunck_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/img_regionalmanger_checked_icon"
+                                android:layout_width="@dimen/size2"
+                                android:layout_height="@dimen/size2"
+                                android:background="@drawable/radio_checked_icon"
+                                android:layout_centerVertical="true"
+                                android:visibility="gone"
+
+                                />
+                            <ImageView
+                                android:id="@+id/img_regionalmanger_unchecked_icon"
+                                android:layout_width="@dimen/size2"
+                                android:layout_height="@dimen/size2"
+                                android:background="@drawable/radio_unchecked_icon"
+                                android:layout_centerVertical="true"
+                                android:visibility="visible"
+                                />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rr_regionalmanger_txt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/rr_regionalmanger_chekunck_img"
+                            android:background="@drawable/x_et_bg_cmpny_login"
+                            android:elevation="@dimen/mrg1"
+                            android:layout_marginLeft="@dimen/mrg2"
+                            >
+
+                            <TextView
+                                android:id="@+id/txt_regionalmanger"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/local"
+                                android:layout_centerVertical="true"
+                                android:textColor="@color/colorPrimary"
+
+                                android:textSize="@dimen/size0"
+                                android:paddingLeft="@dimen/mrg2"
+                                android:paddingRight="@dimen/mrg2"
+                                android:paddingTop="@dimen/mrg1"
+                                android:paddingBottom="@dimen/mrg1"/>
+
+                            <Spinner
+                                android:id="@+id/spn_regionalmanger"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/size2"
+                                android:text="@string/local"
+                                android:dropDownVerticalOffset="40dp"
+                                android:textColor="@color/colorPrimary"
+                                android:paddingLeft="@dimen/mrg2"
+                                android:paddingRight="@dimen/mrg2"
+                                android:visibility="gone"
+                                />
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/rr_salesmanger_checked_unchecked"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/size0"
+                        android:layout_marginRight="@dimen/size0"
+                        android:layout_marginTop="@dimen/size0"
+                        android:layout_below="@+id/rr_independent_checked_unchecked"
+
+                        >
+                        <RelativeLayout
+                            android:id="@+id/rr_salesmanger_chekunck_img"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/img_salesmanger_checked_icon"
+                                android:layout_width="@dimen/size2"
+                                android:layout_height="@dimen/size2"
+                                android:background="@drawable/radio_checked_icon"
+                                android:layout_centerVertical="true"
+                                android:visibility="gone"
+
+                                />
+                            <ImageView
+                                android:id="@+id/img_salesmanger_unchecked_icon"
+                                android:layout_width="@dimen/size2"
+                                android:layout_height="@dimen/size2"
+                                android:background="@drawable/radio_unchecked_icon"
+                                android:layout_centerVertical="true"
+                                android:visibility="visible"
+                                />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rr_salesmanger_txt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/rr_salesmanger_chekunck_img"
+                            android:background="@drawable/x_et_bg_cmpny_login"
+                            android:elevation="@dimen/mrg1"
+                            android:layout_marginLeft="@dimen/mrg2"
+                            >
+
+                            <TextView
+                                android:id="@+id/txt_salesmanger"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/local"
+                                android:layout_centerVertical="true"
+                                android:textColor="@color/colorPrimary"
+
+                                android:textSize="@dimen/size0"
+                                android:paddingLeft="@dimen/mrg2"
+                                android:paddingRight="@dimen/mrg2"
+                                android:paddingTop="@dimen/mrg1"
+                                android:paddingBottom="@dimen/mrg1" />
+                            <Spinner
+                                android:id="@+id/spn_salesmanger"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/size2"
+                                android:text="@string/local"
+                                android:textColor="@color/colorPrimary"
+                                android:paddingLeft="@dimen/mrg2"
+                                android:paddingRight="@dimen/mrg2"
+                                android:dropDownVerticalOffset="40dp"
+                                android:visibility="gone"
+                                />
+
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+
+
+                    <TextView
+                        android:id="@+id/txt_working_with_error"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rr_salesmanger_checked_unchecked"
+                        android:layout_marginLeft="@dimen/size0"
+                        android:layout_marginRight="@dimen/size0"
+                        android:layout_marginTop="@dimen/mrg1"
+android:text="@string/field"
+
+                        android:textColor="@color/Red"
+                        android:visibility="gone"
+
+                        />
+
+
+                </RelativeLayout>
+
+               <!-- <RelativeLayout
+                    android:id="@+id/rr_workingtype"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size0"
+                    android:layout_marginTop="@dimen/size0"
+                    android:layout_below="@+id/rr_independent"
+                    >
+                    <TextView
+                        android:id="@+id/txt_workingtype"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/working_type"
+                        android:textColor="@color/colorPrimary"
+
+                        android:textSize="@dimen/size0"
+
+                        />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/rr_fieldwork"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rr_workingtype"
+                    android:layout_marginTop="@dimen/size1"
+
+                    >
+
+
+                    <RelativeLayout
+                        android:id="@+id/rr_fieldwork_checked_unchecked"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/size0"
+android:layout_marginRight="@dimen/size0"
+                        >
+                        <RelativeLayout
+                            android:id="@+id/rr_fieldwork_chekunck_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/img_fieldwork_checked_icon"
+                                android:layout_width="@dimen/size2"
+                                android:layout_height="@dimen/size2"
+                                android:background="@drawable/radio_checked_icon"
+                                android:layout_centerVertical="true"
+                                />
+                            <ImageView
+                                android:id="@+id/img_fieldwork_unchecked_icon"
+                                android:layout_width="@dimen/size2"
+                                android:layout_height="@dimen/size2"
+                                android:background="@drawable/radio_unchecked_icon"
+                                android:layout_centerVertical="true"
+                                android:visibility="gone"
+                                />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rr_fieldwork_txt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/rr_fieldwork_chekunck_img"
+                            android:background="@drawable/x_et_bg_cmpny_login"
+                            android:elevation="@dimen/mrg1"
+                            android:layout_marginLeft="@dimen/mrg2"
+                            >
+
+                            <TextView
+                                android:id="@+id/txt_fieldwork"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/field_work"
+                                android:layout_centerVertical="true"
+                                android:textColor="@color/colorPrimary"
+
+                                android:textSize="@dimen/size0"
+                                android:paddingLeft="@dimen/mrg2"
+                                android:paddingRight="@dimen/mrg2"
+                                android:paddingTop="@dimen/mrg1"
+                                android:paddingBottom="@dimen/mrg1"                                />
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+
+                </RelativeLayout>-->
+
+                <Button
+                    android:id="@+id/btn_start_local"
+                    android:layout_width="@dimen/size14"
+                    android:layout_height="@dimen/size2"
+                    android:layout_below="@+id/rr_independent"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/login_button"
+                    android:layout_marginTop="@dimen/size0"
+                    android:text="@string/start"
+                    android:textColor="@color/white"
+                    android:textAllCaps="false"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size0"
+
+                    android:layout_below="@+id/btn_start_local"></RelativeLayout>
+                <ProgressBar
+                    android:id="@+id/progress"
+                    android:layout_width="@dimen/size4"
+                    android:layout_height="@dimen/size4"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"
+                    />
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rr_interior"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+
+                android:layout_below="@+id/rr_select_area"
+                android:layout_marginTop="@dimen/size0"
+
+                >
+
+
+
+
+                <RelativeLayout
+                    android:id="@+id/rr_interior_selectterritory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size0"
+                    android:layout_marginRight="@dimen/size0"
+                    android:layout_below="@+id/rr_current_Interior_descp"
+                    >
+
+
+                    <TextView
+                        android:id="@+id/txt_selectterritory_descp_interior"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/select_territory_interior"
+                        android:layout_marginTop="@dimen/mrg2"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/size0"/>
+
+
+                    <RelativeLayout
+                        android:id="@+id/rr_selct_territory"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/mrg2"
+                        android:layout_below="@+id/txt_selectterritory_descp_interior"
+
+                        >
+
+                        <EditText
+                            android:id="@+id/edt_selct_territory"
+                            android:layout_width="340dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:background="@drawable/x_et_bg_cmpny_login"
+                            android:elevation="@dimen/mrg1"
+                            android:hint="@string/select_region"
+                            android:paddingBottom="@dimen/mrg1"
+                            android:paddingLeft="@dimen/mrg2"
+                            android:paddingRight="@dimen/mrg2"
+                            android:paddingTop="@dimen/mrg1"
+                            android:singleLine="true"
+                            android:textColor="@color/colorPrimary"
+
+                            android:textColorHint="@color/colorPrimary"
+                            android:textSize="@dimen/size0" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rr_InboxDetailRV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rr_selct_territory"
+                        android:visibility="gone"
+                        >
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/InboxDetailRV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:alwaysDrawnWithCache="true"
+                            android:clipToPadding="false"
+                            android:scrollbars="none" />
+
+                        <ProgressBar
+                            android:id="@+id/loader"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:visibility="gone" />
+
+
+
+                    </RelativeLayout>
+
+                <TextView
+                  android:id="@+id/txt_territory_error"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@+id/rr_InboxDetailRV"
+                  android:text="@string/field"
+                  android:textColor="@color/Red"
+                  android:visibility="gone"
+                />
+
+       <!----><!----><!----><!---->
+
+
+                    <RelativeLayout
+                        android:id="@+id/rr_selct_city"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/mrg2"
+                        android:layout_below="@+id/txt_territory_error"
+                        >
+
+                        <EditText
+                            android:id="@+id/edt_selct_city"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:background="@drawable/x_et_bg_cmpny_login"
+                            android:elevation="@dimen/mrg1"
+                            android:paddingLeft="@dimen/mrg2"
+                            android:paddingRight="@dimen/mrg2"
+                            android:paddingTop="@dimen/mrg1"
+                            android:paddingBottom="@dimen/mrg1"
+                            android:hint="@string/select_territory"
+                            android:textColor="@color/colorPrimary"
+                            android:textColorHint="@color/colorPrimary"
+                            android:textSize="@dimen/size0"
+
+                            />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rr_InboxDetailRVv"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:layout_below="@+id/rr_selct_city"
+                        android:visibility="gone"
+                        >
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/InboxDetailRVv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:alwaysDrawnWithCache="true"
+                            android:clipToPadding="false"
+                            android:scrollbars="none" />
+
+                        <ProgressBar
+                            android:id="@+id/progresss"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+                    <TextView
+                        android:id="@+id/txt_city_error"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rr_InboxDetailRVv"
+                        android:text="@string/field"
+                        android:textColor="@color/Red"
+                        android:visibility="gone"
+                        />
+
+                    <RelativeLayout
+                        android:id="@+id/rr_selct_interior"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/mrg2"
+                        android:layout_below="@+id/txt_city_error"
+                        >
+
+                        <EditText
+                            android:id="@+id/edt_selct_interior"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            android:background="@drawable/x_et_bg_cmpny_login"
+                            android:elevation="@dimen/mrg1"
+                            android:paddingLeft="@dimen/mrg2"
+                            android:paddingRight="@dimen/mrg2"
+                            android:paddingTop="@dimen/mrg1"
+                            android:paddingBottom="@dimen/mrg1"
+                            android:hint="@string/select_interior"
+                            android:textColor="@color/colorPrimary"
+                            android:textColorHint="@color/colorPrimary"
+                            android:textSize="@dimen/size0"
+                            />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rr_InboxDetailRVvv"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:layout_below="@+id/rr_selct_interior"
+                         android:visibility="gone"
+                        >
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/InboxDetailRVvv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:alwaysDrawnWithCache="true"
+                            android:clipToPadding="false"
+                            android:scrollbars="none" />
+
+                        <ProgressBar
+                            android:id="@+id/progressss"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+                    <TextView
+                        android:id="@+id/txt_working_with_error_interior"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rr_InboxDetailRVvv"
+                        android:text="@string/field"
+                        android:textColor="@color/Red"
+                        android:visibility="gone"/>
+                </RelativeLayout>
+
+<!----><!----><!----><!---->
+
+
+                <TextView
+                    android:id="@+id/txt_selectterritory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Work Via"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginLeft="@dimen/size0"
+                    android:textSize="@dimen/size0"/>
+
+
+                <RelativeLayout
+                    android:id="@+id/car_taxi_lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size0"
+                    android:layout_marginTop="@dimen/mrg2"
+                    android:layout_below="@+id/txt_selectterritory"
+                    >
+
+                    <RelativeLayout
+                        android:id="@+id/rr_car_checked_unchecked"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        >
+                        <RelativeLayout
+                            android:id="@+id/rr_car_chekunck_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/img_car_checked_icon"
+                                android:layout_width="@dimen/size1"
+                                android:layout_height="@dimen/size1"
+                                android:background="@drawable/radio_checked_icon"
+                                android:layout_centerVertical="true"
+
+                                />
+                            <ImageView
+                                android:id="@+id/img_car_unchecked_icon"
+                                android:layout_width="@dimen/size1"
+                                android:layout_height="@dimen/size1"
+                                android:background="@drawable/radio_unchecked_icon"
+                                android:layout_centerVertical="true"
+                                android:visibility="gone"
+                                />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/txt_car"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bike"
+                            android:layout_toRightOf="@+id/rr_car_chekunck_img"
+                            android:layout_centerVertical="true"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold"
+
+                            android:textSize="@dimen/size0"
+                            android:layout_marginLeft="@dimen/mrg2"
+                            />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rr_taxi_checked_unchecked"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/size4">
+
+                        <RelativeLayout
+                            android:id="@+id/rr_taxi_chekunck_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/img_taxi_checked_icon"
+                                android:layout_width="@dimen/size1"
+                                android:layout_height="@dimen/size1"
+                                android:background="@drawable/radio_checked_icon"
+                                android:layout_centerVertical="true"
+                                android:visibility="gone"
+
+                                />
+                            <ImageView
+                                android:id="@+id/img_taxi_unchecked_icon"
+                                android:layout_width="@dimen/size1"
+                                android:layout_height="@dimen/size1"
+                                android:background="@drawable/radio_unchecked_icon"
+                                android:layout_centerVertical="true"
+                                android:visibility="visible"
+                                />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/txt_taxi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Car/Taxi"
+                            android:layout_toRightOf="@+id/rr_taxi_chekunck_img"
+                            android:layout_centerVertical="true"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/size0"
+                            android:layout_marginLeft="@dimen/mrg2"
+                            />
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+
+
+
+
+
+                <!----><!----><!----><!---->
+                <RelativeLayout
+                    android:id="@+id/rr_current_Interior_descp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mrg2"
+                    android:layout_below="@+id/car_taxi_lay"
+                    >
+
+                    <RelativeLayout
+                        android:id="@+id/rr_cureent_Interior_img_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/img_curent_location_Interior"
+                            android:layout_width="15dp"
+                            android:layout_height="@dimen/size0"
+                            android:layout_centerVertical="true"
+                            android:layout_marginBottom="@dimen/mrg2"
+                            android:layout_marginTop="@dimen/mrg2"
+                            android:layout_marginLeft="@dimen/size0"
+                            android:background="@drawable/location_icon"/>
+                        <TextView
+                            android:id="@+id/txt_current_Interior_descp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Indore,India"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/mrg2"
+                            android:layout_marginRight="@dimen/mrg2"
+                            android:layout_toRightOf="@+id/img_curent_location_Interior"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/size0"/>
+
+                    </RelativeLayout>
+                    <TextView
+                        android:id="@+id/txt_current_Interior_error"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/size0"
+                        android:layout_below="@+id/rr_cureent_Interior_img_txt"
+                        android:text="@string/field"
+                        android:textColor="@color/Red"
+                        android:visibility="gone"
+                        />
+                </RelativeLayout>
+
+
+                    <RelativeLayout
+                    android:id="@+id/rr_workingwith_interior"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size0"
+                    android:layout_marginTop="@dimen/mrg2"
+                        android:layout_below="@+id/rr_interior_selectterritory"
+                    >
+                    <TextView
+                        android:id="@+id/txt_workingwith_interior"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/working_with"
+                        android:textColor="@color/colorPrimary"
+
+                        android:textSize="@dimen/size0"
+                        />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rr_independent_interior"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rr_workingwith_interior"
+                    android:layout_marginTop="@dimen/size1"
+                    android:layout_marginLeft="@dimen/size0"
+                    android:layout_marginRight="@dimen/size0"
+                    >
+
+
+                    <RelativeLayout
+                        android:id="@+id/rr_independent_interior_checked_unchecked"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        >
+                        <RelativeLayout
+                            android:id="@+id/rr_independent_interior_chekunck_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/img_independent_interior_checked_icon"
+                                android:layout_width="@dimen/size2"
+                                android:layout_height="@dimen/size2"
+                                android:background="@drawable/radio_checked_icon"
+                                android:layout_centerVertical="true"
+                                />
+                            <ImageView
+                                android:id="@+id/img_independent_interior_unchecked_icon"
+                                android:layout_width="@dimen/size2"
+                                android:layout_height="@dimen/size2"
+                                android:background="@drawable/radio_unchecked_icon"
+                                android:layout_centerVertical="true"
+                                android:visibility="gone"
+                                />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rr_independent_txt_interior"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/rr_independent_interior_chekunck_img"
+                            android:background="@drawable/x_et_bg_cmpny_login"
+                            android:elevation="@dimen/mrg1"
+                            android:layout_marginLeft="@dimen/mrg2"
+                            >
+
+                            <TextView
+                                android:id="@+id/txt_independent_interior"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/independent"
+                                android:layout_centerVertical="true"
+                                android:textColor="@color/colorPrimary"
+                                android:paddingLeft="@dimen/mrg2"
+                                android:paddingRight="@dimen/mrg2"
+                                android:paddingTop="@dimen/mrg1"
+                                android:paddingBottom="@dimen/mrg1"
+                                android:textSize="@dimen/size0"
+                                android:singleLine="true"
+                                />
+                            <Spinner
+                                android:id="@+id/spn_independent_interior"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/size2"
+                                android:text="@string/local"
+                                android:textColor="@color/colorPrimary"
+                                android:paddingLeft="@dimen/mrg2"
+                                android:paddingRight="@dimen/mrg2"
+                                android:paddingTop="@dimen/mrg1"
+                                android:visibility="gone"
+                                />
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rr_areamanger_interior_checked_unchecked"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/size0"
+                        android:layout_below="@+id/rr_regionalmanger_interior_checked_unchecked"
+                        >
+                        <RelativeLayout
+                            android:id="@+id/rr_areamanger_interior_chekunck_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/img_areamanger_interior_checked_icon"
+                                android:layout_width="@dimen/size2"
+                                android:layout_height="@dimen/size2"
+                                android:background="@drawable/radio_checked_icon"
+                                android:layout_centerVertical="true"
+                                android:visibility="gone"
+
+                                />
+                            <ImageView
+                                android:id="@+id/img_areamanger_interior_unchecked_icon"
+                                android:layout_width="@dimen/size2"
+                                android:layout_height="@dimen/size2"
+                                android:background="@drawable/radio_unchecked_icon"
+                                android:layout_centerVertical="true"
+                                android:visibility="visible"
+                                />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rr_areamanger_interior_txt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/rr_areamanger_interior_chekunck_img"
+                            android:background="@drawable/x_et_bg_cmpny_login"
+                            android:elevation="@dimen/mrg1"
+                            android:layout_marginLeft="@dimen/mrg2"
+                            >
+
+                            <TextView
+                                android:id="@+id/txt_areamanger_interior"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/interior"
+                                android:layout_centerVertical="true"
+                                android:textColor="@color/colorPrimary"
+
+                                android:textSize="@dimen/size0"
+                                android:paddingLeft="@dimen/mrg2"
+                                android:paddingRight="@dimen/mrg2"
+                                android:paddingTop="@dimen/mrg1"
+                                android:paddingBottom="@dimen/mrg1"
+                                />
+
+                            <Spinner
+                                android:id="@+id/spn_areamanger_interior"
+                                android:spinnerMode="dropdown"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/size2"
+                                android:text="@string/local"
+                                android:textColor="@color/colorPrimary"
+                                android:paddingLeft="@dimen/mrg2"
+                                android:paddingRight="@dimen/mrg2"
+                                android:dropDownVerticalOffset="40dp"
+
+                                android:visibility="gone"
+                                />
+
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/rr_regionalmanger_interior_checked_unchecked"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/size0"
+                        android:layout_below="@+id/rr_salesmanger_interior_checked_unchecked"
+
+                        >
+                        <RelativeLayout
+                            android:id="@+id/rr_regionalmanger_interior_chekunck_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/img_regionalmanger_interior_checked_icon"
+                                android:layout_width="@dimen/size2"
+                                android:layout_height="@dimen/size2"
+                                android:background="@drawable/radio_checked_icon"
+                                android:layout_centerVertical="true"
+                                android:visibility="gone"
+
+                                />
+                            <ImageView
+                                android:id="@+id/img_regionalmanger_interior_unchecked_icon"
+                                android:layout_width="@dimen/size2"
+                                android:layout_height="@dimen/size2"
+                                android:background="@drawable/radio_unchecked_icon"
+                                android:layout_centerVertical="true"
+                                android:visibility="visible"
+                                />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rr_regionalmanger_interior_txt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/rr_regionalmanger_interior_chekunck_img"
+                            android:background="@drawable/x_et_bg_cmpny_login"
+                            android:elevation="@dimen/mrg1"
+                            android:layout_marginLeft="@dimen/mrg2"
+                            >
+
+                            <TextView
+                                android:id="@+id/txt_regionalmanger_interior"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/interior"
+                                android:layout_centerVertical="true"
+                                android:textColor="@color/colorPrimary"
+
+                                android:textSize="@dimen/size0"
+                                android:paddingLeft="@dimen/mrg2"
+                                android:paddingRight="@dimen/mrg2"
+                                android:paddingTop="@dimen/mrg1"
+                                android:paddingBottom="@dimen/mrg1"                                />
+
+                            <Spinner
+                                android:id="@+id/spn_regionalmanger_interior"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/size2"
+                                android:text="@string/local"
+                                android:textColor="@color/colorPrimary"
+                                android:paddingLeft="@dimen/mrg2"
+                                android:paddingRight="@dimen/mrg2"
+                                android:dropDownVerticalOffset="40dp" android:visibility="gone"
+                                />
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/rr_salesmanger_interior_checked_unchecked"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/size0"
+                        android:layout_below="@+id/rr_independent_interior_checked_unchecked"
+
+                        >
+                        <RelativeLayout
+                            android:id="@+id/rr_salesmanger_interior_chekunck_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/img_salesmanger_interior_checked_icon"
+                                android:layout_width="@dimen/size2"
+                                android:layout_height="@dimen/size2"
+                                android:background="@drawable/radio_checked_icon"
+                                android:layout_centerVertical="true"
+                                android:visibility="gone"
+
+                                />
+                            <ImageView
+                                android:id="@+id/img_salesmanger_interior_unchecked_icon"
+                                android:layout_width="@dimen/size2"
+                                android:layout_height="@dimen/size2"
+                                android:background="@drawable/radio_unchecked_icon"
+                                android:layout_centerVertical="true"
+                                android:visibility="visible"
+                                />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rr_salesmanger_interior_txt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/rr_salesmanger_interior_chekunck_img"
+                            android:background="@drawable/x_et_bg_cmpny_login"
+                            android:elevation="@dimen/mrg1"
+                            android:layout_marginLeft="@dimen/mrg2"
+                            >
+
+                            <TextView
+                                android:id="@+id/txt_salesmanger_interior"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/interior"
+                                android:layout_centerVertical="true"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/size0"
+                                android:paddingLeft="@dimen/mrg2"
+                                android:paddingRight="@dimen/mrg2"
+                                android:paddingTop="@dimen/mrg1"
+                                android:paddingBottom="@dimen/mrg1"
+                                />
+
+                            <Spinner
+                                android:id="@+id/spn_salesmanger_interior"
+                                android:spinnerMode="dropdown"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/size2"
+                                android:textColor="@color/colorPrimary"
+                                android:paddingLeft="@dimen/mrg2"
+                                android:paddingRight="@dimen/mrg2"
+                                android:prompt="@string/select_tittle"
+                                android:dropDownVerticalOffset="40dp"
+                                android:visibility="gone"
+                                />
+
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+
+
+                    <TextView
+                        android:id="@+id/txt_working_with_errorr_interior"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rr_salesmanger_interior_checked_unchecked"
+                        android:text="Please select one field"
+                        android:paddingLeft="@dimen/size3"
+                        android:textColor="@color/Red"
+                        android:visibility="gone"/>
+                    <ProgressBar
+                        android:id="@+id/progress_for_interior"
+                        android:layout_width="@dimen/size4"
+                        android:layout_height="@dimen/size4"
+                        android:layout_centerInParent="true"
+                        android:visibility="gone"
+
+                        />
+
+
+                </RelativeLayout>
+
+
+                <Button
+                    android:id="@+id/btn_start_interior"
+                    android:layout_width="@dimen/size14"
+                    android:layout_height="@dimen/size2"
+
+                    android:layout_below="@+id/rr_independent_interior"
+
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/login_button"
+                    android:layout_marginTop="@dimen/size0"
+                    android:text="@string/start"
+                    android:textColor="@color/white"
+                    android:textAllCaps="false"
+                    />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size0"
+
+                    android:layout_below="@+id/btn_start_interior"></RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

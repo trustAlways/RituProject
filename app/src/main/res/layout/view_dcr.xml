@@ -1,0 +1,1418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:layout_marginLeft="@dimen/mrg2"
+        android:layout_marginRight="@dimen/mrg2"
+        android:layout_marginTop="@dimen/mrg2">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+           >
+
+
+
+            <TextView
+                android:id="@+id/error_for_dcr_report"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/mrg4"
+                android:textColor="@color/colorPrimary"
+                android:layout_centerInParent="true"
+                android:background="@drawable/x_et_bg"
+                android:layout_marginTop="@dimen/size0"
+                android:padding="@dimen/mrg2"
+                android:text="00:00Hrs"
+                android:visibility="gone"
+
+                />
+            <ProgressBar
+                android:id="@+id/progress23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="500dp"
+                android:layout_below="@+id/error_for_dcr_report"
+                android:visibility="visible" />
+
+
+            <RelativeLayout
+                android:id="@+id/full_lay_hide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible">
+
+
+
+  <!----><!----><!----><!----><!----><!--strt of 1st lay-->
+            <RelativeLayout
+                android:id="@+id/rr_calltime_callinprogress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mrg1"
+
+                >
+                <RelativeLayout
+                    android:id="@+id/rr_left_callcurrenttime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentLeft="true">
+
+                    <TextView
+                        android:id="@+id/txt_callstartat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/mrg4"
+                        android:textColor="@color/colorPrimary"
+                        android:text="Date"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/txt_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/mrg4"
+                        android:layout_below="@+id/txt_callstartat"
+                        android:text=""
+
+                        />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rr_right_callprocess"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentRight="true">
+
+                    <TextView
+                        android:id="@+id/txt_callprocess"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/mrg4"
+                        android:textColor="@color/colorPrimary"
+                        android:text="Field Work Duration"
+
+                        />
+                    <TextView
+                        android:id="@+id/txt_calldurationdcr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/mrg4"
+                        android:layout_below="@+id/txt_callprocess"
+                        android:text="00:00Hrs"
+
+                        />
+                </RelativeLayout>
+            </RelativeLayout>
+  <!----> <!---->  <!---->  <!----><!--END OF !ST RELATIVE LAY--><!----><!----><!---->
+
+
+                <RelativeLayout
+                    android:id="@+id/rr_main_full_descp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rr_calltime_callinprogress"
+                    android:layout_marginBottom="@dimen/mrg2"
+                    android:background="@drawable/x_et_bg"
+                    android:elevation="@dimen/mrg2"
+                    android:layout_marginTop="@dimen/mrg2"
+                    android:visibility="visible"
+                    >
+                    <!--selected dateeee-->
+                    <RelativeLayout
+                        android:id="@+id/rr_selected_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/size0"
+                        android:layout_marginLeft="@dimen/mrg2"
+                        android:visibility="gone"
+                        >
+                        <TextView
+                            android:id="@+id/txt_selected_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="DCR Reporting Type : "
+                            android:textStyle="bold"
+                            android:textColor="@color/colorPrimary"
+                            android:visibility="visible"
+                            android:layout_marginLeft="@dimen/mrg1"
+                            android:textSize="@dimen/mrg4"
+                            />
+
+                        <TextView
+                            android:id="@+id/txt_selected_datee"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Live"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_toRightOf="@+id/txt_selected_date"
+                            android:layout_marginLeft="@dimen/mrg1"
+                            android:textSize="@dimen/mrg4"
+                            />
+
+                    </RelativeLayout>
+
+                    <!--work status-->
+                    <RelativeLayout
+                        android:id="@+id/rr_work_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/size0"
+                        android:layout_alignParentRight="true"
+                        android:paddingRight="@dimen/mrg1"
+                        android:visibility="gone"
+                        >
+                        <TextView
+                            android:id="@+id/status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Staus :"
+                            android:paddingLeft="@dimen/mrg1"
+                            android:textColor="@color/colorPrimary"
+                            android:visibility="visible"
+                            android:textSize="@dimen/mrg4"
+                            />
+
+                        <TextView
+                            android:id="@+id/txt_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Completed"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_toRightOf="@+id/status"
+                            android:layout_marginLeft="@dimen/mrg1"
+                            android:textSize="@dimen/mrg4"
+                            />
+
+                    </RelativeLayout>
+
+                    <!--work type fiels-->
+
+                    <RelativeLayout
+                        android:id="@+id/rr_selected_workingtype"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/mrg2"
+                        android:layout_marginLeft="@dimen/mrg2"
+                        android:layout_below="@+id/rr_selected_date"
+                        android:visibility="gone"
+                        >
+                        <TextView
+                            android:id="@+id/txt_selected_workingtype"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/working_type"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/mrg4"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="@dimen/mrg1"
+                            android:visibility="visible"
+                            />
+
+                        <TextView
+                            android:id="@+id/txt_selected_workingtypee"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/field_work"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_toRightOf="@+id/txt_selected_workingtype"
+                            android:layout_marginLeft="@dimen/mrg1"
+                            android:textSize="@dimen/mrg4"
+                            />
+
+                    </RelativeLayout>
+
+                    <!--start work location-->
+                    <RelativeLayout
+                        android:id="@+id/rr_selected_strtfieldwork_location"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/mrg3"
+                        android:layout_below="@+id/rr_selected_workingtype"
+                        android:layout_marginTop="@dimen/mrg2"
+                        android:visibility="gone"
+
+                        >
+                        <TextView
+                            android:id="@+id/txt_selected_strtfieldwork_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Location :"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/mrg4"
+                            android:layout_marginLeft="@dimen/mrg1"
+                            android:textStyle="bold"
+                            android:visibility="visible"
+                            />
+
+                        <TextView
+                            android:id="@+id/txt_selected_strtfieldwork_locationn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="address"
+                            android:layout_marginLeft="@dimen/mrg1"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_toRightOf="@+id/txt_selected_strtfieldwork_location"
+                            android:textSize="@dimen/mrg4"
+                            />
+
+                    </RelativeLayout>
+                    <!--work at-->
+
+                    <RelativeLayout
+                        android:id="@+id/rr_selected_strtfieldwork_at"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/mrg1"
+                        android:layout_below="@+id/rr_selected_strtfieldwork_location"
+                        android:layout_marginTop="@dimen/mrg1"
+                        android:visibility="gone"
+
+                        >
+                        <TextView
+                            android:id="@+id/txt_selected_strtfieldwork_at"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="work at :"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/mrg4"
+                            android:visibility="visible"
+                            />
+
+                        <TextView
+                            android:id="@+id/txt_selected_strtfieldwork_att"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/local"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_toRightOf="@+id/txt_selected_strtfieldwork_at"
+                            android:textSize="@dimen/mrg4"
+                            />
+
+                    </RelativeLayout>
+
+                    <!--city name-->
+                    <RelativeLayout
+                        android:id="@+id/rr_selected_cityname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rr_selected_strtfieldwork_at"
+                        android:layout_marginTop="@dimen/mrg2"
+                        android:visibility="gone"
+                        >
+                        <TextView
+                            android:id="@+id/txt_selected_cityname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/mrg1"
+                            android:text="City :"
+                            android:textColor="@color/colorPrimary"
+
+                            android:textSize="@dimen/mrg4"
+                            android:visibility="gone"
+                            />
+
+                        <TextView
+                            android:id="@+id/txt_selected_citynamee"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Indore"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_toRightOf="@+id/txt_selected_cityname"
+                            android:layout_marginLeft="@dimen/mrg1"
+                            android:textSize="@dimen/mrg4"
+                            />
+
+                    </RelativeLayout>
+
+                    <!--teriory is-->
+
+                    <RelativeLayout
+                        android:id="@+id/rr_selected_interiorname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rr_selected_strtfieldwork_at"
+                        android:layout_toRightOf="@id/rr_selected_cityname"
+                        android:layout_marginTop="@dimen/mrg2"
+                        android:layout_marginLeft="@dimen/mrg5"
+                        android:visibility="gone"
+                        >
+                        <TextView
+                            android:id="@+id/txt_selected_interiorname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Territory :"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/mrg4"
+                            android:visibility="gone"
+                            />
+
+                        <TextView
+                            android:id="@+id/txt_selected_interiornamee"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="dewas"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_toRightOf="@+id/txt_selected_interiorname"
+                            android:layout_marginLeft="@dimen/mrg1"
+                            android:textSize="@dimen/mrg4"
+                            />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/rr_selected_workingvia"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/mrg2"
+                        android:layout_marginLeft="@dimen/mrg2"
+                        android:layout_below="@+id/rr_selected_cityname"
+                        android:visibility="gone"
+                        >
+                        <TextView
+                            android:id="@+id/txt_selected_workingvia"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/working_via"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/mrg4"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="@dimen/mrg1"
+                            android:visibility="visible"
+                            />
+
+                        <TextView
+                            android:id="@+id/txt_value_workingvia"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Car/Taxi"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_toRightOf="@+id/txt_selected_workingvia"
+                            android:layout_marginLeft="@dimen/mrg1"
+                            android:textSize="@dimen/mrg4"
+                            />
+
+                    </RelativeLayout>
+
+
+                    <!--working with-->
+                    <RelativeLayout
+                        android:id="@+id/rr_main_workingwith"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/mrg2"
+                        android:layout_below="@+id/rr_selected_workingvia"
+                        android:visibility="gone">
+
+                        <RelativeLayout
+                            android:id="@+id/rr_selected_workingwith_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/mrg2"
+                            android:layout_marginBottom="@dimen/mrg2"
+
+                            >
+                            <TextView
+                                android:id="@+id/txt_selected_workingwith"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/working_with"
+                                android:textSize="@dimen/mrg4"
+                                android:textColor="@color/colorPrimary"
+                                android:layout_marginLeft="@dimen/mrg1"
+                                android:textStyle="bold"
+                                android:visibility="visible"
+                                />
+
+                            <TextView
+                                android:id="@+id/txt_selected_workingwithh"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textColor="@color/colorPrimary"
+                                android:layout_toRightOf="@+id/txt_selected_workingwith"
+                                android:layout_marginLeft="@dimen/mrg1"
+                                android:textSize="@dimen/mrg4"
+                                android:visibility="visible"
+                                />
+
+                        </RelativeLayout>
+
+                        <!--working with name-->
+                        <RelativeLayout
+                            android:id="@+id/rr_selected_workingwith_independent"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/mrg2"
+                            android:layout_marginBottom="@dimen/mrg1"
+                            android:layout_marginLeft="@dimen/mrg1"
+                            android:layout_below="@+id/rr_selected_workingwith_text"
+                            android:visibility="gone"
+
+                            >
+                            <TextView
+                                android:id="@+id/txt_selected_workingwith_independent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/field_type_is"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/mrg4"
+                                android:paddingLeft="@dimen/mrg1"
+                                android:visibility="gone"
+                                />
+
+                            <TextView
+                                android:id="@+id/txt_selected_workingwithh_independentt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/selected_date_is"
+                                android:textColor="@color/colorPrimary"
+                                android:layout_toRightOf="@+id/txt_selected_workingwith_independent"
+                                android:textSize="@dimen/mrg4"
+                                />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rr_selected_workingwith_marketingrepresentation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/mrg1"
+                            android:layout_marginBottom="@dimen/mrg1"
+                            android:layout_below="@+id/rr_selected_workingwith_independent"
+                            android:visibility="gone"
+
+                            >
+                            <TextView
+                                android:id="@+id/txt_selected_workingwith_marketingrepresentation"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="MR :"
+                                android:textStyle="bold"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/mrg4"
+                                android:visibility="visible"
+                                />
+
+                            <TextView
+                                android:id="@+id/txt_selected_workingwithh_marketingrepresentationn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/selected_date_is"
+                                android:textColor="@color/colorPrimary"
+                                android:layout_toRightOf="@+id/txt_selected_workingwith_marketingrepresentation"
+                                android:textSize="@dimen/mrg4"
+                                />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/rr_selected_workingwith_areamanger"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/mrg1"
+                            android:layout_marginBottom="@dimen/mrg1"
+                            android:layout_below="@+id/rr_selected_workingwith_marketingrepresentation"
+                            android:visibility="gone"
+
+                            >
+                            <TextView
+                                android:id="@+id/txt_selected_workingwith_areamanger"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Area Manager :"
+                                android:textStyle="bold"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/mrg4"
+                                android:visibility="visible"
+                                />
+
+                            <TextView
+                                android:id="@+id/txt_selected_workingwithh_areamanger"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/selected_date_is"
+                                android:textColor="@color/colorPrimary"
+                                android:layout_marginLeft="@dimen/mrg1"
+                                android:layout_toRightOf="@+id/txt_selected_workingwith_areamanger"
+                                android:textSize="@dimen/mrg4"
+                                />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rr_selected_workingwith_regionalmanger"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/mrg1"
+                            android:layout_marginBottom="@dimen/mrg1"
+                            android:layout_marginLeft="@dimen/mrg1"
+
+                            android:layout_below="@+id/rr_selected_workingwith_areamanger"
+                            android:visibility="gone"
+
+                            >
+
+                            <TextView
+                                android:id="@+id/txt_selected_workingwith_regionalmanger"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:text="Regional Manager :"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/mrg4"
+                                android:textStyle="bold"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:id="@+id/txt_selected_workingwithh_regionalmangerr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/selected_date_is"
+                                android:textColor="@color/colorPrimary"
+                                android:layout_toRightOf="@+id/txt_selected_workingwith_regionalmanger"
+                                android:textSize="@dimen/mrg4"
+                                />
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/rr_selected_workingwith_salesmanger"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/mrg1"
+                            android:layout_marginLeft="@dimen/mrg1"
+                            android:layout_marginBottom="@dimen/mrg2"
+
+                            android:layout_below="@+id/rr_selected_workingwith_regionalmanger"
+                            android:visibility="gone"
+
+                            >
+                            <TextView
+                                android:id="@+id/txt_selected_workingwith_salesmanger"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sales Manager :"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/mrg4"
+                                android:textStyle="bold"
+                                android:visibility="visible"
+                                />
+
+                            <TextView
+                                android:id="@+id/txt_selected_workingwithh_salesmangerr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/selected_date_is"
+                                android:textColor="@color/colorPrimary"
+                                android:layout_toRightOf="@+id/txt_selected_workingwith_salesmanger"
+                                android:textSize="@dimen/mrg4"
+                                />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+                </RelativeLayout>
+                <!--end of main relative lay-->
+
+
+
+
+<!----> <!---->  <!---->  <!----><!--END OF 2nd RELATIVE LAY--><!----><!----><!---->
+
+                <RelativeLayout
+                    android:id="@+id/today_start_end_time"
+                    android:layout_below="@id/rr_main_full_descp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size3"
+                    android:layout_marginTop="@dimen/mrg1"
+                    android:padding="@dimen/mrg2"
+                    android:background="@drawable/x_et_bg"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/start_end_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Working Started At :"
+                        android:textColor="@color/colorPrimary"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:paddingLeft="@dimen/mrg1"
+                        android:visibility="visible"
+                        android:textSize="@dimen/mrg4"
+                        />
+
+                    <TextView
+                        android:id="@+id/start_end_time_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="12:40:45 AM"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/mrg1"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_toRightOf="@+id/start_end_time"
+                        android:textSize="@dimen/mrg4"
+                        />
+
+                </RelativeLayout>
+<!----><!----><!----><!--start work time-->
+
+                <RelativeLayout
+                    android:id="@+id/rr_work_start_location"
+                    android:layout_below="@+id/today_start_end_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mrg1"
+                    android:padding="@dimen/mrg2"
+                    android:background="@drawable/x_et_bg"
+                    android:visibility="gone"
+                    >
+                    <TextView
+                        android:id="@+id/work_strt_location2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Work Start Location :"
+                        android:gravity="left"
+                        android:textStyle="bold"
+                        android:paddingLeft="@dimen/mrg1"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/mrg4"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/work_strt_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Location"
+                        android:gravity="left"
+                        android:paddingLeft="@dimen/mrg1"
+                        android:layout_below="@id/work_strt_location2"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/mrg4"
+                        />
+
+                </RelativeLayout>
+
+
+
+<!----><!----><!--end of work strt location-->
+
+
+            <RelativeLayout
+                android:id="@+id/rr_doctorcall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size0"
+                android:layout_below="@+id/rr_work_start_location"
+                >
+                <TextView
+                    android:id="@+id/txt_docter_calls"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/doc_calls"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/size0"
+                    />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+
+                android:id="@+id/rr_InboxDetailRV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rr_doctorcall"
+               >
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/docter_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:alwaysDrawnWithCache="true"
+                    android:clipToPadding="false"
+                    android:layoutAnimation="@anim/layout_animation_fall_down"
+                    android:visibility="visible"
+                    android:scrollbars="none" />
+
+                <TextView
+                    android:id="@+id/no_docter_call_available"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="No Doctor Call"
+                    android:gravity="center"
+                    android:padding="@dimen/mrg2"
+                    android:layout_marginTop="@dimen/mrg1"
+                    android:background="@drawable/x_et_bg"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/mrg4"
+                    android:visibility="gone"
+                    />
+
+
+            </RelativeLayout>
+
+            <ProgressBar
+                android:id="@+id/progresss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_below="@id/rr_InboxDetailRV"
+                />
+
+            <RelativeLayout
+                android:id="@+id/rr_doctorreminder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mrg2"
+                android:layout_below="@+id/rr_InboxDetailRV"
+                >
+                <TextView
+                    android:id="@+id/txt_docter_reminder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/doc_reminder"
+                    android:textColor="@color/colorPrimary"
+
+                    android:textSize="@dimen/size0"
+                    />
+
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rr_InboxDetailRVv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rr_doctorreminder"
+                android:background="@drawable/x_et_bg"
+
+                android:layout_marginTop="@dimen/mrg1">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/docter_reminder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:alwaysDrawnWithCache="true"
+                    android:clipToPadding="false"
+                    android:scrollbars="none"
+                    android:visibility="visible"/>
+
+                <TextView
+                    android:id="@+id/no_doc_reminder_available"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="No Doctor Reminder"
+                    android:gravity="center"
+                    android:padding="@dimen/mrg2"
+                    android:background="@drawable/x_et_bg"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/mrg4"
+                    android:visibility="gone"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rr_chemistvisited"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mrg2"
+                android:layout_below="@+id/rr_InboxDetailRVv"
+                >
+                <TextView
+                    android:id="@+id/txt_chemist_visited"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chemist Visit"
+                    android:textColor="@color/colorPrimary"
+
+                    android:textSize="@dimen/size0"
+                    />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rr_InboxDetailRVvv"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rr_chemistvisited"
+
+                >
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/chemistvisit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:alwaysDrawnWithCache="true"
+                    android:clipToPadding="false"
+                    android:visibility="visible"
+                    android:scrollbars="none" />
+
+
+                <TextView
+                    android:id="@+id/no_chemistvisit_available"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="No Chemist Visit"
+                    android:gravity="center"
+                    android:padding="@dimen/mrg2"
+                    android:layout_marginTop="@dimen/mrg1"
+                    android:background="@drawable/x_et_bg"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/mrg4"
+                    android:visibility="gone"
+                    />
+
+                <ProgressBar
+                    android:id="@+id/progressss"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rr_expenses"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size1"
+                android:layout_below="@+id/rr_InboxDetailRVvv"
+                >
+                <TextView
+                    android:id="@+id/txt_expenses"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/expenses"
+                    android:textColor="@color/colorPrimary"
+
+                    android:textSize="@dimen/size0"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rr_expensess"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size0"
+                android:layout_below="@+id/rr_expenses"
+
+                android:background="@drawable/x_et_bg"
+                android:elevation="@dimen/mrg1">
+
+            <RelativeLayout
+
+                android:id="@+id/rr_reminderexpensestelephone_full"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mrg2"
+                android:layout_marginRight="@dimen/mrg2"
+                android:layout_marginTop="@dimen/mrg2"
+                android:layout_marginBottom="@dimen/mrg2"
+                >
+                <RelativeLayout
+                    android:id="@+id/rr_left_reminderexpenses"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentLeft="true">
+
+                    <TextView
+                        android:id="@+id/txt_reminderexpenses"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/mrg4"
+                        android:textColor="@color/colorPrimary"
+                        android:text="@string/reminder_expenses"
+
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_reminderexpenses"
+                        android:layout_width="@dimen/size7"
+                        android:layout_height="@dimen/size2"
+                        android:layout_below="@+id/txt_reminderexpenses"
+                        android:layout_marginTop="@dimen/mrg1"
+                        android:background="@drawable/x_et_bg_cmpny_login"
+                        android:elevation="@dimen/mrg1"
+                        android:focusable="false"
+                        android:enabled="false"
+                        android:paddingLeft="@dimen/size0"
+                        android:text="0"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/mrg4" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rr_right_telephone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentRight="true">
+
+                    <TextView
+                        android:id="@+id/txt_telephone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/mrg4"
+                        android:textColor="@color/colorPrimary"
+                        android:text="@string/telephone"
+                        />
+
+
+                    <EditText
+                        android:id="@+id/edt_telephone"
+                        android:layout_width="@dimen/size7"
+                        android:layout_height="@dimen/size2"
+                        android:textSize="@dimen/mrg4"
+                        android:textColor="@color/colorPrimary"
+                        android:textColorHint="@color/colorPrimary"
+                        android:layout_below="@+id/txt_telephone"
+                        android:background="@drawable/x_et_bg_cmpny_login"
+                        android:elevation="@dimen/mrg1"
+                        android:text="0"
+                        android:focusable="false"
+                        android:layout_marginTop="@dimen/mrg1"
+                        android:paddingLeft="@dimen/size0"
+
+                        />
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+
+                <RelativeLayout
+
+                    android:id="@+id/rr_fwasundary_full"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/mrg2"
+                    android:layout_marginRight="@dimen/mrg2"
+                    android:layout_marginTop="@dimen/mrg2"
+                    android:layout_marginBottom="@dimen/mrg2"
+                    android:layout_below="@+id/rr_reminderexpensestelephone_full"
+                    >
+                    <RelativeLayout
+                        android:id="@+id/rr_left_fwa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignParentLeft="true">
+
+                        <TextView
+                            android:id="@+id/txt_fwa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/mrg4"
+                            android:textColor="@color/colorPrimary"
+                            android:text="@string/fwa"
+
+                            />
+
+                        <EditText
+                            android:id="@+id/edt_fwa"
+                            android:layout_width="@dimen/size7"
+                            android:layout_height="@dimen/size2"
+                            android:textSize="@dimen/mrg4"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_below="@+id/txt_fwa"
+                            android:background="@drawable/x_et_bg_cmpny_login"
+                            android:elevation="@dimen/mrg1"
+                            android:text="0"
+                            android:focusable="false"
+                            android:layout_marginTop="@dimen/mrg1"
+                            android:paddingLeft="@dimen/size0"
+
+                            />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/rr_right_sundary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignParentRight="true">
+
+                        <TextView
+                            android:id="@+id/txt_sundary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/mrg4"
+                            android:textColor="@color/colorPrimary"
+                            android:text="Sundry Expenses"
+                            />
+
+
+                            <EditText
+                                android:id="@+id/edt_sundary"
+                                android:layout_width="@dimen/size7"
+                                android:layout_height="@dimen/size2"
+                                android:textSize="@dimen/mrg4"
+                                android:textColor="@color/colorPrimary"
+                                android:textColorHint="@color/colorPrimary"
+                                android:background="@drawable/x_et_bg_cmpny_login"
+                                android:elevation="@dimen/mrg1"
+                                android:text="0"
+                                android:focusable="false"
+                                android:layout_marginTop="@dimen/mrg1"
+                                android:paddingLeft="@dimen/size0"
+                                android:layout_below="@+id/txt_sundary"
+
+                                />
+
+                    </RelativeLayout>
+                </RelativeLayout>
+                <RelativeLayout
+
+                    android:id="@+id/rr_printingstationarypetrol_full"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/mrg2"
+                    android:layout_marginRight="@dimen/mrg2"
+                    android:layout_marginTop="@dimen/mrg2"
+                    android:layout_marginBottom="@dimen/mrg2"
+                    android:layout_below="@+id/rr_fwasundary_full"
+                    >
+                    <RelativeLayout
+                        android:id="@+id/rr_left_printingstationary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignParentLeft="true">
+
+                        <TextView
+                            android:id="@+id/txt_printingstationary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/mrg4"
+                            android:textColor="@color/colorPrimary"
+                            android:text="Printing &amp; Stationary"
+
+                            />
+
+                        <EditText
+                            android:id="@+id/edt_printingstationary"
+                            android:layout_width="@dimen/size7"
+                            android:layout_height="@dimen/size2"
+                            android:textSize="@dimen/mrg4"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_below="@+id/txt_printingstationary"
+                            android:background="@drawable/x_et_bg_cmpny_login"
+                            android:elevation="@dimen/mrg1"
+                            android:text="0"
+                            android:focusable="false"
+                            android:enabled="false"
+                            android:layout_marginTop="@dimen/mrg1"
+                            android:paddingLeft="@dimen/size0"
+
+                            />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/rr_right_petrol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignParentRight="true">
+
+                        <TextView
+                            android:id="@+id/txt_petrol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/mrg4"
+                            android:textColor="@color/colorPrimary"
+                            android:text=""
+                            />
+
+
+                        <EditText
+                            android:id="@+id/edt_petrol"
+                            android:layout_width="@dimen/size7"
+                            android:layout_height="38dp"
+                            android:layout_below="@+id/txt_petrol"
+                            android:layout_marginTop="7dp"
+                            android:background="@drawable/x_et_bg_cmpny_login"
+                            android:elevation="@dimen/mrg1"
+                            android:focusable="false"
+                            android:paddingLeft="@dimen/size0"
+                            android:hint="0"
+                            android:textColor="@color/colorPrimary"
+                            android:textColorHint="@color/colorPrimary"
+                            android:textSize="@dimen/mrg4"
+
+                            />
+
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+
+                    android:id="@+id/rr_remark_full"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/mrg2"
+                    android:layout_marginRight="@dimen/mrg2"
+                    android:layout_marginTop="@dimen/mrg2"
+                    android:layout_marginBottom="@dimen/mrg2"
+                    android:layout_below="@+id/rr_printingstationarypetrol_full"
+                    >
+                    <RelativeLayout
+                        android:id="@+id/rr_left_remark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignParentLeft="true">
+
+                        <TextView
+                            android:id="@+id/txt_remark"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/mrg4"
+                            android:textColor="@color/colorPrimary"
+                            android:text="Remarks"
+
+                            />
+
+                        <EditText
+                            android:id="@+id/edt_remark"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/mrg4"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_below="@+id/txt_remark"
+                            android:background="@drawable/x_et_bg_cmpny_login"
+                            android:elevation="@dimen/mrg1"
+                            android:focusable="false"
+                            android:hint="Remarks for manager or admin"
+                            android:textColorHint="@color/colorPrimary"
+                            android:layout_marginTop="@dimen/mrg1"
+                            android:padding="@dimen/mrg2"
+
+                            />
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+<!----><!----><!----><!----><!---->
+
+
+
+
+                <RelativeLayout
+                    android:id="@+id/rr_doc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mrg2"
+                    android:layout_below="@+id/rr_expensess"
+                    >
+                    <TextView
+                        android:id="@+id/txt_document"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Documents"
+                        android:textColor="@color/colorPrimary"
+
+                        android:textSize="@dimen/size0"
+                        />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rr_document_detail_lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rr_doc"
+                    android:layout_marginTop="@dimen/mrg1"
+                    android:layout_marginBottom="@dimen/mrg1"
+                    android:visibility="visible">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/document_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:alwaysDrawnWithCache="true"
+                        android:clipToPadding="false"
+                        android:visibility="visible"
+                        android:scrollbars="none" />
+
+
+                    <TextView
+                        android:id="@+id/no_doc_available"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No Doc Available"
+                        android:gravity="center"
+                        android:padding="@dimen/mrg2"
+                        android:background="@drawable/x_et_bg"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/mrg4"
+                        android:visibility="gone"
+                        />
+
+
+                </RelativeLayout>
+
+
+
+                <!----><!----><!----><!----><!---->
+                <RelativeLayout
+                    android:id="@+id/end_time_relativelayout"
+                    android:layout_below="@id/rr_document_detail_lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size3"
+                    android:background="@drawable/x_et_bg"
+                    android:layout_marginTop="@dimen/mrg2"
+                    android:visibility="gone"
+                    >
+                    <TextView
+                        android:id="@+id/end_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Working End At :"
+                        android:textColor="@color/colorPrimary"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:paddingLeft="@dimen/mrg2"
+                        android:visibility="visible"
+                        android:textSize="@dimen/mrg4"
+                        />
+
+                    <TextView
+                        android:id="@+id/end_time_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="12:40:45 AM"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/mrg2"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_toRightOf="@+id/end_time"
+                        android:layout_marginLeft="@dimen/mrg1"
+                        android:textSize="@dimen/mrg4"
+                        />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rr_work_end_location"
+                    android:layout_below="@+id/end_time_relativelayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mrg2"
+                    android:layout_marginBottom="@dimen/mrg2"
+                    android:padding="@dimen/mrg2"
+                    android:background="@drawable/x_et_bg"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/work_end_location2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Work End Location :"
+                        android:gravity="left"
+                        android:textStyle="bold"
+                        android:paddingLeft="@dimen/mrg1"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/mrg4"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/work_end_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Location : "
+                        android:gravity="left"
+                        android:layout_below="@id/work_end_location2"
+                        android:paddingLeft="@dimen/mrg1"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/mrg4"
+                        />
+
+                </RelativeLayout>
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/rr_submitdcr_checked_unchecked"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/size3"
+                android:layout_centerInParent="true"
+                android:layout_margin="@dimen/mrg2"
+                android:visibility="visible"
+                android:layout_below="@id/rr_work_end_location"
+                android:background="@drawable/login_button_bg"
+
+                >
+                <RelativeLayout
+                    android:id="@+id/rr_docreminder_chekunck_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/mrg4"
+
+                    >
+                    <ImageView
+                        android:id="@+id/img_docreminder_checked_icon"
+                        android:layout_width="@dimen/mrg5"
+                        android:layout_height="@dimen/mrg4"
+                        android:background="@drawable/dcr_submit_icon"
+                        />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/txt_docreminder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dcr_submit"
+                    android:layout_toRightOf="@+id/rr_docreminder_chekunck_img"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/mrg4"
+                    android:layout_marginRight="@dimen/mrg4"
+                    android:layout_marginLeft="@dimen/mrg1"
+
+                    />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

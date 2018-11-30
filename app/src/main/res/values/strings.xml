@@ -1,0 +1,108 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">DR Live</string>
+    <string name="entr_company_id">Enter Company Id</string>
+    <string name="forgot_company_id">Forgot company id?</string>
+    <string name="forgot_password">Forgot Password?</string>
+
+    <string name="submit">Submit</string>
+    <string name="entr_employee_id">Enter Employe id</string>
+    <string name="entr_employee_password">Enter Password</string>
+    <string name="entr_login_id">Enter Login id</string>
+
+    <string name="login">Login</string>
+
+    <string name="home">Home</string>
+    <string name="reviewdayend">Review &amp; Day End</string>
+    <string name="viewdcr">View DCR</string>
+    <string name="viewtime">Timeline</string>
+    <string name="view_doc_list">My Doctor List</string>
+
+    <string name="selected_date_is">Selected Date is :</string>
+    <string name="field_type_is">Field Type is:</string>
+
+    <string name="logout">Logout</string>
+
+    <string name="title">Title</string>
+    <string name="local">Local</string>
+    <string name="independent">Independent</string>
+
+    <string name="interior">Interior</string>
+    <string name="working_with">Working With :</string>
+    <string name="working_type">Working Type :</string>
+    <string name="working_via">Working Via :</string>
+
+    <string name="start">Start</string>
+    <string name="select_territory_interior">Select Territory &amp; Interior</string>
+    <string name="select_region">Select Region</string>
+    <string name="select_product">Select Product</string>
+    <string name="select_gift">Select Gift</string>
+
+    <string name="select_territory">Select Territory</string>
+    <string name="select_city">Select City</string>
+
+    <string name="select_interior">Select Interior</string>
+    <string name="search_doctor">Enter Doctor Name</string>
+    <string name="select_date">Select Date</string>
+
+    <string name="call_start_at">Call Start at :</string>
+    <string name="time_started">Working Hours</string>
+    <!--//Today\'s-->
+    <string name="call_in_process">Call in process</string>
+<string name="product_detailing_nd_sample_distributor">Product Detailing And Sample Distribution</string>
+    <string name="qty">Qty</string>
+    <string name="amt">Amt</string>
+
+    <string name="call_start">Call Start</string>
+    <string name="doc_reminder">Doctor Reminder</string>
+    <string name="doc_calls">Doctor Calls</string>
+
+    <string name="add_chemist">Add Chemist</string>
+    <string name="add_product">Add Products</string>
+    <string name="add_gift">Add Gift</string>
+    <string name="gifts">Gifts</string>
+
+    <string name="add">Add</string>
+    <string name="add_more">Add More</string>
+    <string name="add_chemist_visit">Add Chemist visit </string>
+    <string name="select_tittle">Select Marketing Representative</string>
+
+    <string name="add_files">Add Files</string>
+
+    <string name="call_complete">Call Complete</string>
+
+    <string name="chemist_visited">Add Chemist Visit</string>
+    <string name="chemist_name">Chemist Name</string>
+    <string name="entr_chemist_name">Enter Chemist Name</string>
+
+    <string name="expenses">Expenses</string>
+    <string name="add_expenses">Add Expenses</string>
+
+    <string name="reminder_expenses">Reminder Expenses</string>
+    <string name="telephone">Telephone Expenses</string>
+    <string name="fwa">F.W.A Expenses</string>
+    <string name="sundry">Add Sundry  &amp; Miscellaneous Expenses</string>
+    <string name="sundry1">Sundry &amp; Miscellaneous Expenses</string>
+
+    <string name="printing_nd_sationary">Add Printing &amp; Stationary Expenses</string>
+    <string name="printing_nd_sationary1">Printing &amp; Stationary Expenses</string>
+
+    <string name="petrol">Petrol Expenses</string>
+
+    <string name="remark">Enter remarks for your managers and company, if any.</string>
+    <string name="dcr_submit">DCR Submit</string>
+
+<string name="field">This field is Required</string>
+    <string name="for_any_technical_support">For any Technical Support</string>
+    <string name="contact_us_at">Contact Us At</string>
+<string name="no">No</string>
+    <string name="field_work">Field Work</string>
+    <string name="ok">Ok</string>
+
+    <string name="entr_pob_amount">Enter POB Amount</string>
+    <string name="entr_stockiest1">Stockiest1</string>
+    <string name="entr_stockiest2">Stockiest2</string>
+    <string name="entr_stockiest3">Stockiest3</string>
+
+    <string name="copy_right">Copyright  © 2018. Daily Reporting ERP. All rights reserved.</string>
+
+</resources>

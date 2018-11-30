@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+
+        android:id="@+id/rr_first_descp"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginLeft="@dimen/mrg2"
+        android:layout_marginRight="@dimen/mrg2"
+        android:background="@drawable/x_et_home_timeline">
+
+
+        <ImageView
+            android:id="@+id/icon_show_process"
+            android:layout_width="50dp"
+            android:layout_height="52dp"
+            android:src="@drawable/start_work"
+            android:padding="@dimen/mrg0"
+            android:scaleType="fitXY"
+            android:layout_centerInParent="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="30dp"
+           />
+
+
+        <TextView
+            android:id="@+id/cuisineslistitem"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/size0"
+            android:layout_below="@+id/icon_show_process"
+            android:layout_centerInParent="true"
+            android:paddingLeft="@dimen/mrg1"
+            android:paddingRight="@dimen/mrg1"
+            android:text="Start Field Work"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"/>
+
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

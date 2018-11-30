@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rr_txt_doc_descp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mrg1"
+        android:layout_below="@+id/rr_doc_reminder"
+        android:background="@drawable/x_et_bg"
+        android:elevation="@dimen/mrg1"
+        >
+
+        <RelativeLayout
+            android:id="@+id/rr_docname"
+            android:layout_width="@dimen/size8"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mrg2"
+            android:layout_marginTop="@dimen/mrg2"
+            >
+            <TextView
+                android:id="@+id/txt_doctor_namee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/mrg4"
+                android:text="Test123"
+                android:visibility="visible"
+                android:singleLine="true"
+                android:inputType="textCapWords"
+                android:capitalize="words"
+
+                android:textColor="@color/colorPrimary"/>
+
+
+
+        </RelativeLayout>
+<RelativeLayout
+    android:id="@+id/rr_gifts"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/size3"
+
+    android:layout_below="@+id/rr_docname"
+    >
+
+        <RelativeLayout
+            android:id="@+id/rr_degree"
+            android:layout_marginTop="@dimen/mrg1"
+            android:layout_width="@dimen/size14"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mrg2"
+            android:layout_centerVertical="true"
+
+            >
+            <TextView
+                android:id="@+id/txt_degree"
+                android:layout_width="@dimen/size13"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/mrg4"
+                android:textColor="@color/colorPrimary"
+                android:visibility="visible"
+                android:singleLine="true"
+                android:text="Gifts"
+                />
+
+
+
+        </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rr_testing_count"
+        android:layout_width="@dimen/size19"
+        android:layout_height="@dimen/size3"
+android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        >
+
+
+        <RelativeLayout
+            android:id="@+id/rr_left_testing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/x_et_bg_cmpny_login"
+            android:elevation="@dimen/mrg1"
+            android:layout_toLeftOf="@+id/rr_right_qty"
+            android:layout_marginRight="@dimen/mrg1"
+
+            >
+
+            <EditText
+                android:id="@+id/spn_product"
+                android:layout_width="@dimen/size7"
+                android:layout_height="@dimen/size2"
+                android:text="Testing"
+
+                android:paddingLeft="@dimen/size0"
+                android:textColor="@color/colorPrimary"
+                android:background="@android:color/transparent"
+                ></EditText>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rr_right_qty"
+            android:layout_width="@dimen/size4"
+            android:layout_height="@dimen/size2"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/x_et_bg_cmpny_login"
+            android:elevation="@dimen/mrg1"
+            android:layout_marginRight="@dimen/mrg1"
+
+            >
+
+            <EditText
+                android:id="@+id/edt_product_qty"
+                android:layout_width="@dimen/size4"
+                android:layout_height="@dimen/size2"
+
+                android:text="10"
+                android:layout_centerInParent="true"
+                android:paddingLeft="@dimen/size1"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="@color/colorPrimary"
+                android:textSize="@dimen/mrg4"
+                android:background="@android:color/transparent"
+                ></EditText>
+
+        </RelativeLayout>
+
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rr_pobamount"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size3"
+
+            android:layout_below="@+id/rr_gifts"
+            >
+
+            <RelativeLayout
+                android:id="@+id/rr_pobamount_testing"
+                android:layout_marginTop="@dimen/mrg1"
+                android:layout_width="@dimen/size14"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mrg2"
+                android:layout_centerVertical="true"
+
+                >
+                <TextView
+                    android:id="@+id/txt_pobamount"
+                    android:layout_width="@dimen/size13"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/mrg4"
+                    android:textColor="@color/colorPrimary"
+                    android:visibility="visible"
+                    android:singleLine="true"
+                    android:text="POB amount"
+                    />
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rr_testing_pobamount"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/size3"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/mrg1"
+                >
+
+
+                <RelativeLayout
+                    android:id="@+id/rr_left_testing_pobamount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/x_et_bg_cmpny_login"
+                    android:elevation="@dimen/mrg1"
+
+                    >
+
+                    <EditText
+                        android:id="@+id/spn_product_pobamount"
+                        android:layout_width="@dimen/size7"
+                        android:layout_height="@dimen/size2"
+                        android:text="Testing"
+
+                        android:paddingLeft="@dimen/size0"
+                        android:textColor="@color/colorPrimary"
+                        android:background="@android:color/transparent"
+                        ></EditText>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rr_stockiest1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size3"
+
+            android:layout_below="@+id/rr_pobamount"
+            >
+
+            <RelativeLayout
+                android:id="@+id/rr_stockiest1_full"
+                android:layout_marginTop="@dimen/mrg1"
+                android:layout_width="@dimen/size14"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mrg2"
+                android:layout_centerVertical="true"
+
+                >
+                <TextView
+                    android:id="@+id/txt_stockiest1"
+                    android:layout_width="@dimen/size13"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/mrg4"
+                    android:textColor="@color/colorPrimary"
+                    android:visibility="visible"
+                    android:singleLine="true"
+                    android:text="Stockiest (1)"
+                    />
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rr_testing_count_stockiest1"
+                android:layout_width="@dimen/size19"
+                android:layout_height="@dimen/size3"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                >
+
+
+                <RelativeLayout
+                    android:id="@+id/rr_left_testing_stockiest1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/x_et_bg_cmpny_login"
+                    android:elevation="@dimen/mrg1"
+                    android:layout_toLeftOf="@+id/rr_stockiest1_qty"
+                    android:layout_marginRight="@dimen/mrg1"
+
+                    >
+
+                    <EditText
+                        android:id="@+id/spn_stockiest1"
+                        android:layout_width="@dimen/size7"
+                        android:layout_height="@dimen/size2"
+                        android:text="Testing"
+
+                        android:paddingLeft="@dimen/size0"
+                        android:textColor="@color/colorPrimary"
+                        android:background="@android:color/transparent"
+                        ></EditText>
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/rr_stockiest1_qty"
+                    android:layout_width="@dimen/size4"
+                    android:layout_height="@dimen/size2"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/x_et_bg_cmpny_login"
+                    android:elevation="@dimen/mrg1"
+                    android:layout_marginRight="@dimen/mrg1"
+
+                    >
+
+                    <EditText
+                        android:id="@+id/edt_stockiest1_qty"
+                        android:layout_width="@dimen/size4"
+                        android:layout_height="@dimen/size2"
+
+                        android:text="10"
+                        android:layout_centerInParent="true"
+                        android:paddingLeft="@dimen/size1"
+                        android:textColor="@color/colorPrimary"
+                        android:textColorHint="@color/colorPrimary"
+                        android:textSize="@dimen/mrg4"
+                        android:background="@android:color/transparent"
+                        ></EditText>
+
+                </RelativeLayout>
+
+
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rr_stockiest2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size3"
+
+            android:layout_below="@+id/rr_stockiest1"
+            >
+
+            <RelativeLayout
+                android:id="@+id/rr_stockiest2_full"
+                android:layout_marginTop="@dimen/mrg1"
+                android:layout_width="@dimen/size14"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mrg2"
+                android:layout_centerVertical="true"
+
+                >
+                <TextView
+                    android:id="@+id/txt_stockiest2"
+                    android:layout_width="@dimen/size13"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/mrg4"
+                    android:textColor="@color/colorPrimary"
+                    android:visibility="visible"
+                    android:singleLine="true"
+                    android:text="Stockiest (2)"
+                    />
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rr_testing_count_stockiest2"
+                android:layout_width="@dimen/size19"
+                android:layout_height="@dimen/size3"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                >
+
+
+                <RelativeLayout
+                    android:id="@+id/rr_left_testing_stockiest2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/x_et_bg_cmpny_login"
+                    android:elevation="@dimen/mrg1"
+                    android:layout_toLeftOf="@+id/rr_stockiest2_qty"
+                    android:layout_marginRight="@dimen/mrg1"
+
+                    >
+
+                    <EditText
+                        android:id="@+id/spn_stockiest2"
+                        android:layout_width="@dimen/size7"
+                        android:layout_height="@dimen/size2"
+                        android:text="Testing"
+
+                        android:paddingLeft="@dimen/size0"
+                        android:textColor="@color/colorPrimary"
+                        android:background="@android:color/transparent"
+                        ></EditText>
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/rr_stockiest2_qty"
+                    android:layout_width="@dimen/size4"
+                    android:layout_height="@dimen/size2"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/x_et_bg_cmpny_login"
+                    android:elevation="@dimen/mrg1"
+                    android:layout_marginRight="@dimen/mrg1"
+
+                    >
+
+                    <EditText
+                        android:id="@+id/edt_stockiest2_qty"
+                        android:layout_width="@dimen/size4"
+                        android:layout_height="@dimen/size2"
+
+                        android:text="10"
+                        android:layout_centerInParent="true"
+                        android:paddingLeft="@dimen/size1"
+                        android:textColor="@color/colorPrimary"
+                        android:textColorHint="@color/colorPrimary"
+                        android:textSize="@dimen/mrg4"
+                        android:background="@android:color/transparent"
+                        ></EditText>
+
+                </RelativeLayout>
+
+
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rr_stockiest3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size3"
+
+            android:layout_below="@+id/rr_stockiest2"
+            >
+
+            <RelativeLayout
+                android:id="@+id/rr_stockiest3_full"
+                android:layout_marginTop="@dimen/mrg1"
+                android:layout_width="@dimen/size14"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mrg2"
+                android:layout_centerVertical="true"
+
+                >
+                <TextView
+                    android:id="@+id/txt_stockiest3"
+                    android:layout_width="@dimen/size13"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/mrg4"
+                    android:textColor="@color/colorPrimary"
+                    android:visibility="visible"
+                    android:singleLine="true"
+                    android:text="Stockiest (3)"
+                    />
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rr_testing_count_stockiest3"
+                android:layout_width="@dimen/size19"
+                android:layout_height="@dimen/size3"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                >
+
+
+                <RelativeLayout
+                    android:id="@+id/rr_left_testing_stockiest3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/x_et_bg_cmpny_login"
+                    android:elevation="@dimen/mrg1"
+                    android:layout_toLeftOf="@+id/rr_stockiest3_qty"
+                    android:layout_marginRight="@dimen/mrg1"
+
+                    >
+
+                    <EditText
+                        android:id="@+id/spn_stockiest3"
+                        android:layout_width="@dimen/size7"
+                        android:layout_height="@dimen/size2"
+                        android:focusable="false"
+                        android:text="Testing"
+
+                        android:paddingLeft="@dimen/size0"
+                        android:textColor="@color/colorPrimary"
+                        android:background="@android:color/transparent"
+                        ></EditText>
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/rr_stockiest3_qty"
+                    android:layout_width="@dimen/size4"
+                    android:layout_height="@dimen/size2"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/x_et_bg_cmpny_login"
+                    android:elevation="@dimen/mrg1"
+                    android:layout_marginRight="@dimen/mrg1"
+
+                    >
+
+                    <EditText
+                        android:id="@+id/edt_stockiest3_qty"
+                        android:layout_width="@dimen/size4"
+                        android:layout_height="@dimen/size2"
+
+                        android:text="10"
+                        android:layout_centerInParent="true"
+                        android:paddingLeft="@dimen/size1"
+                        android:textColor="@color/colorPrimary"
+                        android:textColorHint="@color/colorPrimary"
+                        android:textSize="@dimen/mrg4"
+                        android:background="@android:color/transparent"
+                        ></EditText>
+
+                </RelativeLayout>
+
+
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rr_addchmist_cllcmplt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rr_stockiest3"
+            android:layout_marginTop="@dimen/mrg2"
+            android:layout_marginLeft="@dimen/mrg2"
+            android:layout_marginRight="@dimen/mrg2"
+            android:layout_marginBottom="@dimen/size0"
+
+
+
+            >
+
+            <RelativeLayout
+                android:id="@+id/rr_addchmist_checked_unchecked"
+                android:layout_width="@dimen/size7"
+                android:layout_height="@dimen/size3"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/login_button_bg"
+                android:visibility="gone"
+
+                >
+                <RelativeLayout
+                    android:id="@+id/rr_local_chekunck_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/mrg2"
+                    >
+                    <ImageView
+                        android:id="@+id/img_local_checked_icon"
+                        android:layout_width="@dimen/mrg5"
+                        android:layout_height="@dimen/mrg4"
+                        android:background="@drawable/add_chemist_icon"
+                        />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/txt_local"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add_chemist"
+                    android:layout_toRightOf="@+id/rr_local_chekunck_img"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/mrg4"
+                    />
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rr_callcmplte_checked_unchecked"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size3"
+android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/size0"
+        android:layout_below="@+id/rr_txt_doc_descp"
+        android:background="@drawable/login_button_bg"
+
+        >
+        <RelativeLayout
+            android:id="@+id/rr_callcmplte_chekunck_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/mrg2"
+            >
+            <ImageView
+                android:id="@+id/img_callcmplte_checked_icon"
+                android:layout_width="@dimen/mrg5"
+                android:layout_height="@dimen/mrg4"
+                android:background="@drawable/add_chemist_icon"
+                />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txt_callcmplte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_chemist_visit"
+            android:layout_toRightOf="@+id/rr_callcmplte_chekunck_img"
+            android:layout_centerVertical="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/mrg4"
+            android:layout_marginLeft="@dimen/mrg1"
+            android:layout_marginRight="@dimen/mrg2"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>

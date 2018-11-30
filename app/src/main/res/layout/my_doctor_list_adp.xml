@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rr_current_loc_descp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/x_et_bg_gridhome"
+        >
+
+        <TextView
+            android:id="@+id/txt_current_loc_descp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dr Anil Gupta"
+            android:layout_marginLeft="@dimen/mrg2"
+            android:layout_marginRight="@dimen/mrg2"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/size188"/>
+
+        <TextView
+            android:id="@+id/txt_profession"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Physian"
+            android:layout_below="@+id/txt_current_loc_descp"
+            android:layout_marginTop="@dimen/mrg2"
+            android:layout_marginLeft="@dimen/mrg2"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/size188"
+            android:visibility="gone"
+            />
+
+
+        <TextView
+            android:id="@+id/txt_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clinic Address"
+            android:layout_below="@+id/txt_profession"
+            android:layout_marginLeft="@dimen/mrg2"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/size188"
+            />
+    </RelativeLayout>
+
+
+</RelativeLayout>

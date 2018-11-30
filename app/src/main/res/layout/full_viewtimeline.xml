@@ -1,0 +1,792 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:layout_marginLeft="@dimen/mrg2"
+        android:layout_marginRight="@dimen/mrg2">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+            <RelativeLayout
+                android:id="@+id/rr_main_full_descp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/mrg2"
+                android:background="@drawable/x_et_bg"
+                android:elevation="@dimen/mrg2"
+                android:layout_marginTop="@dimen/mrg2"
+                android:visibility="visible"
+                >
+         <!--selected dateeee-->
+            <RelativeLayout
+                android:id="@+id/rr_selected_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size0"
+                android:visibility="gone"
+                >
+                <TextView
+                    android:id="@+id/txt_selected_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/selected_date_is"
+                    android:textColor="@color/colorPrimary"
+                    android:visibility="gone"
+                    android:textSize="@dimen/mrg4"
+                    />
+
+                <TextView
+                    android:id="@+id/txt_selected_datee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="21-7-18"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_toRightOf="@+id/txt_selected_date"
+                    android:layout_marginLeft="@dimen/mrg1"
+                    android:textSize="@dimen/mrg4"
+                    />
+
+            </RelativeLayout>
+
+               <!--work status-->
+                <RelativeLayout
+                    android:id="@+id/rr_work_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size0"
+                    android:layout_alignParentRight="true"
+                    android:paddingRight="@dimen/mrg1"
+                    android:visibility="gone"
+                    >
+                    <TextView
+                        android:id="@+id/status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Staus :"
+                        android:paddingLeft="@dimen/mrg1"
+                        android:textColor="@color/colorPrimary"
+                        android:visibility="visible"
+                        android:textSize="@dimen/mrg4"
+                        />
+
+                    <TextView
+                        android:id="@+id/txt_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Completed"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_toRightOf="@+id/status"
+                        android:layout_marginLeft="@dimen/mrg1"
+                        android:textSize="@dimen/mrg4"
+                        />
+
+                </RelativeLayout>
+
+                <!--work type fiels-->
+
+                <RelativeLayout
+                    android:id="@+id/rr_selected_workingtype"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mrg2"
+                    android:layout_marginLeft="@dimen/mrg2"
+                    android:layout_below="@+id/rr_selected_date"
+                    android:visibility="gone"
+                    >
+                    <TextView
+                        android:id="@+id/txt_selected_workingtype"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/working_type"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/mrg4"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="@dimen/mrg1"
+                        android:visibility="visible"
+                        />
+
+                    <TextView
+                        android:id="@+id/txt_selected_workingtypee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/field_work"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_toRightOf="@+id/txt_selected_workingtype"
+                        android:layout_marginLeft="@dimen/mrg1"
+                        android:textSize="@dimen/mrg4"
+                        />
+
+                </RelativeLayout>
+
+               <!--start work location-->
+                <RelativeLayout
+                    android:id="@+id/rr_selected_strtfieldwork_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/mrg3"
+                    android:layout_below="@+id/rr_selected_workingtype"
+                    android:layout_marginTop="@dimen/mrg2"
+                    android:visibility="gone"
+
+                    >
+                    <TextView
+                        android:id="@+id/txt_selected_strtfieldwork_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Location :"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/mrg4"
+                        android:layout_marginLeft="@dimen/mrg1"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        />
+
+                    <TextView
+                        android:id="@+id/txt_selected_strtfieldwork_locationn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="address"
+                        android:layout_marginLeft="@dimen/mrg1"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_toRightOf="@+id/txt_selected_strtfieldwork_location"
+                        android:textSize="@dimen/mrg4"
+                        />
+
+                </RelativeLayout>
+         <!--work at-->
+
+            <RelativeLayout
+                android:id="@+id/rr_selected_strtfieldwork_at"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mrg1"
+                android:layout_below="@+id/rr_selected_strtfieldwork_location"
+                android:layout_marginTop="@dimen/mrg1"
+                android:visibility="gone"
+
+                >
+                <TextView
+                    android:id="@+id/txt_selected_strtfieldwork_at"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="work at :"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/mrg4"
+                    android:visibility="visible"
+                    />
+
+                <TextView
+                    android:id="@+id/txt_selected_strtfieldwork_att"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/local"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_toRightOf="@+id/txt_selected_strtfieldwork_at"
+                    android:textSize="@dimen/mrg4"
+                    />
+
+            </RelativeLayout>
+
+<!--city name-->
+             <RelativeLayout
+                android:id="@+id/rr_selected_cityname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rr_selected_strtfieldwork_at"
+                android:layout_marginTop="@dimen/mrg2"
+                android:visibility="gone"
+                >
+                <TextView
+                    android:id="@+id/txt_selected_cityname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/mrg1"
+                    android:text="City :"
+                    android:textColor="@color/colorPrimary"
+
+                    android:textSize="@dimen/mrg4"
+                    android:visibility="gone"
+                    />
+
+                <TextView
+                    android:id="@+id/txt_selected_citynamee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Indore"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_toRightOf="@+id/txt_selected_cityname"
+                    android:layout_marginLeft="@dimen/mrg1"
+                    android:textSize="@dimen/mrg4"
+                    />
+
+            </RelativeLayout>
+
+                <!--teriory is-->
+
+            <RelativeLayout
+                android:id="@+id/rr_selected_interiorname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rr_selected_strtfieldwork_at"
+                android:layout_toRightOf="@id/rr_selected_cityname"
+                android:layout_marginTop="@dimen/mrg2"
+                android:layout_marginLeft="@dimen/mrg5"
+                android:visibility="gone"
+                >
+                <TextView
+                    android:id="@+id/txt_selected_interiorname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Territory :"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/mrg4"
+                    android:visibility="gone"
+                    />
+
+                <TextView
+                    android:id="@+id/txt_selected_interiornamee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="dewas"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_toRightOf="@+id/txt_selected_interiorname"
+                    android:layout_marginLeft="@dimen/mrg1"
+                    android:textSize="@dimen/mrg4"
+                    />
+
+            </RelativeLayout>
+
+
+
+                <RelativeLayout
+                    android:id="@+id/rr_selected_workingvia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mrg2"
+                    android:layout_marginLeft="@dimen/mrg2"
+                    android:layout_below="@+id/rr_selected_cityname"
+                    android:visibility="gone"
+                    >
+                    <TextView
+                        android:id="@+id/txt_selected_workingvia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/working_via"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/mrg4"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="@dimen/mrg1"
+                        android:visibility="visible"
+                        />
+
+                    <TextView
+                        android:id="@+id/txt_value_workingvia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Car/Taxi"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_toRightOf="@+id/txt_selected_workingvia"
+                        android:layout_marginLeft="@dimen/mrg1"
+                        android:textSize="@dimen/mrg4"
+                        />
+
+                </RelativeLayout>
+
+
+
+
+
+
+
+
+                <!--working with-->
+
+            <RelativeLayout
+                android:id="@+id/rr_main_workingwith"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/mrg2"
+                android:layout_below="@+id/rr_selected_workingvia"
+                android:visibility="gone">
+
+            <RelativeLayout
+                android:id="@+id/rr_selected_workingwith_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mrg2"
+                android:layout_marginBottom="@dimen/mrg2"
+
+                >
+                <TextView
+                    android:id="@+id/txt_selected_workingwith"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/working_with"
+                    android:textSize="@dimen/mrg4"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginLeft="@dimen/mrg1"
+                    android:textStyle="bold"
+                    android:visibility="visible"
+                    />
+
+                <TextView
+                    android:id="@+id/txt_selected_workingwithh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/colorPrimary"
+                    android:layout_toRightOf="@+id/txt_selected_workingwith"
+                    android:layout_marginLeft="@dimen/mrg1"
+                    android:textSize="@dimen/mrg4"
+                    android:visibility="visible"
+                    />
+
+            </RelativeLayout>
+
+                <!--working with name-->
+                <RelativeLayout
+                    android:id="@+id/rr_selected_workingwith_independent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mrg2"
+                    android:layout_marginBottom="@dimen/mrg1"
+                    android:layout_marginLeft="@dimen/mrg1"
+                    android:layout_below="@+id/rr_selected_workingwith_text"
+                    android:visibility="gone"
+
+                    >
+                    <TextView
+                        android:id="@+id/txt_selected_workingwith_independent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/field_type_is"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/mrg4"
+                        android:paddingLeft="@dimen/mrg1"
+                        android:visibility="gone"
+                        />
+
+                    <TextView
+                        android:id="@+id/txt_selected_workingwithh_independentt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/selected_date_is"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_toRightOf="@+id/txt_selected_workingwith_independent"
+                        android:textSize="@dimen/mrg4"
+                        />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rr_selected_workingwith_marketingrepresentation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/mrg1"
+                    android:layout_marginBottom="@dimen/mrg1"
+                    android:layout_below="@+id/rr_selected_workingwith_independent"
+                    android:visibility="gone"
+
+                    >
+                    <TextView
+                        android:id="@+id/txt_selected_workingwith_marketingrepresentation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MR :"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/mrg4"
+                        android:visibility="visible"
+                        />
+
+                    <TextView
+                        android:id="@+id/txt_selected_workingwithh_marketingrepresentationn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/selected_date_is"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_toRightOf="@+id/txt_selected_workingwith_marketingrepresentation"
+                        android:textSize="@dimen/mrg4"
+                        />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rr_selected_workingwith_areamanger"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/mrg1"
+                    android:layout_marginBottom="@dimen/mrg1"
+                    android:layout_below="@+id/rr_selected_workingwith_marketingrepresentation"
+                    android:visibility="gone"
+
+                    >
+                    <TextView
+                        android:id="@+id/txt_selected_workingwith_areamanger"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Area Manager :"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/mrg4"
+                        android:visibility="visible"
+                        />
+
+                    <TextView
+                        android:id="@+id/txt_selected_workingwithh_areamanger"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/selected_date_is"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_marginLeft="@dimen/mrg1"
+                        android:layout_toRightOf="@+id/txt_selected_workingwith_areamanger"
+                        android:textSize="@dimen/mrg4"
+                        />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rr_selected_workingwith_regionalmanger"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mrg1"
+                    android:layout_marginBottom="@dimen/mrg1"
+                    android:layout_marginLeft="@dimen/mrg1"
+
+                    android:layout_below="@+id/rr_selected_workingwith_areamanger"
+                    android:visibility="gone"
+
+                    >
+                    <TextView
+                        android:id="@+id/txt_selected_workingwith_regionalmanger"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Regional Manager :"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/mrg4"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        />
+
+                    <TextView
+                        android:id="@+id/txt_selected_workingwithh_regionalmangerr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/selected_date_is"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_toRightOf="@+id/txt_selected_workingwith_regionalmanger"
+                        android:textSize="@dimen/mrg4"
+                        />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/rr_selected_workingwith_salesmanger"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mrg1"
+                    android:layout_marginLeft="@dimen/mrg1"
+                    android:layout_marginBottom="@dimen/mrg2"
+
+                    android:layout_below="@+id/rr_selected_workingwith_regionalmanger"
+                    android:visibility="gone"
+
+                    >
+                    <TextView
+                        android:id="@+id/txt_selected_workingwith_salesmanger"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sales Manager :"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/mrg4"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        />
+
+                    <TextView
+                        android:id="@+id/txt_selected_workingwithh_salesmangerr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/selected_date_is"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_toRightOf="@+id/txt_selected_workingwith_salesmanger"
+                        android:textSize="@dimen/mrg4"
+                        />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+            </RelativeLayout>
+           <!--end of main relative lay-->
+
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/today_start_end_time"
+                android:layout_below="@id/rr_main_full_descp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size3"
+                android:layout_marginTop="@dimen/mrg1"
+                android:padding="@dimen/mrg2"
+                android:background="@drawable/x_et_bg"
+                android:visibility="gone">
+                <TextView
+                    android:id="@+id/start_end_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Working Started At :"
+                    android:textColor="@color/colorPrimary"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/mrg1"
+                    android:visibility="visible"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/mrg4"
+                    />
+
+                <TextView
+                    android:id="@+id/start_end_time_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="12:40:45 AM"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/mrg1"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_toRightOf="@+id/start_end_time"
+                    android:textSize="@dimen/mrg4"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rr_work_start_location"
+                android:layout_below="@+id/today_start_end_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mrg1"
+                android:padding="@dimen/mrg2"
+                android:background="@drawable/x_et_bg"
+                android:visibility="gone"
+                >
+
+                <TextView
+                    android:id="@+id/work_strt_location2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Work Start Location :"
+                    android:gravity="left"
+                    android:textStyle="bold"
+                    android:paddingLeft="@dimen/mrg1"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/mrg4"
+                    />
+
+
+                <TextView
+                    android:id="@+id/work_strt_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Location : "
+                    android:layout_below="@+id/work_strt_location2"
+                    android:gravity="left"
+                    android:paddingLeft="@dimen/mrg1"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/mrg4"
+                    />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rr_recleview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rr_work_start_location"
+                android:layout_marginTop="@dimen/mrg2"
+
+                >
+
+                <RelativeLayout
+                    android:id="@+id/rr_InboxDetailRV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <ProgressBar
+                        android:id="@+id/progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:visibility="gone" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/InboxDetailRV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:alwaysDrawnWithCache="true"
+                        android:clipToPadding="false"
+                        android:scrollbars="none"
+                        android:layoutAnimation="@anim/layout_animation_slide_right"
+                        app:reverseLayout="true"
+                        app:stackFromEnd="true" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rr_InboxDetailRVv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rr_InboxDetailRV"
+                    android:layout_marginTop="@dimen/mrg2"
+                    >
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/InboxDetailRVv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:alwaysDrawnWithCache="true"
+                        android:clipToPadding="false"
+                        android:scrollbars="none"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:id="@+id/no_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No Doctor Call, Reminder and Chemist Visit Available."
+                        android:textColor="@color/colorPrimary"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:padding="@dimen/mrg1"
+                        android:background="@drawable/x_et_bg"
+                        android:visibility="gone"
+                        android:textSize="@dimen/mrg4"
+                        />
+
+                    <ProgressBar
+                        android:id="@+id/progresss"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:visibility="gone" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/end_time_relativelayout"
+                android:layout_below="@id/rr_recleview"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size3"
+                android:background="@drawable/x_et_bg"
+                android:layout_marginTop="@dimen/mrg2"
+                android:padding="@dimen/mrg2"
+                android:visibility="gone"
+                >
+                <TextView
+                    android:id="@+id/end_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Working End At :"
+                    android:textColor="@color/colorPrimary"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:paddingLeft="@dimen/mrg1"
+                    android:visibility="visible"
+                    android:textSize="@dimen/mrg4"
+                    />
+
+                <TextView
+                    android:id="@+id/end_time_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="12:40:45 AM"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/mrg2"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_toRightOf="@+id/end_time"
+                    android:layout_marginLeft="@dimen/mrg1"
+                    android:textSize="@dimen/mrg4"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rr_work_end_location"
+                android:layout_below="@+id/end_time_relativelayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mrg2"
+                android:layout_marginBottom="@dimen/mrg2"
+                android:padding="@dimen/mrg2"
+                android:background="@drawable/x_et_bg"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/work_end_location2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="End Location :"
+                    android:gravity="left"
+                    android:textStyle="bold"
+                    android:paddingLeft="@dimen/mrg1"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/mrg4"
+                    />
+
+
+                <TextView
+                    android:id="@+id/work_end_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Location : "
+                    android:gravity="left"
+                    android:layout_below="@id/work_end_location2"
+                    android:paddingLeft="@dimen/mrg1"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/mrg4"
+                    />
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/txt_selected_date_report_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:padding="@dimen/mrg2"
+                android:layout_marginTop="@dimen/size0"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/mrg4"
+                android:background="@drawable/x_et_bg"
+                android:visibility="gone"
+                />
+            <ProgressBar
+                android:id="@+id/loader"
+                android:layout_width="@dimen/size4"
+                android:layout_height="@dimen/size4"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size0"
+                android:layout_below="@+id/rr_recleview"
+                ></LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

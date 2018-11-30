@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/white">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+
+        android:background="@color/white">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/rr_logo"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="@dimen/size2"
+                android:background="@color/white"
+                android:layout_centerHorizontal="true"
+                >
+
+                <ImageView
+                    android:id="@+id/img_logo_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/default_img"
+                    android:layout_centerInParent="true"
+                    android:adjustViewBounds="true"
+                    />
+                
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/txt_comapny_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_below="@+id/rr_logo"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/size1"
+                android:text="Company Name"
+                android:textColor="@color/colorPrimary"
+
+                android:textSize="@dimen/size1"
+                />
+
+
+
+<FrameLayout
+    android:id="@+id/fl_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/txt_comapny_name"
+
+    android:layout_marginTop="@dimen/size2"
+    android:layout_marginLeft="@dimen/size0"
+    android:layout_marginRight="@dimen/size0"
+    >
+
+
+            <RelativeLayout
+                android:id="@+id/rr_companyid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/x_et_bg_gridhome"
+                android:elevation="@dimen/mrg1"
+                >
+
+                <EditText
+                    android:id="@+id/edt_empid"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size3"
+
+                    android:layout_marginLeft="@dimen/size1"
+                    android:layout_marginRight="@dimen/size1"
+                    android:layout_marginTop="@dimen/size4"
+                    android:background="@drawable/x_et_bg_cmpny_login"
+                    android:hint="@string/entr_login_id"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:paddingLeft="@dimen/size0"
+                    android:textSize="@dimen/mrg4"
+                    android:singleLine="true"
+
+                    />
+
+                <TextView
+                    android:id="@+id/txt_empid_error"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+
+                    android:layout_marginLeft="@dimen/size1"
+                    android:layout_marginRight="@dimen/size1"
+                    android:layout_below="@+id/edt_empid"
+                    android:textColor="@color/Red"
+                    android:layout_marginTop="@dimen/mrg1"
+
+                    android:text="@string/field"
+                    android:visibility="gone"
+
+                    />
+
+
+
+                <EditText
+                    android:id="@+id/edt_emppassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size3"
+
+                    android:layout_marginLeft="@dimen/size1"
+                    android:layout_marginRight="@dimen/size1"
+                    android:layout_marginTop="@dimen/size0"
+                    android:layout_below="@+id/txt_empid_error"
+                    android:background="@drawable/x_et_bg_cmpny_login"
+                    android:hint="@string/entr_employee_password"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/colorPrimary"
+                    android:paddingLeft="@dimen/size0"
+                    android:textSize="@dimen/mrg4"
+                    android:inputType="textPassword"
+                    android:singleLine="true"
+
+                    />
+                <TextView
+                    android:id="@+id/txt_emppassword_error"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+
+                    android:layout_marginLeft="@dimen/size1"
+                    android:layout_marginRight="@dimen/size1"
+                    android:layout_below="@+id/edt_emppassword"
+                    android:textColor="@color/Red"
+                    android:layout_marginTop="@dimen/mrg1"
+
+                    android:text="@string/field"
+                    android:visibility="gone"
+
+                    />
+<RelativeLayout
+    android:id="@+id/rr_forgot_password"
+    android:layout_width="@dimen/size17"
+    android:layout_height="@dimen/size1"
+    android:layout_below="@+id/txt_emppassword_error"
+    android:layout_alignParentRight="true"
+    android:layout_marginTop="@dimen/mrg2"
+    android:layout_marginRight="@dimen/size1"
+
+
+    >
+
+                <TextView
+                    android:id="@+id/txt_forgortpassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/forgot_password"
+                    android:textSize="@dimen/mrg4"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/colorPrimary"
+
+                    />
+        </RelativeLayout>
+                <ProgressBar
+                    android:id="@+id/loader"
+                    android:layout_width="@dimen/size4"
+                    android:layout_height="@dimen/size4"
+                    android:layout_gravity="center"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"
+
+                    />
+
+                <Button
+                    android:id="@+id/btn_login"
+                    android:layout_width="@dimen/size6"
+                    android:layout_height="@dimen/size3"
+
+
+                    android:layout_below="@+id/rr_forgot_password"
+
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/login_button"
+                    android:layout_marginTop="@dimen/mrg2"
+                    android:text="@string/login"
+                    android:textColor="@color/white"
+                    android:textAllCaps="false"
+                    />
+                <RelativeLayout
+                    android:id="@+id/rr_submit"
+                    android:layout_width="@dimen/size14"
+                    android:layout_height="@dimen/size1"
+
+                    android:layout_below="@+id/rr_forgot_password"
+
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/x_et_reg_log_bg"
+                    android:layout_marginTop="@dimen/size0"
+                    android:visibility="gone"
+
+                    >
+                    <ImageView
+
+                        android:id="@+id/img_submit"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        />
+
+                    <TextView
+                        android:id="@+id/txt_submit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/submit"
+                        android:textColor="@color/txt_submit_color"
+                        />
+
+                </RelativeLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size0"
+                    android:layout_below="@+id/btn_login"
+                    android:layout_marginTop="@dimen/mrg1"></LinearLayout>
+
+            </RelativeLayout>
+
+</FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size0"
+                android:layout_below="@+id/fl_layout"
+                android:layout_marginTop="@dimen/mrg1"></LinearLayout>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rr_left_product"
+        android:layout_width="@dimen/size19"
+        android:layout_height="@dimen/size33"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/submit_dcr_drdescp_icon"
+
+        >
+
+        <EditText
+            android:id="@+id/edt_product"
+            android:layout_width="@dimen/size19"
+            android:layout_height="@dimen/size33"
+            android:background="@android:color/transparent"
+            android:textColor="@color/colorPrimary"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/mrg4"
+            android:text="bottal"
+            android:inputType="textNoSuggestions"
+            android:paddingLeft="@dimen/mrg5"
+            ></EditText>
+
+    </RelativeLayout>
+    <RelativeLayout
+         android:id="@+id/rr_right_qty"
+         android:layout_width="@dimen/size19"
+         android:layout_height="@dimen/size33"
+          android:layout_toRightOf="@+id/rr_left_product"
+          android:background="@drawable/submit_dcr_drdescp_icon"
+
+
+        >
+
+        <EditText
+android:id="@+id/edt_product_qty"
+            android:layout_width="@dimen/size14"
+            android:layout_height="@dimen/size33"
+            android:hint="@string/qty"
+            android:paddingLeft="@dimen/size1"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/colorPrimary"
+            android:textSize="@dimen/mrg4"
+            android:inputType="number"
+            android:focusable="false"
+            android:background="@android:color/transparent"
+            ></EditText>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

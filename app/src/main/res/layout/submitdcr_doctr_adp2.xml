@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rr_testing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+
+        android:layout_below="@+id/rr_txt_doc_descp"
+        android:layout_marginTop="@dimen/size0"
+        >
+        <RelativeLayout
+            android:id="@+id/rr_left_testing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/x_et_bg"
+            android:elevation="@dimen/mrg1"
+
+            >
+
+            <EditText
+                android:id="@+id/spn_product"
+                android:layout_width="@dimen/size19"
+                android:layout_height="@dimen/size3"
+                android:focusable="false"
+                android:text="Testing"
+
+                android:paddingLeft="@dimen/size0"
+                android:textColor="@color/colorPrimary"
+                android:background="@android:color/transparent"
+                ></EditText>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rr_right_qty"
+            android:layout_width="@dimen/size14"
+            android:layout_height="@dimen/size3"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/x_et_bg"
+            android:elevation="@dimen/mrg1"
+
+            >
+
+            <EditText
+                android:id="@+id/edt_product_qty"
+                android:layout_width="@dimen/size14"
+                android:layout_height="@dimen/size3"
+
+                android:text="10"
+                android:layout_centerInParent="true"
+                android:paddingLeft="@dimen/size2"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="@color/colorPrimary"
+                android:textSize="@dimen/mrg4"
+                android:focusable="false"
+                android:background="@android:color/transparent"
+                ></EditText>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

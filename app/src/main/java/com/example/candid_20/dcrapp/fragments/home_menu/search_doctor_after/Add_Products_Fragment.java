@@ -187,13 +187,13 @@ public class Add_Products_Fragment extends Fragment implements View.OnClickListe
         if(v==btn_ok)
         {
           String  str_edt_quant = null;
-            String  str_totl_quant = null;
-int in_edt_quant = 0,in_totl_quant=0;
-            boolean iseeor=false;
+          String  str_totl_quant = null;
+          int in_edt_quant = 0,in_totl_quant=0;
+          boolean iseeor=false;
 
             if(MySharedPref.bean_list!=null) {
                 System.out.println("Exception List is###"+MySharedPref.bean_list.size());
-MySharedPref.bean_list22=new ArrayList<>();
+                 MySharedPref.bean_list22=new ArrayList<>();
                 for (int k = 0; k < MySharedPref.bean_list.size(); k++) {
 
                     if (MySharedPref.bean_list.get(k).isSelected()) {
@@ -219,8 +219,8 @@ MySharedPref.bean_list22=new ArrayList<>();
 
                }
 
-               ItemModel consultant_list_bean = new ItemModel(str_totl_quant,str_edt_quant);
-                        MySharedPref.bean_list22.add(consultant_list_bean);
+                          ItemModel consultant_list_bean = new ItemModel(str_totl_quant,str_edt_quant);
+                           MySharedPref.bean_list22.add(consultant_list_bean);
 
                         }
 
@@ -230,11 +230,11 @@ MySharedPref.bean_list22=new ArrayList<>();
                     System.out.println("Edit Amount###"+str_edt_quant);
                     System.out.println("Total Amount###"+in_totl_quant);
 
-                    if (str_edt_quant == null) {
+                    /*if (str_edt_quant == null) {
                         iseeor = true;
                         Toast.makeText(getActivity(), "Please Select Quantity", Toast.LENGTH_SHORT).show();
                     }
-                  else if(str_edt_quant.equalsIgnoreCase("0"))
+                   else if(str_edt_quant.equalsIgnoreCase("0"))
                     {
                         iseeor = true;
                         Toast.makeText(getActivity(), "Please Select More than 0 quantity", Toast.LENGTH_SHORT).show();
@@ -248,7 +248,7 @@ MySharedPref.bean_list22=new ArrayList<>();
                     else if (str_edt_quant.equalsIgnoreCase("null")) {
                         iseeor = true;
                         Toast.makeText(getActivity(), "Please Select Quantity", Toast.LENGTH_SHORT).show();
-                    }
+                    }*/
                     if (!iseeor) {
 
                         MySharedPref sp=new MySharedPref();
@@ -485,13 +485,18 @@ for(int i=0;i<bool_lst.size();i++)
         List<Dcr_Products_LxDetails_Bean> arrayList = new ArrayList<>();
         List<Dcr_Products_LxDetails_Bean> arSearchlist;
         int in_total_qty;
+
         ArrayList<ItemModel> itemModels3;
         ArrayList<ItemModel_Selected> itemModels4 = new ArrayList<>();
+
         ItemModel model3;
+
         int in_id;
+
         String doc_idd, doc_idd_selected;
 
-        public CustomGetProducts_Adp(Activity activity, List<Dcr_Products_LxDetails_Bean> arr_all_search_doctors2, ArrayList<ItemModel> itemlist2) {
+        public CustomGetProducts_Adp(Activity activity, List<Dcr_Products_LxDetails_Bean> arr_all_search_doctors2,
+                                     ArrayList<ItemModel> itemlist2) {
 
             this.activity = activity;
 
@@ -578,11 +583,11 @@ for(int i=0;i<bool_lst.size();i++)
             String upperString_str_doc_name = str_doc_name.substring(0, 1).toUpperCase() + str_doc_name.substring(1);
             holder.txt_product.setText(upperString_str_doc_name);
 
-
-//holder.edt_product_qty.setText(arr_all_search_doctors3.get(position).getTotalQty());
+            //holder.edt_product_qty.setText(arr_all_search_doctors3.get(position).getTotalQty());
 
             //     System.out.println("Int id Bind###" + in_id);
             //System.out.println("Size Checkbox_Position###" + position);
+
             MySharedPref sp = new MySharedPref();
             doc_idd = sp.getData(getActivity(), "doc_idd", "null");
             doc_idd_selected = sp.getData(getActivity(), "doc_idd_selected", "null");
@@ -597,6 +602,7 @@ for(int i=0;i<bool_lst.size();i++)
                                 for (int j = 0; j < MySharedPref.bean_list2.size(); j++) {
                                     in_id = l1.get(j);
                                     if (position == in_id) {
+
                                         chk_left_checked.setChecked(MySharedPref.bean_list2.get(j).isSelected());
 
                                         numberOfCheckboxesChecked = MySharedPref.bean_list2.size();
@@ -652,9 +658,17 @@ for(int i=0;i<bool_lst.size();i++)
                         //  holder.edt_product_qty.setEnabled(true);
 
                         if (in_edt_pro_qty == 0) {
-                            holder.edt_product_qty.setError("Please Enter more than zero");
-                            btn_ok.setClickable(false);
-                        } else if (in_edt_pro_qty > in_total_qty) {
+                            //holder.edt_product_qty.setError("Please Enter more than zero");
+                            //btn_ok.setClickable(true);
+                            btn_ok.setClickable(true);
+                            qty_lst.add(holder.edt_product_qty.getText().toString());
+                            System.out.println("List Size Quant###" + qty_lst);
+
+                            MySharedPref.bean_list.get(position).setEdt_product_quantity(holder.edt_product_qty.getText().toString());
+
+
+                        }
+                        else if (in_edt_pro_qty > in_total_qty) {
                             holder.edt_product_qty.setError("Please Enter less than total Quantity");
                             MySharedPref.bean_list.get(position).setEdt_product_quantity("null");
                             btn_ok.setClickable(false);
@@ -691,10 +705,11 @@ for(int i=0;i<bool_lst.size();i++)
                     // Toast.makeText(ctx, imageModelArrayList.get(pos).getAnimal() + " clicked!", Toast.LENGTH_SHORT).show();
                     if (cb.isChecked() && numberOfCheckboxesChecked >= 3) {
                         cb.setChecked(false);
-                        Toast.makeText(getActivity(), "Max allowed three checkbox only", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity(), "Select max 3 product only", Toast.LENGTH_LONG).show();
                         // notifyDataSetChanged();
 
-                    } else if (cb.isChecked()) {
+                    }
+                    else if (cb.isChecked()) {
                         //    MySharedPref.bean_list.get(pos).setSelected(true);
                         holder.edt_product_qty.setEnabled(true);
                         numberOfCheckboxesChecked++;
@@ -710,7 +725,11 @@ for(int i=0;i<bool_lst.size();i++)
                         if (in_total_qty1 > 0) {
                             holder.edt_product_qty.setEnabled(true);
 
-                        } else {
+                        }
+                        else {
+
+                            holder.edt_product_qty.setText("Qty");
+                            holder.edt_product_qty.setTextColor(getResources().getColor(R.color.Red));
                             holder.edt_product_qty.setEnabled(false);
 
                         }
@@ -718,7 +737,8 @@ for(int i=0;i<bool_lst.size();i++)
 
                         //   notifyDataSetChanged();
 
-                    } else {
+                    }
+                    else {
                         //     MySharedPref.bean_list.get(pos).setSelected(false);
                         holder.edt_product_qty.setEnabled(false);
                         holder.edt_product_qty.setText("");
@@ -867,7 +887,7 @@ for(int i=0;i<bool_lst.size();i++)
 
                     if (error.equals("success")) {
 
-                        MySharedPref.bean_list= new ArrayList<ItemModel>();
+                        MySharedPref.bean_list = new ArrayList<ItemModel>();
                         loader.setVisibility(View.GONE);
 
                         Gson gson = new Gson();
@@ -907,8 +927,7 @@ for(int i=0;i<bool_lst.size();i++)
 
                             customGetProducts_adp = new CustomGetProducts_Adp(getActivity(),dcr_products_bean.getResult(),MySharedPref.bean_list);
                             InboxDetailRV.setAdapter(customGetProducts_adp);
-
-
+                            InboxDetailRV.setNestedScrollingEnabled(false);
 
                         }
 

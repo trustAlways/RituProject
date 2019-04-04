@@ -5,6 +5,9 @@ import android.content.SharedPreferences;
 import android.support.v4.app.FragmentActivity;
 
 import com.example.candid_20.dcrapp.bean.ItemModel;
+import com.example.candid_20.dcrapp.bean.ItemModelArea;
+import com.example.candid_20.dcrapp.bean.ItemModelArea_Selected;
+import com.example.candid_20.dcrapp.bean.ItemModelAreaaa;
 import com.example.candid_20.dcrapp.bean.ItemModel_Selected;
 import com.example.candid_20.dcrapp.bean.for_gift.ItemModelGift;
 import com.example.candid_20.dcrapp.bean.for_gift.ItemModel_Selected_Gift;
@@ -84,12 +87,12 @@ public class MySharedPref {
     }
     public static ArrayList<ItemModel> bean_list;
     public static ItemModel bean;
+
     public static ArrayList<ItemModel> bean_list22;
     public static ItemModel bean22;
 
     public static ArrayList<ItemModel_Selected> bean_list2;
     public static ItemModel_Selected bean2;
-
 
     public static ArrayList<ItemModelGift> bean_list3;
     public static ItemModel bean3;
@@ -99,6 +102,15 @@ public class MySharedPref {
 
     public static ArrayList<ItemModel_Selected_Gift> bean_list4;
     public static ItemModel_Selected bean4;
+
+   /* public static ArrayList<ItemModelArea> bean_list_area;
+    public static ItemModelArea beanArea;
+
+    public static ArrayList<ItemModelAreaaa> bean_list_areaaa;
+    public static ItemModelAreaaa beanAreaa;
+
+    public static ArrayList<ItemModelArea_Selected> bean_list_selected_area;
+    public static ItemModel_Selected beanareaselected;*/
 
     public static final String KEY_Interior_id = "interior_id";
     public static final String KEY_Lat = "update_lat";
@@ -110,6 +122,7 @@ public class MySharedPref {
     public String getData(String key) {
         return sp.getString(key, null);
     }
+
     public void setData(Context activity,String key, String value) {
         sp = activity.getSharedPreferences("DCRapp",activity.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();

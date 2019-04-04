@@ -154,6 +154,7 @@
                     android:layout_alignParentTop="true"
                     android:alwaysDrawnWithCache="true"
                     android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
                     android:scrollbars="none"
                     android:visibility="visible"/>
 

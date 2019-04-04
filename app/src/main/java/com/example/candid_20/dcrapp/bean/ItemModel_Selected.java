@@ -66,7 +66,11 @@ public class ItemModel_Selected {
 
     }
 
-    public ItemModel_Selected(String id1,String index1,String edt_product_quantity1, String product_name1, String product_quantity1, boolean isSelected1)
+    public ItemModel_Selected(String id1,String index1,
+                              String edt_product_quantity1,
+                              String product_name1,
+                              String product_quantity1,
+                              boolean isSelected1)
     {
 
 

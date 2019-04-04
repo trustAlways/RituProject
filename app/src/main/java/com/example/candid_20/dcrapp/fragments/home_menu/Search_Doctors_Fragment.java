@@ -370,12 +370,12 @@ public class Search_Doctors_Fragment extends Fragment implements View.OnClickLis
 
 
 
-                    } else {
+                    }
+                    else {
                         loader.setVisibility(View.GONE);
 
                         String errorMsg = jObj.getString("message");
                         if(getActivity()!=null) {
-
                             Toast.makeText(getActivity(), errorMsg, Toast.LENGTH_SHORT).show();
                         }
 
@@ -508,8 +508,8 @@ public class Search_Doctors_Fragment extends Fragment implements View.OnClickLis
                                     // ---------------------------- Set Custom RecycleView and Adapter -------------------------------------------------------------------------------//
                                     customSearch_doctors_adp = new CustomSearch_Doctors_Adp(getActivity(),searchDoctor_bean.getResult());
                                     InboxDetailRV.setAdapter(customSearch_doctors_adp);
-                           /* rr_InboxDetailRV.setVisibility(View.VISIBLE);
-                            InboxDetailRV.setVisibility(View.VISIBLE);*/
+                                   /* rr_InboxDetailRV.setVisibility(View.VISIBLE);
+                                    InboxDetailRV.setVisibility(View.VISIBLE);*/
                                 }
 
                                 else
@@ -521,8 +521,8 @@ public class Search_Doctors_Fragment extends Fragment implements View.OnClickLis
 
                                 String errorMsg = jObj.getString("message");
                                 if(getActivity()!=null) {
-                         /*   txt_avail_pro.setVisibility(View.VISIBLE);
-                            txt_avail_pro.setText("No products added yet.");*/
+                                     /*   txt_avail_pro.setVisibility(View.VISIBLE);
+                                    txt_avail_pro.setText("No products added yet.");*/
                                     //  Toast.makeText(getActivity(), errorMsg, Toast.LENGTH_SHORT).show();
                                 }
 
@@ -534,10 +534,8 @@ public class Search_Doctors_Fragment extends Fragment implements View.OnClickLis
 
                                 String errorMsg = jObj.getString("message");
                                 if(getActivity()!=null) {
-
                                     Toast.makeText(getActivity(), errorMsg, Toast.LENGTH_SHORT).show();
                                 }
-
                                 Log.e("errorMsg", errorMsg);
                             }
                         } catch (JSONException e) {
@@ -553,12 +551,6 @@ public class Search_Doctors_Fragment extends Fragment implements View.OnClickLis
                 try {
 
                     if(error.getMessage()!=null) {
-                       /* JSONObject jsonObject22 = new JSONObject(error.getMessage());
-
-                        String errorMsg = jsonObject22.getString("message");*/
-                        //  JSONObject jsonObject33=new JSONObject(message);
-                        //   String password=jsonObject33.getString("password");
-
                         Toast.makeText(getActivity(), error.getMessage(), Toast.LENGTH_SHORT).show();
                     }
 
@@ -660,7 +652,7 @@ public class Search_Doctors_Fragment extends Fragment implements View.OnClickLis
 
     // ---------------------------- Class for RecycleView GridSpacing-------------------------------------------------------------------------------//
 
-    class GridSpacingItemDecoration extends RecyclerView.ItemDecoration{
+    class GridSpacingItemDecoration extends RecyclerView.ItemDecoration {
 
         private int spanCount;
         private int spacing;
@@ -751,9 +743,10 @@ public class Search_Doctors_Fragment extends Fragment implements View.OnClickLis
          holder.rr_current_loc_descp.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-         txt_search_doctor.setText(arr_all_search_doctors3.get(position).getDoctorName());
-         Search_Doctors_Submit_Fragment selectedFragment = Search_Doctors_Submit_Fragment.newInstance();
-         FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+           txt_search_doctor.setText(arr_all_search_doctors3.get(position).getDoctorName());
+
+            Search_Doctors_Submit_Fragment selectedFragment = Search_Doctors_Submit_Fragment.newInstance();
+            FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
 
             Bundle b=new Bundle();
             b.putString("my_String",txt_search_doctor.getText().toString());
@@ -774,7 +767,7 @@ public class Search_Doctors_Fragment extends Fragment implements View.OnClickLis
 
         public class MyViewHolder extends RecyclerView.ViewHolder {
             TextView txt_current_loc_descp,txt_profession;
-RelativeLayout rr_current_loc_descp;
+            RelativeLayout rr_current_loc_descp;
 
             public MyViewHolder(View itemView) {
                 super(itemView);

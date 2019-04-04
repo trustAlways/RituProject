@@ -62,12 +62,9 @@ public class ItemModel {
     public ItemModel(String id1,String index1, String product_name1, String product_quantity1)
     {
 
-
         this.id=id1;
         this.index=index1;
-
         this.product_name=product_name1;
-
         this.product_quantity=product_quantity1;
 
         }

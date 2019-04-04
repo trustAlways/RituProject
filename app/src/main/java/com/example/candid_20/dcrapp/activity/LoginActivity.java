@@ -260,9 +260,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void callWebService_forEmployeeLogin(String str_comid2,String str_emppassword2) {
         // Check Internet Connectivity
         if (Utils.isConnected(getApplicationContext())) {
-
-//Call WebService
-
+            //Call WebService
             log_In(str_comid2,str_emppassword2);
 
         }

@@ -4,7 +4,8 @@ public class URLs {
 
    //public static final String ROOT_URL1 = "http://192.168.1.5/pharma_webservices/api/";
     //public static final String ROOT_URL = "http://dailyreporting.in/miracle/api/";
-    public static final String ROOT_URL = "http://dailyreporting.in/apps/api/companyid/";
+     public static final String ROOT_URL = "http://dailyreporting.in/apps/api/companyid/";
+   // public static final String ROOT_URL = "https://motaso.com/TrackingDemo/companyid/";
 
     public static final String URL_LOGIN= ROOT_URL + "login";
     public static final String URL_WORKING_WITH_USER_RECORD= ROOT_URL + "working_with_user_record";

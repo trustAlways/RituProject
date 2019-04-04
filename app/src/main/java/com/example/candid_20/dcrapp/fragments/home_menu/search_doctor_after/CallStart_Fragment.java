@@ -65,7 +65,8 @@ public class CallStart_Fragment extends Fragment implements View.OnClickListener
     View v;
     MySharedPref sp;
     String ldata,user_id4,token;
-    TextView txt_title,txt_doctor_namee,txt_degree,txt_doc_address,txt_callstarttime,txt_addproducts,txt_add_gifts,txt_addproducts_error,txt_addgifts_error;
+    TextView txt_title,txt_doctor_namee,txt_degree,txt_doc_address,txt_callstarttime,txt_addproducts,txt_add_gifts,txt_addproducts_error,
+            txt_addgifts_error;
     ProgressBar loader;
 String doc_id;
     //------------------------------------ Initialise boolean-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
@@ -411,16 +412,22 @@ if(!iserror)
                 System.out.println("Dcr Doctor Live Table Insert id###"+dcr_table_insert_id);
                 System.out.println("Dcr Doctor Live Table Insert id###"+user_id4);
                 System.out.println("Dcr Doctor Live Table Insert id###"+doc_id);
+                System.out.println("bean list###"+MySharedPref.bean_list2.size());
 
                 params.put("dcr_doctor_live_table_insert_id",dcr_doctor_live_table_insert_id);
+
+
+
 
                 if(MySharedPref.bean_list2!=null) {
 
             if (MySharedPref.bean_list2.size() >0)
           {
 
-                if(str_product_one.equalsIgnoreCase("")) {
-                    params.put("product1","");
+
+
+              if(str_product_one.equalsIgnoreCase("null") || str_product_one_qty==null) {
+                    params.put("product1",str_product_one);
                     params.put("product1_value","");
                 }
                 else
@@ -432,8 +439,8 @@ if(!iserror)
                     System.out.println("Dcr Doctor Live 1###"+str_product_one_qty);
 
                 }
-                if(str_product_two.equalsIgnoreCase("")) {
-                    params.put("product2","");
+                if(str_product_two.equalsIgnoreCase("") || str_product_two_qty==null) {
+                    params.put("product2",str_product_two);
                     params.put("product2_value","");
                     }
                 else
@@ -445,8 +452,8 @@ if(!iserror)
                     System.out.println("Dcr Doctor Live 2###"+str_product_two_qty);
                 }
 
-                if(str_product_three.equalsIgnoreCase("")) {
-                    params.put("product3","");
+                if(str_product_three.equalsIgnoreCase("") || str_product_three_qty==null) {
+                    params.put("product3",str_product_three);
                     params.put("product3_value","");
 
                 }
@@ -459,7 +466,7 @@ if(!iserror)
                     System.out.println("Dcr Doctor Live 3###"+str_product_three_qty);
                     }
 
-                    }
+                }
                             else
                         {
                               params.put("product1","");
@@ -475,14 +482,14 @@ if(!iserror)
 
 
                     else
-            {
+                {
                     params.put("product1","");
                     params.put("product1_value","");
                     params.put("product2","");
                     params.put("product2_value","");
                     params.put("product3",str_product_three);
                     params.put("product3_value",str_product_three_qty);
-           }
+               }
 
 
                 params.put("checkout_lat", String.valueOf(currentlat));
@@ -694,15 +701,17 @@ if(!iserror)
                                     boolean isSelected1 = MySharedPref.bean_list.get(j).isSelected();
 
                                     //  boolean   is_selected=MySharedPref.bean_list.get(i).isSelected();
+                                    ItemModel_Selected consultant_list_bean = new ItemModel_Selected(id, index1, edt_proquanty1, product_name1, pro_quantity1, isSelected1);
+                                    MySharedPref.bean_list2.add(consultant_list_bean);
 
-                                    if(edt_proquanty1!=null) {
+                                    /* if(edt_proquanty1!=null) {
 
                                         if (!edt_proquanty1.equalsIgnoreCase("null")) {
                                             ItemModel_Selected consultant_list_bean = new ItemModel_Selected(id, index1, edt_proquanty1, product_name1, pro_quantity1, isSelected1);
                                             MySharedPref.bean_list2.add(consultant_list_bean);
                                             System.out.println("MyShared Size###" + MySharedPref.bean_list2.size());
                                         }
-                                    }
+                                    }*/
 
 
 
@@ -733,6 +742,7 @@ if(MySharedPref.bean_list2.size()==1) {
     str_product_three="";
 
 
+    System.out.println("0 product qty"+ MySharedPref.bean_list2.get(0).getEdt_product_quantity());
     str_product_one_qty=MySharedPref.bean_list2.get(0).getEdt_product_quantity();
     str_product_two_qty="";
     str_product_three_qty="";
@@ -742,6 +752,9 @@ if(MySharedPref.bean_list2.size()==2)
     str_product_one = MySharedPref.bean_list2.get(0).getId();
     str_product_two=MySharedPref.bean_list2.get(1).getId();
     str_product_three="";
+
+    System.out.println("0 product qty"+ MySharedPref.bean_list2.get(0).getEdt_product_quantity());
+    System.out.println("1 product qty"+ MySharedPref.bean_list2.get(1).getEdt_product_quantity());
 
     str_product_one_qty=MySharedPref.bean_list2.get(0).getEdt_product_quantity();
     str_product_two_qty=MySharedPref.bean_list2.get(1).getEdt_product_quantity();
@@ -753,8 +766,13 @@ if(MySharedPref.bean_list2.size()==3) {
                                                         str_product_two=MySharedPref.bean_list2.get(1).getId();
                                                         str_product_three=MySharedPref.bean_list2.get(2).getId();
 
-                                                        str_product_one_qty=MySharedPref.bean_list2.get(0).getEdt_product_quantity();
-                                                        str_product_two_qty=MySharedPref.bean_list2.get(1).getEdt_product_quantity();
+    System.out.println("0 product qty"+ MySharedPref.bean_list2.get(0).getEdt_product_quantity());
+    System.out.println("1 product qty"+ MySharedPref.bean_list2.get(1).getEdt_product_quantity());
+    System.out.println("2 product qty"+ MySharedPref.bean_list2.get(0).getEdt_product_quantity());
+
+
+    str_product_one_qty=MySharedPref.bean_list2.get(0).getEdt_product_quantity();
+    str_product_two_qty=MySharedPref.bean_list2.get(1).getEdt_product_quantity();
                                                         str_product_three_qty=MySharedPref.bean_list2.get(2).getEdt_product_quantity();
 
                                                     }

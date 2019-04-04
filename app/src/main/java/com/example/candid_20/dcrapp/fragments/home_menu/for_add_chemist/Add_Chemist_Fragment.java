@@ -22,6 +22,8 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -40,10 +42,12 @@ import com.example.candid_20.dcrapp.bean.for_chemist.For_ChemistList_Bean;
 import com.example.candid_20.dcrapp.bean.for_chemist.For_ChemistList_Lxdetails_Bean;
 import com.example.candid_20.dcrapp.bean.for_gift_list.Gift_List_Bean;
 import com.example.candid_20.dcrapp.bean.for_gift_list.Gift_List_Lxdetails_Bean;
+import com.example.candid_20.dcrapp.bean.for_search_doctor.SearchDoctor_Bean;
 import com.example.candid_20.dcrapp.bean.for_stockiest.For_StockiestList_Bean;
 import com.example.candid_20.dcrapp.bean.for_stockiest.For_StockiestList_Lxdetails_Bean;
 import com.example.candid_20.dcrapp.constant.Utils;
 import com.example.candid_20.dcrapp.fragments.home_menu.TimeLineFragment;
+import com.example.candid_20.dcrapp.fragments.home_menu.for_doctor_list.MyDoctor_List_Frag;
 import com.example.candid_20.dcrapp.fragments.home_menu.search_doctor_after.Add_Products_Fragment;
 import com.example.candid_20.dcrapp.fragments.home_menu.search_doctor_after.Doctors_Reminder_Fragment;
 import com.example.candid_20.dcrapp.other.GPSTracker;
@@ -61,10 +65,11 @@ import java.util.List;
 import java.util.Map;
 
 import static android.content.Context.LOCATION_SERVICE;
+import static android.view.Gravity.CENTER;
 
 public class Add_Chemist_Fragment extends Fragment implements View.OnClickListener {
     View v;
-    TextView txt_title,txt_chname_error,txt_gift_error,txt_stckiest1_error,txt_pob_error;
+    TextView txt_title,txt_chname_error,txt_gift_error,txt_stckiest1_error,txt_pob_error,chemist_address;
     MySharedPref sp;
     String ldata,dcr_table_insert_id,user_id4,token,dcr_chemist_stockist_live_table_id;
 ProgressBar loader;
@@ -72,7 +77,8 @@ EditText edt_chemist_name,spn_product_pobamount;
     RelativeLayout rr_InboxDetailRVvv,rr_InboxDetailRVvv_gift,
             rr_InboxDetailRVvv_stockiest,
             rr_InboxDetailRVvv_stockiest2,rr_InboxDetailRVvv_stockiest3
-            ,rr_callcmplte_checked_unchecked;
+            ,rr_callcmplte_checked_unchecked,
+    checmist_location_box;
 
     RecyclerView InboxDetailRVvv,InboxDetailRVvv_gift,
             InboxDetailRVvv_stockiest,InboxDetailRVvv_stockiest2,InboxDetailRVvv_stockiest3;
@@ -187,6 +193,7 @@ public static Add_Chemist_Fragment newInstance() {
         InboxDetailRVvv=(RecyclerView)v.findViewById(R.id.InboxDetailRVvv);
 
 
+
         //Casting RelativeLayout for Call Complete
         rr_callcmplte_checked_unchecked=(RelativeLayout)v.findViewById(R.id.rr_callcmplte_checked_unchecked);
 
@@ -209,6 +216,11 @@ public static Add_Chemist_Fragment newInstance() {
         rr_InboxDetailRVvv_stockiest3=(RelativeLayout)v.findViewById(R.id.rr_InboxDetailRVvv_stockiest3);
         //Casting RecyclerView for Stockiest3
         InboxDetailRVvv_stockiest3=(RecyclerView)v.findViewById(R.id.InboxDetailRVvv_stockiest3);
+
+        //for chemist location show
+        checmist_location_box = (RelativeLayout)v.findViewById(R.id.location_box);
+        //for chemist address
+        chemist_address = (TextView)v.findViewById(R.id.chemist_Address);
 
 
         //For  Set Chemist Create by these
@@ -321,8 +333,10 @@ public static Add_Chemist_Fragment newInstance() {
 
                 else {
                     rr_InboxDetailRVvv.setVisibility(View.GONE);
-
                     InboxDetailRVvv.setVisibility(View.GONE);
+
+                    checmist_location_box.setVisibility(View.GONE);
+                    chemist_address.setVisibility(View.GONE);
                     //edt_selct_city.setText("");
                 }
 
@@ -1935,7 +1949,11 @@ else if(str_stockiest3_proquant.equalsIgnoreCase("null"))
 
                     try {
                         edt_chemist_name.setText(arr_all_search_doctors3.get(position).getChemistName());
+                        String selected_chemist_id = arr_all_search_doctors3.get(position).getChemistId();
 
+                        checmist_location_box.setVisibility(View.VISIBLE);
+                        chemist_address.setVisibility(View.VISIBLE);
+                        chemist_address.setText(arr_all_search_doctors3.get(position).getShopAddress());
 
                         str_chemist_proquant=arr_all_search_doctors3.get(position).getChemistId();
                         rr_InboxDetailRVvv.setVisibility(View.GONE);
@@ -1990,8 +2008,6 @@ else if(str_stockiest3_proquant.equalsIgnoreCase("null"))
             notifyDataSetChanged();
         }
     }
-
-
     // ---------------------------- Class for RecycleView for Search Doctor Adapter-------------------------------------------------------------------------------//
     private class CustomSearch_Stockiest_Adp extends RecyclerView.Adapter<CustomSearch_Stockiest_Adp.MyViewHolder> {
 

@@ -5,6 +5,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
@@ -17,6 +18,9 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
+
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class LocationMonitorService extends Service implements
         GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener,
@@ -109,7 +113,6 @@ public class LocationMonitorService extends Service implements
     private void sendMessageToUI(String lat, String lng) {
 
         Log.d(TAG, "Sending info...");
-
        /* Intent intent1 = new Intent(ACTION_LOCATION_BROADCAST);
         intent1.putExtra(EXTRA_LATITUDE, lat);
         intent1.putExtra(EXTRA_LONGITUDE, lng);
@@ -124,11 +127,9 @@ public class LocationMonitorService extends Service implements
     }
 
 
-
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {
         Log.d(TAG, "Failed to connect to Google API");
-
     }
 
     public void onDestroy() {

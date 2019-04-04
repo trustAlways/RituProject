@@ -2,12 +2,12 @@ package com.example.candid_20.dcrapp.fragments.home_menu.view_DCR;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.content.res.Resources;
-import android.graphics.Rect;
 import android.location.Address;
 import android.location.Geocoder;
 import android.net.Uri;
@@ -18,18 +18,13 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AnimationUtils;
-import android.view.animation.LayoutAnimationController;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -45,20 +40,11 @@ import com.example.candid_20.dcrapp.bean.DCR_REVIEW_DATA.dcr_review_chemist_visi
 import com.example.candid_20.dcrapp.bean.DCR_REVIEW_DATA.dcr_review_docter;
 import com.example.candid_20.dcrapp.bean.DCR_REVIEW_DATA.dcr_review_docter_reminder;
 import com.example.candid_20.dcrapp.bean.DCR_REVIEW_DATA.dcr_review_expenses;
-import com.example.candid_20.dcrapp.bean.fullview_timeline_doctor_bean.TimeLineMainResult_Bean;
-import com.example.candid_20.dcrapp.bean.fullview_timeline_doctor_bean.TimeLineResultDoctor_Bean;
-import com.example.candid_20.dcrapp.bean.fullview_timeline_doctor_bean.TimeLineResultStockiest;
+import com.example.candid_20.dcrapp.constant.AlarmReceiver;
 import com.example.candid_20.dcrapp.constant.Utils;
-import com.example.candid_20.dcrapp.fragments.HomeFragments;
-import com.example.candid_20.dcrapp.fragments.home_menu.TimeLineFragment;
-import com.example.candid_20.dcrapp.fragments.home_menu.for_add_expenses.Expenses_Frag;
-import com.example.candid_20.dcrapp.fragments.home_menu.for_view_timeline.TimeLine_FullView_Frag;
-import com.example.candid_20.dcrapp.other.URLs;
 import com.example.candid_20.dcrapp.storage.MySharedPref;
 import com.example.candid_20.dcrapp.volleyconnector.AppSingleton;
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -77,6 +63,7 @@ public class DCR_Fullview_Frag extends Fragment implements View.OnClickListener 
     View v;
     MySharedPref sp;
     String work_via;
+    AlarmReceiver alarmReceiver = new AlarmReceiver();
     //for show like timeview
     TextView txt_selected_datee,txt_selected_strtfieldwork_att,txt_selected_strtfieldwork_locationn,
             txt_selected_citynamee,txt_selected_interiornamee,
@@ -644,6 +631,15 @@ public class DCR_Fullview_Frag extends Fragment implements View.OnClickListener 
 
                             rr_selected_strtfieldwork_location.setVisibility(View.VISIBLE);
                             txt_selected_strtfieldwork_locationn.setText(working_at+" - "+interior);
+                        }
+
+                        String area=jsonObject44.getString("area_name");
+                        System.out.println("Working area###"+area);
+
+                        if(!area.equalsIgnoreCase(""))
+                        {
+                            rr_selected_strtfieldwork_at.setVisibility(View.VISIBLE);
+                            txt_selected_strtfieldwork_att.setText(area);
                         }
 
                         String work_type=jsonObject44.getString("work_type");
@@ -1224,11 +1220,10 @@ public class DCR_Fullview_Frag extends Fragment implements View.OnClickListener 
     }
 
     // ---------------------------- For WebService Call for get Search Doctor Suggestion -------------------------------------------------------------------------------//
-    private void submit_todayDcrReport() {
+    public void submit_todayDcrReport() {
 
         String url = "http://dailyreporting.in/"+company_name+"/api/submit_report";
         System.out.println("sout url"+ url);
-
 
         final String latitude = sp.getData(MySharedPref.KEY_Lat);
         final String longitude = sp.getData(MySharedPref.KEY_Long);
@@ -1240,7 +1235,7 @@ public class DCR_Fullview_Frag extends Fragment implements View.OnClickListener 
         String cancel_req_tag = "area";
        /* StringRequest strReq = new StringRequest(Request.Method.POST, URLs.URL_DAY_DCR_REPORT,
                 new com.android.volley.Response.Listener<String>() {*/
-    StringRequest strReq = new StringRequest(Request.Method.POST, url,
+         StringRequest strReq = new StringRequest(Request.Method.POST, url,
                 new com.android.volley.Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -1257,11 +1252,24 @@ public class DCR_Fullview_Frag extends Fragment implements View.OnClickListener 
                                 .replace(R.id.contentFrame, new HomeFragments())
                                 //.addToBackStack("0")
                                 .commit();*/
+
+
                         Intent intent = new Intent(getActivity(), MainActivity.class);
                         startActivity(intent);
 
+                        Intent myIntent = new Intent(getActivity(), AlarmReceiver.class);
+                        PendingIntent pendingIntent = PendingIntent.getBroadcast(getActivity(), 0, myIntent,0);
+                        AlarmManager  alarmManager = (AlarmManager)getActivity().getSystemService(Context.ALARM_SERVICE);
+                        // cancel the alarm
+                        alarmManager.cancel(pendingIntent);
+                        // delete the PendingIntent
+                        pendingIntent.cancel();
+                        Toast.makeText(getActivity(), "delete intent", Toast.LENGTH_SHORT).show();
+
+
                     }
                     else {
+
                         loader.setVisibility(View.GONE);
 
                         String errorMsg = jObj.getString("message");

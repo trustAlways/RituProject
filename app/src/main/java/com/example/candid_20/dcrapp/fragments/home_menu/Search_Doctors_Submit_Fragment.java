@@ -770,6 +770,7 @@ String doc_id,dcr_live_table_insert_id,dcr_table_insert_id,doc_name,speciality_i
             String str_doc_name=arr_all_search_doctors3.get(position).getDoctorName();
             String txt_degree=arr_all_search_doctors3.get(position).getSpeciality();
             String txt_doc_city=arr_all_search_doctors3.get(position).getCityName();
+            String clinic_address=arr_all_search_doctors3.get(position).getClinicAddress();
 
             String upperString_str_doc_name = str_doc_name.substring(0,1).toUpperCase() + str_doc_name.substring(1);
             holder.txt_doctor_namee.setText(upperString_str_doc_name);
@@ -779,8 +780,16 @@ String doc_id,dcr_live_table_insert_id,dcr_table_insert_id,doc_name,speciality_i
 
             if (!txt_doc_city.equalsIgnoreCase(""))
             {
-                String upperString_str_doc_city = txt_doc_city.substring(0,1).toUpperCase() + txt_doc_city.substring(1);
-                holder.txt_doc_city.setText(upperString_str_doc_city);
+                if (!clinic_address.equalsIgnoreCase("")){
+                    String upperString_str_doc_city = txt_doc_city.substring(0,1).toUpperCase() + txt_doc_city.substring(1);
+                    holder.txt_doc_city.setText(clinic_address+", "+upperString_str_doc_city);
+                }
+                else
+                {
+                    String upperString_str_doc_city = txt_doc_city.substring(0,1).toUpperCase() + txt_doc_city.substring(1);
+                    holder.txt_doc_city.setText(upperString_str_doc_city);
+                }
+
             }
             else
             {

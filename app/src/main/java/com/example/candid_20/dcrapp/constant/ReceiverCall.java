@@ -1,5 +1,7 @@
 package com.example.candid_20.dcrapp.constant;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -16,6 +18,7 @@ import com.example.candid_20.dcrapp.volleyconnector.AppSingleton;
 
 import org.json.JSONObject;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -60,6 +63,29 @@ public class ReceiverCall extends BroadcastReceiver {
         else {
             context.startService(new Intent(context, LocationMonitorService.class));
         }
+
+
+       /* if (intent.getAction().equals("android.intent.action.BOOT_COMPLETED"));
+        {
+            // Retrieve a PendingIntent that will perform a broadcast
+           AlarmManager manager = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
+
+            // Set the alarm to start at 11:59:59 PM
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTimeInMillis(System.currentTimeMillis());
+            calendar.set(Calendar.HOUR, 11);
+            calendar.set(Calendar.MINUTE, 59);
+            calendar.set(Calendar.AM_PM, Calendar.PM);
+
+            Intent alarmIntent = new Intent(context, AlarmReceiver.class);
+            alarmIntent.putExtra("MAKE_SERVER_CALL","1");
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, alarmIntent, 0);
+
+            manager.setRepeating(AlarmManager.RTC, calendar.getTimeInMillis(),  AlarmManager.INTERVAL_DAY, pendingIntent);
+        }*/
+
+
+
     }
 
     // ---------------------------- For  WebService Call Method of Login-------------------------------------------------------------------------------//

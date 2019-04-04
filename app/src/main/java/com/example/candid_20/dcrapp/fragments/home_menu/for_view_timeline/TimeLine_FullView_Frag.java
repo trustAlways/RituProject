@@ -619,6 +619,15 @@ public class TimeLine_FullView_Frag extends Fragment {
                             txt_selected_strtfieldwork_locationn.setText(working_at+" - "+interior);
                         }
 
+
+                             String area=jsonObject44.getString("area_name");
+                             System.out.println("Working area###"+area);
+                             if(!area.equalsIgnoreCase(""))
+                             {
+                                 rr_selected_strtfieldwork_at.setVisibility(View.VISIBLE);
+                                 txt_selected_strtfieldwork_att.setText(area);
+                             }
+
                         String work_type=jsonObject44.getString("work_type");
 
                         rr_selected_workingtype.setVisibility(View.VISIBLE);

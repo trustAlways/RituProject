@@ -2,7 +2,9 @@ package com.example.candid_20.dcrapp.fragments;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlarmManager;
 import android.app.Dialog;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -53,6 +55,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.example.candid_20.dcrapp.R;
 import com.example.candid_20.dcrapp.activity.LoginActivity;
 import com.example.candid_20.dcrapp.activity.MainActivity;
+import com.example.candid_20.dcrapp.constant.AlarmReceiver;
 import com.example.candid_20.dcrapp.constant.LocationMonitorService;
 import com.example.candid_20.dcrapp.constant.Utils;
 import com.example.candid_20.dcrapp.customgrid.MyGridView;
@@ -87,6 +90,7 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -142,6 +146,7 @@ public class HomeFragments extends Fragment implements View.OnClickListener {
     private LocationCallback mLocationCallback;
     private Location mCurrentLocation;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -152,13 +157,43 @@ public class HomeFragments extends Fragment implements View.OnClickListener {
         getSaveddata();
         // ---------------------------- For Initilize UI -------------------------------------------------------------------------------//
         initUi();
+
         startLocationUpdates();
         // ---------------------------- For Get Current Location -------------------------------------------------------------------------------//
        // getLocation();
         getUpdate();
         return v;
     }
+
+    /*private void setAl() {
+
+        // Retrieve a PendingIntent that will perform a broadcast
+       AlarmManager manager = (AlarmManager)getActivity().getSystemService(Context.ALARM_SERVICE);
+
+        // Set the alarm to start at 11:59:59 PM
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        calendar.set(Calendar.HOUR, 6);
+        calendar.set(Calendar.MINUTE, 55);
+        calendar.set(Calendar.AM_PM, Calendar.PM);
+
+        Intent alarmIntent = new Intent(getActivity(), AlarmReceiver.class);
+        alarmIntent.putExtra("MAKE_SERVER_CALL","1");
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(getActivity(), 0, alarmIntent, 0);
+
+    *//*if (Build.VERSION.SDK_INT >= 23) {
+        alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+    } else if (Build.VERSION.SDK_INT >= 19) {
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+    } else {
+        alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+    }*//*
+        manager.cancel(pendingIntent);
+        manager.setRepeating(AlarmManager.RTC, calendar.getTimeInMillis(),  AlarmManager.INTERVAL_DAY, pendingIntent);
+        Toast.makeText(getActivity(), "alarm..!", Toast.LENGTH_SHORT).show();
+    }*/
     // ---------------------------- For Get Current Location -------------------------------------------------------------------------------//
+
 
     private void getLocation() {
 
@@ -413,6 +448,8 @@ public class HomeFragments extends Fragment implements View.OnClickListener {
     private void initUi() {
 // ---------------------------- For Casting Elements -------------------------------------------------------------------------------//
 
+
+
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(getActivity());
         mSettingsClient = LocationServices.getSettingsClient(getActivity());
 
@@ -428,6 +465,7 @@ public class HomeFragments extends Fragment implements View.OnClickListener {
                 getLocation();
             }
         };
+
         mLocationRequest = new LocationRequest();
         mLocationRequest.setInterval(3000);
         mLocationRequest.setFastestInterval(1000);
@@ -510,7 +548,7 @@ public class HomeFragments extends Fragment implements View.OnClickListener {
 
 
 
-//btn_logout=(Button)v.findViewById(R.id.btn_logout);
+       //btn_logout=(Button)v.findViewById(R.id.btn_logout);
         // ---------------------------- GridView OnClickListner -------------------------------------------------------------------------------//
   grid_content.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -1006,7 +1044,10 @@ public class HomeFragments extends Fragment implements View.OnClickListener {
                     String dcr_city_idd = jObj.getString("city_id");
                     String dcr_mr_idd = jObj.getString("mrid");
                     String dcr_region_idd = jObj.getString("region");
+                    String user_type = jObj.getString("lateuser");
 
+                if (user_type.equalsIgnoreCase("0") && !user_type.equalsIgnoreCase(""))
+                {
                     if (!dcr_table_insert_idd.equalsIgnoreCase("") && !dcr_live_table_insert_idd.equalsIgnoreCase(""))
                     {
                         sp.saveData(getActivity(),"dcr_work_strt_type",dcr_work_location);
@@ -1177,8 +1218,30 @@ public class HomeFragments extends Fragment implements View.OnClickListener {
                     {
                         sp.saveData(getActivity(),"work_time",field_work_time);
                     }
+                  //------- checking user type
+                }
+                else
+                {
+                    loader.setVisibility(View.GONE);
 
-                } catch (Exception e) {
+                    MySharedPref sp=new MySharedPref();
+                    sp.saveData(getActivity(),"ldata","null");
+                    sp.saveData(getActivity(),"petrol","");
+
+                    sp.saveData(getActivity(),"selected_city_id","");
+                    sp.saveData(getActivity(),"selected_city_id_local","");
+                    sp.saveData(getActivity(),"selected_interior_id","");
+                    sp.saveData(getActivity(),"mr_id","");
+                    sp.saveData(getActivity(),"dcr_work_strt_type","");
+                    sp.saveData(getActivity(),"region_id","");
+
+                    Intent iii=new Intent(getActivity(), LocationMonitorService.class);
+                    getActivity().stopService(iii);
+
+                    Intent i1 = new Intent(getActivity(), LoginActivity.class);
+                    startActivity(i1);
+                }
+            } catch (Exception e) {
                     e.printStackTrace();
                 }
 
@@ -1214,7 +1277,12 @@ public class HomeFragments extends Fragment implements View.OnClickListener {
                     CustomGridviewForContent customGridviewForContent=new CustomGridviewForContent(getActivity(), l1 ,images);
                     grid_content.setAdapter(customGridviewForContent);
 
-                } catch (Exception e) {
+
+
+                }
+
+
+                catch (Exception e) {
                     e.printStackTrace();
                 }
 
@@ -1565,4 +1633,6 @@ public class HomeFragments extends Fragment implements View.OnClickListener {
         // dialog.setMessage(Message);
         return dialog;
     }
+
+
 }

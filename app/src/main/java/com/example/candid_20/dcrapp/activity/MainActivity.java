@@ -82,12 +82,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     String company_name,company_logo;
     //String Sharedpreferences Data
     String ldata,user_id4,token,first_name,last_name,empcode,role_nam;
+    private static MainActivity mainActivityRunningInstance;
+
+
+    public static MainActivity  getInstace(){
+        return mainActivityRunningInstance;
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        mainActivityRunningInstance = this;
 // ---------------------------- For  Get Saved Data -------------------------------------------------------------------------------//
         getSaveddata();
 
@@ -159,6 +167,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     }
+
+    public void refreshMyData2(){
+        // do your operations here.
+        initUi();
+        System.out.println("refresh Activity main");
+    }
+
     public void refreshMyData(){
         // do your operations here.
         get_Data_forGetStart();
@@ -569,9 +584,7 @@ if(v==rr_left)
                     // Check for both permissions
                     if (perms.get(Manifest.permission. ACCESS_FINE_LOCATION)== PackageManager.PERMISSION_GRANTED
                             && perms.get(Manifest.permission.ACCESS_COARSE_LOCATION )== PackageManager.PERMISSION_GRANTED
-
-
-                            )
+                        )
                     {
                         Log.d("", "sms & location services permission granted");
                         ischeckedpermission=true;
@@ -709,7 +722,6 @@ if(v==rr_left)
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("X-API-KEY","TEST@123");
-
 
                 return params;
             }

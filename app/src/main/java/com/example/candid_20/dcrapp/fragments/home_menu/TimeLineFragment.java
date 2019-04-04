@@ -1,22 +1,31 @@
 package com.example.candid_20.dcrapp.fragments.home_menu;
 
+import android.app.Activity;
+import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.SystemClock;
 import android.provider.Settings;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -30,20 +39,21 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.candid_20.dcrapp.R;
 import com.example.candid_20.dcrapp.activity.MainActivity;
+import com.example.candid_20.dcrapp.bean.ItemModelArea;
+import com.example.candid_20.dcrapp.bean.ItemModelArea_Selected;
 import com.example.candid_20.dcrapp.constant.Utils;
 import com.example.candid_20.dcrapp.customgrid.MyGridView;
 import com.example.candid_20.dcrapp.fragments.HomeFragments;
 import com.example.candid_20.dcrapp.fragments.home_menu.for_add_chemist.Add_Chemist_Fragment;
 import com.example.candid_20.dcrapp.fragments.home_menu.for_add_expenses.Expenses_Frag;
+import com.example.candid_20.dcrapp.fragments.home_menu.for_map_my_work.MapMyTeam_Work;
 import com.example.candid_20.dcrapp.fragments.home_menu.for_map_my_work.Map_My_Work;
-import com.example.candid_20.dcrapp.fragments.home_menu.for_view_timeline.TimeLine_FullView_Frag;
-import com.example.candid_20.dcrapp.fragments.home_menu.search_doctor_after.CallStart_Fragment;
 import com.example.candid_20.dcrapp.fragments.home_menu.today_dcr.Today_Dcr_Frag;
 import com.example.candid_20.dcrapp.other.GPSTracker;
-import com.example.candid_20.dcrapp.other.URLs;
 import com.example.candid_20.dcrapp.storage.MySharedPref;
 import com.example.candid_20.dcrapp.volleyconnector.AppSingleton;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -52,18 +62,20 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static android.content.Context.LOCATION_SERVICE;
 
 public class TimeLineFragment extends Fragment {
-View v;
+
+    View v;
     MyGridView grid_content;
     ArrayList<String> l1;
     ArrayList<Integer> images;
 
-TextView tct_call_hour,txt_callprocess,txt_callprocess_second;
-   int count = -1;
+    TextView tct_call_hour,txt_callprocess,txt_callprocess_second;
+    int count = -1;
     private long startTime = 0L;
 
     TextView txt_title;
@@ -80,9 +92,25 @@ TextView tct_call_hour,txt_callprocess,txt_callprocess_second;
     long timeSwapBuff = 0L;
     long updatedTime = 0L;
 
-    String doc_id,work_time,item1,item2,item3,company_name;
+    String doc_id,work_time,item1,item2,item3,company_name,
 
+     dcr_work_location,dcr_interior_idd,dcr_city_idd,area_id;
     ProgressBar loader;
+
+    //-----------------------
+    ProgressDialog progressDialog;
+    Dialog select_area_optional_dialog;
+    Button btn_cncl, btn_dlt;
+    RecyclerView select_area_recycle;
+    TextView txt_show_error;
+    CheckBox chk_left_checked;
+    CustomGetProducts_Adp customGetProducts_adp;
+   // AdapterForAreaInterior adapterForAreaInterior;
+    //for select area local
+    String idd;
+    ArrayList<ItemModelArea> arrayListAreaLocal = new ArrayList<>();
+    ArrayList<ItemModelArea_Selected> arrayListArealocalselected;
+
 
     public static TimeLineFragment newInstance()
     {
@@ -105,6 +133,9 @@ TextView tct_call_hour,txt_callprocess,txt_callprocess_second;
 
         // ---------------------------- For Initilize UI -------------------------------------------------------------------------------//
         initUi();
+
+        // ---------------------------- For area selected -------------------------------------------------------------------------------//
+
 
         return v;
     }
@@ -189,6 +220,7 @@ TextView tct_call_hour,txt_callprocess,txt_callprocess_second;
                 JSONObject jsonObject = new JSONObject(ldata);
                 user_id4 = jsonObject.getString("user_id");
                 role_id = jsonObject.getString("role_id");
+                System.out.println("user role id ---- "+role_id);
 
                 token = jsonObject.getString("token");
 
@@ -294,21 +326,49 @@ TextView tct_call_hour,txt_callprocess,txt_callprocess_second;
         customHandler.postDelayed(updateTimerThread, 1000);
 
 // ---------------------------- ArrayList set -------------------------------------------------------------------------------//
-            l1=new ArrayList<>();
-            l1.add("Add Doctor Call or Reminder");
-            l1.add("Add Chemist Visit");
-            l1.add("Add Expenses");
-            l1.add("Today's Timeline");
-            //l1.add("Map My Work");
-            l1.add("Back to Home");
+           if (role_id.equalsIgnoreCase("5"))
+           {
+               l1=new ArrayList<>();
+               l1.add("Add Doctor Call or Reminder");
+               l1.add("Add Chemist Visit");
+               l1.add("Add Expenses");
+               l1.add("Today's Timeline");
+               l1.add("Change Area");
+               l1.add("Map My Work");
+               l1.add("Back to Home");
 
-            images=new ArrayList<>();
-            images.add(R.drawable.doctor_reminder);
-            images.add(R.drawable.chemist_visit);
-            images.add(R.drawable.add_expenses);
-            images.add(R.drawable.today_timeline);
-            //images.add(R.drawable.back_to_home);
-            images.add(R.drawable.back_to_home);
+               images=new ArrayList<>();
+               images.add(R.drawable.doctor_reminder);
+               images.add(R.drawable.chemist_visit);
+               images.add(R.drawable.add_expenses);
+               images.add(R.drawable.today_timeline);
+               images.add(R.drawable.area_with_pins);
+               images.add(R.drawable.area_with_pins);
+               images.add(R.drawable.back_to_home);
+           }
+           else
+           {
+               l1=new ArrayList<>();
+               l1.add("Add Doctor Call or Reminder");
+               l1.add("Add Chemist Visit");
+               l1.add("Add Expenses");
+               l1.add("Today's Timeline");
+               l1.add("Change Area");
+               l1.add("Map My Work");
+               l1.add("Map My Team");
+               l1.add("Back to Home");
+
+               images=new ArrayList<>();
+               images.add(R.drawable.doctor_reminder);
+               images.add(R.drawable.chemist_visit);
+               images.add(R.drawable.add_expenses);
+               images.add(R.drawable.today_timeline);
+               images.add(R.drawable.area_with_pins);
+               images.add(R.drawable.area_with_pins);
+               images.add(R.drawable.area_with_pins);
+               images.add(R.drawable.back_to_home);
+           }
+
 
      /* For Stop
 
@@ -384,7 +444,381 @@ TextView tct_call_hour,txt_callprocess,txt_callprocess_second;
             }
         });
 
+    }
+  //----------------------------------set Dialog for open-----------------------------------------------------
+
+    private void openDialogForArea(int length)
+    {
+        try {
+            select_area_optional_dialog = new Dialog(getActivity());
+            select_area_optional_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            select_area_optional_dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+            select_area_optional_dialog.setContentView(R.layout.select_area_popup_view);
+            select_area_optional_dialog.setCancelable(true);
+
+            select_area_recycle = (RecyclerView) select_area_optional_dialog.findViewById(R.id.select_recycler_view);
+            //For  State Recycle Create by these
+            RecyclerView.LayoutManager mLayoutManager2 = new LinearLayoutManager(getActivity());
+            select_area_recycle.setLayoutManager(mLayoutManager2);
+           // select_area_recycle.addItemDecoration(new StartFieldWork.GridSpacingItemDecoration(1, dpToPx(5), true));
+            //     InboxDetailRV.setNestedScrollingEnabled(false);
+            select_area_recycle.setItemAnimator(new DefaultItemAnimator());
+
+            txt_show_error  = (TextView)select_area_optional_dialog.findViewById(R.id.alert_msg_error);
+            btn_dlt = (Button) select_area_optional_dialog.findViewById(R.id.delete_ok);
+            btn_cncl = (Button) select_area_optional_dialog.findViewById(R.id.delete_cancel);
+
+
+            btn_dlt.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    if(arrayListAreaLocal!=null) {
+                       /* System.out.println("Exception List is###" + MySharedPref.bean_list_area.size());
+                        //MySharedPref.bean_list22 = new ArrayList<>();
+                        for (int k = 0; k < MySharedPref.bean_list_area.size(); k++) {
+
+                           try{
+                               if (MySharedPref.bean_list_area.get(k).isSelected()) {
+                                   System.out.println("Exception Selected List is###" + MySharedPref.bean_list_area.get(k).isSelected());
+
+                                   System.out.println("Exception is###" + MySharedPref.bean_list_area.get(k).getArea_name());
+
+                                   ItemModelAreaaa consultant_list_bean = new ItemModelAreaaa( MySharedPref.bean_list_area.get(k).getArea_id()
+                                           , MySharedPref.bean_list_area.get(k).getArea_name(),
+                                           MySharedPref.bean_list_area.get(k).isSelected());
+
+                                   MySharedPref.bean_list_areaaa.add(consultant_list_bean);
+                                   System.out.println("Exception is###" + MySharedPref.bean_list_areaaa.size());
+
+                               }
+                           }
+                           catch(Exception e)
+                           {
+                               e.printStackTrace();
+                           }
+                        }*/
+                        select_area_optional_dialog.dismiss();
+                        setData("1");
+                    }
+                    else
+                    {
+                        select_area_optional_dialog.dismiss();
+                    }
+
+                }
+            });
+
+            btn_cncl.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    select_area_optional_dialog.dismiss();
+                }
+            });
+
+
+            ArrayList<Integer> l1 = new ArrayList<Integer>();
+           try{
+
+               if (!area_id.equalsIgnoreCase("")) {
+                String[] items = area_id.split(",");
+                System.out.println("item length = " + items.length);
+                l1.clear();
+                for (String item : items) {
+                    System.out.println("item = " + item);
+                    l1.add(Integer.valueOf(item));
+                }
+                System.out.println("Int SIZEEE###" + l1.size() );
+
+
+                for (int i = 0; i < l1.size(); i++) {
+                String id = String.valueOf(l1.get(i));
+                System.out.println("Int id###" + id + " 36543752 " + arrayListAreaLocal.get(i).getArea_id());
+                if (id.equalsIgnoreCase(arrayListAreaLocal.get(i).getArea_id()))
+                {
+                    System.out.println("Int id###" + id + " 36543752 " + arrayListAreaLocal.get(i).getArea_id());
+                    arrayListAreaLocal.get(i).setSelected(true);
+                }
+            }
+         }
+
+            setData("0");
+
+            if (length==0)
+            {
+                select_area_recycle.setVisibility(View.GONE);
+                txt_show_error.setVisibility(View.VISIBLE);
+            }
+            else
+            {
+                customGetProducts_adp = new CustomGetProducts_Adp(getActivity(),arrayListAreaLocal);
+                select_area_recycle.setAdapter(customGetProducts_adp);
+                select_area_recycle.setNestedScrollingEnabled(false);
+            }
+       }
+       catch (Exception e)
+       {
+           e.printStackTrace();
+       }
+
+    }
+    catch (Exception e)
+    {
+        e.printStackTrace();
+    }
+
+        select_area_optional_dialog.show();
+
+    }
+//-----------------------------------fuction for set data-------------on popup------------
+    private void setData(String i) {
+        arrayListArealocalselected = new ArrayList<ItemModelArea_Selected>();
+        arrayListArealocalselected.clear();
+        arrayListArealocalselected.isEmpty();
+        idd = "";
+        System.out.println("Exception is###" + arrayListArealocalselected.size());
+
+        try{
+            if (arrayListAreaLocal != null) {
+            for (int j = 0; j < arrayListAreaLocal.size(); j++)
+            {
+                if (arrayListAreaLocal.get(j).isSelected()) {
+
+                    System.out.println("Exception is###" + arrayListAreaLocal.get(j).isSelected());
+
+                    String id = arrayListAreaLocal.get(j).getArea_id();
+                    String name = arrayListAreaLocal.get(j).getArea_name();
+                    String region = arrayListAreaLocal.get(j).getArea_region();
+                    String city = arrayListAreaLocal.get(j).getArea_city();
+                    String code = arrayListAreaLocal.get(j).getArea_code();
+                    String interior = arrayListAreaLocal.get(j).getArea_interiors();
+                    boolean isSelected1 = arrayListAreaLocal.get(j).isSelected();
+
+                   // select_area_local_relative_view.setVisibility(View.VISIBLE);
+                   // show_select_area_list_local.append(name+ "\n");
+
+                    if (!arrayListAreaLocal.get(j).getArea_id().equalsIgnoreCase("null"))
+                    {
+                        idd += arrayListAreaLocal.get(j).getArea_id()+",";
+                    }
+
+                    arrayListArealocalselected.add(new ItemModelArea_Selected(id, name,region,city,code,interior,isSelected1));
+                }
+            }
+
+            if (arrayListArealocalselected.size()==0)
+            {
+                System.out.println("46#########333---- "+idd);
+                //select_area_local_relative_view.setVisibility(View.GONE);
+            }
+
+            if (!i.equalsIgnoreCase("0"))
+            {
+                update_area();
+            }
+            System.out.println("46#########333---- "+idd);
         }
+
+    }
+    catch (Exception e)
+    {
+       e.printStackTrace();
+    }
+}
+
+    //calling api for get dtaa
+// ---------------------------- For WebService Call for get Search Doctor Suggestion -------------------------------------------------------------------------------//
+private void getData_ForArea() {
+
+    String url = "http://dailyreporting.in/" + company_name + "/api/all_area";
+    System.out.println("sout url" + url);
+
+    // String url = "http://192.168.1.5/pharma_webservices/api/all_area";
+    // System.out.println("sout url" + url);
+
+    loader.setVisibility(View.VISIBLE);
+
+    // Tag used to cancel the request
+    String cancel_req_tag = "area";
+    StringRequest strReq = new StringRequest(Request.Method.POST, url,
+            new com.android.volley.Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    Log.d("User Allocate Products", "User Allocate Products response: " + response.toString());
+
+                    try {
+                        JSONObject jObj = new JSONObject(response);
+
+                        String errorMsg = jObj.getString("message");
+                        String status = jObj.getString("status");
+                        if (status.equals("success")) {
+                            loader.setVisibility(View.GONE);
+                            JSONArray jsonArray = jObj.getJSONArray("result");
+                            System.out.println("jSonArryA Length "+ jsonArray.length());
+
+                            if (jsonArray.length()==0)
+                            {
+                                int json_length = jsonArray.length();
+                                openDialogForArea(json_length);
+                            }
+                            else
+                            {
+                                for (int i = 0; i < jsonArray.length(); i++) {
+                                    JSONObject jsonObject1 = jsonArray.getJSONObject(i);
+
+                                    String area_id = jsonObject1.getString("area_id");
+                                    String area_type = jsonObject1.getString("area_type");
+                                    String area_city = jsonObject1.getString("city");
+                                    String area_code = jsonObject1.getString("area_code");
+                                    String area_region = jsonObject1.getString("region");
+                                    String area_interiors = jsonObject1.getString("interiors");
+                                    String area_name = jsonObject1.getString("area_name");
+
+
+                                    arrayListAreaLocal.clear();
+                                    arrayListAreaLocal.add(new ItemModelArea(area_id,area_name,area_region,area_city
+                                                ,area_code,area_interiors));
+
+                                }
+
+                                openDialogForArea(jsonArray.length());
+
+                            }
+
+                        }
+                        else if (status.equals("Error")){
+                            loader.setVisibility(View.GONE);
+                           // select_area_recycle.setVisibility(View.GONE);
+                           // txt_show_error.setVisibility(View.VISIBLE);
+                            openDialogForArea(0);
+                            Toast.makeText(getActivity(), errorMsg, Toast.LENGTH_SHORT).show();
+                            Log.e("errorMsg", errorMsg);
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            }, new com.android.volley.Response.ErrorListener() {
+        @Override
+        public void onErrorResponse(VolleyError error) {
+            loader.setVisibility(View.GONE);
+           // select_area_recycle.setVisibility(View.GONE);
+           // txt_show_error.setVisibility(View.VISIBLE);
+            openDialogForArea(0);
+
+            Log.e("UserAllocateAreas", "User Allocate area Error: " + error.getMessage());
+        }
+    }) {
+
+
+        //This is for Headers If You Needed
+        @Override
+        public Map<String, String> getHeaders() throws AuthFailureError {
+            Map<String, String> params = new HashMap<String, String>();
+            params.put("X-API-KEY", "TEST@123");
+            return params;
+        }
+
+        @Override
+        protected Map<String, String> getParams() {
+            // Posting params to login url
+            Map<String, String> params = new HashMap<String, String>();
+
+            if (dcr_work_location.equalsIgnoreCase("1"))
+            {
+                params.put("interior",dcr_interior_idd);
+                params.put("work_type","interior");
+                System.out.println("work type interior id ###### "+dcr_interior_idd+" "+dcr_work_location);
+            }
+            else
+            {
+                params.put("city", dcr_city_idd);
+                params.put("work_type","local");
+                System.out.println("work type ## city_id  "+dcr_city_idd+" "+dcr_work_location);
+            }
+            return params;
+        }
+    };
+    // Adding request to request queue
+    AppSingleton.getInstance(getActivity()).addToRequestQueue(strReq, cancel_req_tag);
+}
+//-------------------------------------for update area ---------------------------------------
+
+
+    // ---------------------------- For WebService Call for get Search Doctor Suggestion -------------------------------------------------------------------------------//
+    private void update_area() {
+
+        String url = "http://dailyreporting.in/" + company_name + "/api/update_area";
+        System.out.println("sout url" + url);
+
+        // String url = "http://192.168.1.5/pharma_webservices/api/all_area";
+        // System.out.println("sout url" + url);
+        loader.setVisibility(View.VISIBLE);
+
+        // Tag used to cancel the request
+        String cancel_req_tag = "area";
+        StringRequest strReq = new StringRequest(Request.Method.POST, url,
+                new com.android.volley.Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d("User Update area", "User update area: " + response.toString());
+
+                        try {
+                            JSONObject jObj = new JSONObject(response);
+
+                            String errorMsg = jObj.getString("message");
+                            String status = jObj.getString("status");
+                            if (status.equals("success")) {
+                                loader.setVisibility(View.GONE);
+                                Toast.makeText(getActivity(), errorMsg, Toast.LENGTH_SHORT).show();
+                            }
+                            else if (status.equals("Error")){
+                                loader.setVisibility(View.GONE);
+                                // select_area_recycle.setVisibility(View.GONE);
+                                // txt_show_error.setVisibility(View.VISIBLE);
+                                Toast.makeText(getActivity(), errorMsg, Toast.LENGTH_SHORT).show();
+                                Log.e("errorMsg", errorMsg);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }, new com.android.volley.Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                loader.setVisibility(View.GONE);
+                Log.e("UserAllocateAreas", "User Allocate area Error: " + error.getMessage());
+            }
+        }) {
+
+
+            //This is for Headers If You Needed
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("X-API-KEY", "TEST@123");
+                return params;
+            }
+
+            @Override
+            protected Map<String, String> getParams() {
+                // Posting params to login url
+                Map<String, String> params = new HashMap<String, String>();
+
+                    params.put("user_id",user_id4);
+                    params.put("area",idd);
+                    System.out.println("user paramss ###### "+user_id4+" "+idd);
+
+                    return params;
+            }
+        };
+        // Adding request to request queue
+        AppSingleton.getInstance(getActivity()).addToRequestQueue(strReq, cancel_req_tag);
+    }
+
+
 
 
     // ---------------------------- Set Custom Gridview for Content -------------------------------------------------------------------------------//
@@ -502,22 +936,62 @@ TextView tct_call_hour,txt_callprocess,txt_callprocess_second;
                         }
 
 
-                       /* if (position==4)
+                        if (position==4)
                         {
-                            getActivity().getSupportFragmentManager().beginTransaction()
+                            /*getActivity().getSupportFragmentManager().beginTransaction()
                                     .replace(R.id.contentFrame, new Map_My_Work())
-                                    .addToBackStack("")
-                                    .commit();
-                        }*/
+                                    .addToBackStack(null)
+                                    .commit();*/
+                            getData_ForArea();
 
-                        if(position==4)
+
+                        }
+                        if(position==5)
                         {
                             //Call Fragment
                             getActivity().getSupportFragmentManager().beginTransaction()
-                                    .replace(R.id.contentFrame, new HomeFragments())
-                                    .addToBackStack("1")
+                                    .replace(R.id.contentFrame, new Map_My_Work())
+                                    .addToBackStack(null)
                                     .commit();
                         }
+
+                        if (role_id.equalsIgnoreCase("5"))
+                        {
+                            if(position==6)
+                            {
+                                //Call Fragment
+                                getActivity().getSupportFragmentManager().beginTransaction()
+                                        .replace(R.id.contentFrame, new HomeFragments())
+                                        .addToBackStack("1")
+                                        .commit();
+                            }
+                        }
+                        else
+                        {
+
+                            if(position==6)
+                            {
+                                //Toast.makeText(mContext, "6", Toast.LENGTH_SHORT).show();
+                                //Call Fragment
+                                getActivity().getSupportFragmentManager().beginTransaction()
+                                        .replace(R.id.contentFrame, new MapMyTeam_Work())
+                                        .addToBackStack(null)
+                                        .commit();
+                            }
+
+                            if(position==7)
+                            {
+                                //Toast.makeText(mContext, "7", Toast.LENGTH_SHORT).show();
+
+                                //Call Fragment
+                                getActivity().getSupportFragmentManager().beginTransaction()
+                                        .replace(R.id.contentFrame, new HomeFragments())
+                                        .addToBackStack("1")
+                                        .commit();
+                            }
+                        }
+
+
 
 
                     }
@@ -855,7 +1329,7 @@ TextView tct_call_hour,txt_callprocess,txt_callprocess_second;
             url, new Response.Listener<String>() {
          @Override
          public void onResponse(String response) {
-             Log.d("CheckUserFieldWork", "CheckUserFieldWork: " + response.toString());
+            Log.d("CheckUserFieldWork", "CheckUserFieldWork: " + response.toString());
 
              try {
                  JSONObject jObj = new JSONObject(response);
@@ -864,18 +1338,19 @@ TextView tct_call_hour,txt_callprocess,txt_callprocess_second;
                   String err_message = jObj.getString("message");
                   if (error.equals("error")) {
 
-                     String result=jObj.getString("result");
-                     System.out.println("Result CheckUserFieldWork***"+result);
-                     String message=jObj.getString("message");
+                       String result=jObj.getString("result");
+                       System.out.println("Result CheckUserFieldWork***"+result);
+                       String message=jObj.getString("message");
 
-                      String dcr_table_insert_idd = jObj.getString("dcr_table_insert_id");
-                      String dcr_live_table_insert_idd = jObj.getString("dcr_live_table_insert_id");
+                       String dcr_table_insert_idd = jObj.getString("dcr_table_insert_id");
+                       String dcr_live_table_insert_idd = jObj.getString("dcr_live_table_insert_id");
 
-                      String dcr_work_location = jObj.getString("work_location");
-                      String dcr_interior_idd = jObj.getString("interior_id");
-                      String dcr_city_idd = jObj.getString("city_id");
-                      String dcr_mr_idd = jObj.getString("mrid");
-                      String dcr_region_idd = jObj.getString("region");
+                       dcr_work_location = jObj.getString("work_location");
+                       dcr_interior_idd = jObj.getString("interior_id");
+                       dcr_city_idd = jObj.getString("city_id");
+                       area_id = jObj.getString("area_id");
+                       String dcr_mr_idd = jObj.getString("mrid");
+                       String dcr_region_idd = jObj.getString("region");
 
                       if (!dcr_table_insert_idd.equalsIgnoreCase("") && !dcr_live_table_insert_idd.equalsIgnoreCase(""))
                       {
@@ -901,9 +1376,7 @@ TextView tct_call_hour,txt_callprocess,txt_callprocess_second;
                      String field_work_time = jObj.getString("fieldwork");
                      if (field_work_time!=null)
                      {
-
-                        // sp.saveData(getActivity(),"work_time",field_work_time);
-
+                         // sp.saveData(getActivity(),"work_time",field_work_time);
                          if (field_work_time != null) {
                              String[] items = field_work_time.split(":");
                              for (String item : items) {
@@ -911,9 +1384,9 @@ TextView tct_call_hour,txt_callprocess,txt_callprocess_second;
                                  item1 = items[0];
                                  item2 = items[1];
                                  item3 = items[2];
-                                 System.out.println("item = " + item1);
-                                 System.out.println("item = " + item2);
-                                 System.out.println("item = " + item3);
+                               //  System.out.println("item = " + item1);
+                                // System.out.println("item = " + item2);
+                                // System.out.println("item = " + item3);
 
                                  tct_call_hour.setText(""+ item1);
                                  txt_callprocess.setText(""+ item2);
@@ -979,5 +1452,133 @@ TextView tct_call_hour,txt_callprocess,txt_callprocess_second;
     public void onPause() {
         customHandler.removeCallbacks(updateTimerThread);
         super.onPause();
+    }
+//------------------------------------------------------------------------------------------------------------------------------------------------
+    private class CustomGetProducts_Adp extends RecyclerView.Adapter<CustomGetProducts_Adp.MyViewHolder> {
+
+    Activity activity;
+    int numberOfCheckboxesChecked = 0;
+    ArrayList<Integer> l1;
+    List<ItemModelArea> arr_all_search_doctors3;
+    int in_id;
+
+    public CustomGetProducts_Adp(FragmentActivity activity, ArrayList<ItemModelArea> arrayListAreaLocal) {
+
+        this.activity = activity;
+        this.arr_all_search_doctors3 = arrayListAreaLocal;
+        l1 = new ArrayList<>();
+
+       if (arrayListArealocalselected!= null) {
+            if (arrayListArealocalselected.size() > 0) {
+                l1 = new ArrayList<>();
+
+                System.out.println("Size Checkbox Constructor###" + arrayListArealocalselected.size());
+                for (int j = 0; j < arrayListArealocalselected.size(); j++) {
+                    l1.add(Integer.valueOf(arrayListArealocalselected.get(j).getArea_id()));
+                }
+            }
+        }
+    }
+
+    @NonNull
+        @Override
+        public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View itemView = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.select_areas_adpter_view, parent, false);
+
+        return new CustomGetProducts_Adp.MyViewHolder(itemView);
+        }
+
+
+        @Override
+        public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
+            String str_doc_name = arr_all_search_doctors3.get(position).getArea_name();
+            String upperString_str_doc_name = str_doc_name.substring(0, 1).toUpperCase() + str_doc_name.substring(1);
+            holder.txt_product.setText(upperString_str_doc_name);
+
+            if (arrayListArealocalselected != null) {
+                if (arrayListArealocalselected.size() > 0) {
+                    System.out.println("l1.size()" + arrayListArealocalselected.size());
+
+                    for (int j = 0; j < arrayListArealocalselected.size(); j++) {
+                        in_id = l1.get(j);
+                        int id = Integer.parseInt(arrayListArealocalselected.get(position).getArea_id());
+
+                        System.out.println("Int id###" + id + " 36543752 "+ in_id);
+                        System.out.println("Size Checkbox_Position###" + arrayListArealocalselected.size());
+
+                        if (id == in_id) {
+
+                            System.out.println("##1323");
+                            chk_left_checked.setChecked(arrayListArealocalselected.get(j).getSelected());
+                            numberOfCheckboxesChecked = arrayListArealocalselected.size();
+                            arrayListAreaLocal.get(position).setSelected(true);
+                        }
+
+                        System.out.println("Int id###" + numberOfCheckboxesChecked);
+                        System.out.println("Size Checkbox_Position###" + position);
+                    }
+                }
+
+            }
+
+
+
+            chk_left_checked.setTag(new Integer(position));
+
+            //CheckBox OnClickListner
+            chk_left_checked.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    CheckBox cb = (CheckBox) v;
+                    Integer pos = (Integer) chk_left_checked.getTag();
+                    // Toast.makeText(ctx, imageModelArrayList.get(pos).getAnimal() + " clicked!", Toast.LENGTH_SHORT).show();
+                    if (cb.isChecked()) {
+                        numberOfCheckboxesChecked++;
+                        System.out.println("Int Selected###" + numberOfCheckboxesChecked);
+                        //   notifyDataSetChanged();
+                        arrayListAreaLocal.get(position).setSelected(true);
+
+                    }
+                    else {
+
+                        numberOfCheckboxesChecked--;
+                        System.out.println("Int UnSelected###" + numberOfCheckboxesChecked);
+                        // qty_lst.remove(l1.get(position));
+                        arrayListAreaLocal.get(position).setSelected(false);
+
+                        //  customGetProducts_adp.notifyDataSetChanged();
+                        //
+                    }
+                }
+            });
+
+        }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position;
+    }
+
+
+    @Override
+    public int getItemCount() {
+        return  arr_all_search_doctors3.size();
+    }
+
+    public  class MyViewHolder extends RecyclerView.ViewHolder {
+        TextView txt_product;
+
+        public MyViewHolder(View itemView) {
+            super(itemView);
+            txt_product = (TextView) itemView.findViewById(R.id.txt_area);
+            chk_left_checked = (CheckBox) itemView.findViewById(R.id.chk_left_checked);
+        }
+    }
     }
 }

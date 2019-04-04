@@ -580,6 +580,18 @@ public class Today_Dcr_Frag extends Fragment {
                             rr_selected_strtfieldwork_location.setVisibility(View.VISIBLE);
                             txt_selected_strtfieldwork_locationn.setText(working_at+" - "+name);
                         }
+
+                        String area=jsonObject44.getString("area_name");
+                        System.out.println("Working area###"+area);
+                        //rr_selected_strtfieldwork_at.setVisibility(View.VISIBLE);
+                        // txt_selected_strtfieldwork_att.setText(working_at);
+                        if(!area.equalsIgnoreCase(""))
+                        {
+                            rr_selected_strtfieldwork_at.setVisibility(View.VISIBLE);
+                            txt_selected_strtfieldwork_att.setText(area);
+                        }
+
+
                         if(working_at.equalsIgnoreCase("Interior"))
                         {
                             //For Interior name
